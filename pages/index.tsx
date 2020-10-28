@@ -55,5 +55,11 @@ export const getStaticProps: GetStaticProps = async function({
 }
 
 const Test = styled.div`
-  color: blue;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 `
