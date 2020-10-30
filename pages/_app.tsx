@@ -1,65 +1,63 @@
-import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import { GithubClient, TinacmsGithubProvider, GithubMediaStore } from 'react-tinacms-github'
+import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { useMemo, useState, useRef, useEffect } from 'react';
 
-export default class Site extends App {
-  cms: TinaCMS
 
-  constructor(props) {
-    super(props)
+function App({pageProps, Component}) {
 
+  const [theme, setTheme] = useState(themes[0].theme)
+
+  const themeHandler = useRef(null)
+
+  useEffect(() => {
+    themeHandler.current = new ThemeHandler(themes[0], setTheme)
+  }, [])
+
+  const memoizedCms = useMemo(() => {
     const github = new GithubClient({
-      proxy: '/api/proxy-github',
-      authCallbackRoute: '/api/create-github-access-token',
+      proxy: "/api/proxy-github",
+      authCallbackRoute: "/api/create-github-access-token",
       clientId: process.env.GITHUB_CLIENT_ID,
-      baseRepoFullName: process.env.REPO_FULL_NAME, // e.g: tinacms/tinacms.org,
-      baseBranch: process.env.BASE_BRANCH, // e.g. 'master' or 'main' on newer repos
-    })
-
-    /**
-     * 1. Create the TinaCMS instance
-     */
-    this.cms = new TinaCMS({
-      enabled: !!props.pageProps.preview,
+      baseRepoFullName: process.env.REPO_FULL_NAME,
+      baseBranch: process.env.BASE_BRANCH,
+    });
+    const cms = new TinaCMS({
+      enabled: !!pageProps.preview,
       apis: {
-        /**
-         * 2. Register the GithubClient
-         */
         github,
       },
-      /**
-       * 3. Register the Media Store
-       */
       media: new GithubMediaStore(github),
-      /**
-       * 4. Use the Sidebar and Toolbar
-       */
-      sidebar: props.pageProps.preview,
-      toolbar: props.pageProps.preview,
-    })
-  }
+      sidebar: pageProps.preview,
+      toolbar: pageProps.preview,
+    });
 
-  render() {
-    const { Component, pageProps } = this.props
+    return cms;
+  }, []);
+  
     return (
       /**
        * 5. Wrap the page Component with the Tina and Github providers
        */
-      <TinaProvider cms={this.cms}>
-        <TinacmsGithubProvider
-          onLogin={onLogin}
-          onLogout={onLogout}
-          error={pageProps.error}
-        >
-          {/**
-           * 6. Add a button for entering Preview/Edit Mode
-           */}
-          <EditLink cms={this.cms} />
-          <Component {...pageProps} />
-        </TinacmsGithubProvider>
-      </TinaProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalTheme />
+        <TinaProvider cms={memoizedCms}>
+          <TinacmsGithubProvider
+            onLogin={onLogin}
+            onLogout={onLogout}
+            error={pageProps.error}
+          >
+            {/**
+             * 6. Add a button for entering Preview/Edit Mode
+             */}
+            <EditLink cms={memoizedCms} />
+            <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button>
+            <Component {...pageProps} />
+          </TinacmsGithubProvider>
+        </TinaProvider>
+      </ThemeProvider>
     )
-  }
+  
 }
 
 const onLogin = async () => {
@@ -94,3 +92,45 @@ export const EditLink = ({ cms }: EditLinkProps) => {
     </button>
   )
 }
+
+
+
+const GlobalTheme = createGlobalStyle`
+  body {
+    background: ${props => props.theme.background}
+  }
+`
+
+interface ThemeOption {
+  name: string
+  theme: any
+}
+
+const themes: ThemeOption[] = [
+  {
+    name: 'Light',
+    theme: {
+      primary: 'black',
+      background: 'white'
+    }
+  },
+  {
+    name: 'Dark',
+    theme: {
+      primary: 'white',
+      background: 'black'
+    }
+  }
+]
+
+class ThemeHandler {
+  constructor(public currentTheme: ThemeOption, private setTheme) {}
+
+  swapThemes() {
+    this.currentTheme = themes.filter((theme) => this.currentTheme.name != theme.name)[0]
+    this.setTheme(this.currentTheme.theme)
+  }
+  
+}
+
+export default App

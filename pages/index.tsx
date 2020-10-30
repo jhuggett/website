@@ -5,6 +5,7 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 
 export default function Home({file}) {
+  
   const formOptions = {
     labeL: 'Home Page',
     fields: [
@@ -24,6 +25,7 @@ export default function Home({file}) {
     <>
     
     <Test>{data.title}</Test>
+    
     
     </>
   )
@@ -55,6 +57,7 @@ export const getStaticProps: GetStaticProps = async function({
 }
 
 const Test = styled.div`
+  color: ${props => props.theme.primary};
   font-family: Helvetica;
   font-weight: bold;
   font-size: 3em;
