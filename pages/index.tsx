@@ -8,6 +8,9 @@ import { SwapTheme } from '../components/SwapTheme'
 
 export default function Home({file, cms, themeHandler}) {
   
+  console.log(themeHandler);
+  
+
   const formOptions = {
     labeL: 'Home Page',
     fields: [

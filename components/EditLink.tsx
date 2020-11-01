@@ -1,4 +1,5 @@
 import { TinaCMS } from "tinacms"
+import styled from "styled-components"
 
 export interface EditLinkProps {
   cms: TinaCMS
@@ -6,8 +7,12 @@ export interface EditLinkProps {
 
 export const EditLink = ({ cms }: EditLinkProps) => {
   return (
-    <button onClick={() => cms.toggle()}>
+    <Button onClick={() => cms.toggle()}>
       {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-    </button>
+    </Button>
   )
 }
+
+const Button = styled.div`
+
+`
