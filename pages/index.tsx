@@ -12,6 +12,10 @@ export default function Home({file}) {
       {
         name: 'title',
         component: 'text'
+      },
+      {
+        name: 'blurb',
+        component: 'text'
       }
     ]
   }
@@ -22,12 +26,17 @@ export default function Home({file}) {
   useGithubToolbarPlugins()
 
   return (
-    <>
-    
-    <Test>{data.title}</Test>
-    
-    
-    </>
+    <Container>
+      <Header></Header>
+
+      <Body>
+        <Title>{data.title}</Title>
+
+        <Blurb>{data.blurb}</Blurb>
+      </Body>
+
+      <Footer></Footer>
+    </Container>
   )
 }
 
@@ -55,6 +64,46 @@ export const getStaticProps: GetStaticProps = async function({
     }
   }
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+
+  background-color: green;
+
+  display: flex;
+  flex-direction: column;
+`
+
+const Header = styled.div`
+  width: 100%;
+  height: 10em;
+  background-color: red;
+`
+
+const Body = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Footer = styled.div`
+  width: 100%;
+  height: 4em;
+  background-color: yellow;
+  bottom: 0;
+  position: abosolte
+`
+
+const Title = styled.div``
+
+const Blurb = styled.div``
 
 const Test = styled.div`
   color: ${props => props.theme.primary};

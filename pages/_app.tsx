@@ -47,11 +47,8 @@ function App({pageProps, Component}) {
             onLogout={onLogout}
             error={pageProps.error}
           >
-            {/**
-             * 6. Add a button for entering Preview/Edit Mode
-             */}
-            <EditLink cms={memoizedCms} />
-            <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button>
+            {/* <EditLink cms={memoizedCms} />
+            <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
             <Component {...pageProps} />
           </TinacmsGithubProvider>
         </TinaProvider>
@@ -97,8 +94,17 @@ export const EditLink = ({ cms }: EditLinkProps) => {
 
 const GlobalTheme = createGlobalStyle`
   body {
-    background: ${props => props.theme.background}
+    background: ${props => props.theme.background};
+    margin: 0;
+    padding: 0;
   }
+
+  html, body, #__next {
+    height: 100%;
+    width: 100%;
+  }
+
+  
 `
 
 interface ThemeOption {
