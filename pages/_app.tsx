@@ -49,7 +49,7 @@ function App({pageProps, Component}) {
           >
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <Component {...pageProps} />
+            <Component cms={memoizedCms} themeHandler={themeHandler.current} {...pageProps} />
           </TinacmsGithubProvider>
         </TinaProvider>
       </ThemeProvider>
@@ -78,17 +78,7 @@ const onLogout = () => {
   })
 }
 
-export interface EditLinkProps {
-  cms: TinaCMS
-}
 
-export const EditLink = ({ cms }: EditLinkProps) => {
-  return (
-    <button onClick={() => cms.toggle()}>
-      {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-    </button>
-  )
-}
 
 
 
@@ -129,7 +119,7 @@ const themes: ThemeOption[] = [
   }
 ]
 
-class ThemeHandler {
+export class ThemeHandler {
   constructor(public currentTheme: ThemeOption, private setTheme) {}
 
   swapThemes() {

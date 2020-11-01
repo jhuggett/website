@@ -3,8 +3,10 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
+import { EditLink } from '../components'
+import { SwapTheme } from '../components/SwapTheme'
 
-export default function Home({file}) {
+export default function Home({file, cms, themeHandler}) {
   
   const formOptions = {
     labeL: 'Home Page',
@@ -35,7 +37,10 @@ export default function Home({file}) {
         <Blurb>{data.blurb}</Blurb>
       </Body>
 
-      <Footer></Footer>
+      <Footer>
+        <EditLink cms={cms}></EditLink>
+        <SwapTheme themeHandler={themeHandler}></SwapTheme>
+      </Footer>
     </Container>
   )
 }
@@ -69,7 +74,6 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: green;
 
   display: flex;
   flex-direction: column;
@@ -77,14 +81,16 @@ const Container = styled.div`
 
 const Header = styled.div`
   width: 100%;
-  height: 10em;
-  background-color: red;
+
+  flex-grow: 1;
+  
 `
 
 const Body = styled.div`
   width: 100%;
-  height: 100%;
-  background-color: blue;
+
+  flex-grow: 10;
+  
 
 
   flex-direction: column;
@@ -95,23 +101,24 @@ const Body = styled.div`
 
 const Footer = styled.div`
   width: 100%;
-  height: 4em;
-  background-color: yellow;
+
+  flex-grow: 1;
+  
   bottom: 0;
   position: abosolte
 `
 
-const Title = styled.div``
-
-const Blurb = styled.div``
-
-const Test = styled.div`
-  color: ${props => props.theme.primary};
-  font-family: Helvetica;
-  font-weight: bold;
-  font-size: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+const Title = styled.div`
+color: ${props => props.theme.primary};
+font-family: Helvetica;
+font-weight: bold;
+font-size: 3em;
 `
+
+const Blurb = styled.div`
+color: ${props => props.theme.primary};
+font-family: Helvetica;
+font-weight: ;
+font-size: 2em;
+`
+
