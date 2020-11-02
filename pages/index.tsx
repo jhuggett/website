@@ -7,7 +7,7 @@ import { EditLink } from '../components'
 import { SwapTheme } from '../components/SwapTheme'
 
 export default function Home({file, cms, themeHandler}) {
-  
+
   const formOptions = {
     labeL: 'Home Page',
     fields: [
@@ -18,6 +18,10 @@ export default function Home({file, cms, themeHandler}) {
       {
         name: 'blurb',
         component: 'text'
+      },
+      {
+        name: 'hero_image',
+        component: 'image'
       }
     ]
   }
@@ -33,7 +37,7 @@ export default function Home({file, cms, themeHandler}) {
 
       <Body>
         <Title>{data.title}</Title>
-
+        <img src={data.hero_image.previewSrc}></img>
         <Blurb>{data.blurb}</Blurb>
       </Body>
 
@@ -104,20 +108,23 @@ const Footer = styled.div`
 
   flex-grow: 1;
   
-  bottom: 0;
-  position: abosolte
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.div`
 color: ${props => props.theme.primary};
-font-family: Helvetica;
+font-family: ${props => props.theme.font.family};
 font-weight: bold;
 font-size: 3em;
 `
 
 const Blurb = styled.div`
 color: ${props => props.theme.primary};
-font-family: Helvetica;
+font-family: ${props => props.theme.font.family};
 font-weight: ;
 font-size: 2em;
 `

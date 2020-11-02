@@ -8,11 +8,7 @@ function App({pageProps, Component}) {
 
   const [theme, setTheme] = useState(themes[0].theme)
 
-  const themeHandler = useRef(null)
-
-  useEffect(() => {
-    themeHandler.current = new ThemeHandler(themes[0], setTheme)
-  }, [])
+  themeHandler.setSetTheme(setTheme)
 
   const memoizedCms = useMemo(() => {
     const github = new GithubClient({
@@ -49,7 +45,7 @@ function App({pageProps, Component}) {
           >
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <Component cms={memoizedCms} themeHandler={themeHandler.current} {...pageProps} />
+            <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
           </TinacmsGithubProvider>
         </TinaProvider>
       </ThemeProvider>
@@ -107,14 +103,24 @@ const themes: ThemeOption[] = [
     name: 'Light',
     theme: {
       primary: 'black',
-      background: 'white'
+      secondary: 'brown',
+      background: 'white',
+
+      font: {
+        family: 'Didot'
+      }
     }
   },
   {
     name: 'Dark',
     theme: {
       primary: 'white',
-      background: 'black'
+      secondary: 'brown',
+      background: 'black',
+
+      font: {
+        family: 'Lucida Bright'
+      }
     }
   }
 ]
@@ -126,7 +132,12 @@ export class ThemeHandler {
     this.currentTheme = themes.filter((theme) => this.currentTheme.name != theme.name)[0]
     this.setTheme(this.currentTheme.theme)
   }
-  
+
+  setSetTheme(set) {
+    this.setTheme = set
+  }
 }
+
+const themeHandler = new ThemeHandler(themes[0], null)
 
 export default App
