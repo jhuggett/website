@@ -2,10 +2,10 @@
   "title": "A great website.",
   "blurb": "Here's a blurb.",
   "hero_image": {
-    "id": "public/atlassianProfilePic.jpg",
-    "filename": "atlassianProfilePic.jpg",
+    "id": "public/B58A2B5E-F421-4754-81AC-82AAB3BEED0A_1_105_c.jpeg",
+    "filename": "B58A2B5E-F421-4754-81AC-82AAB3BEED0A_1_105_c.jpeg",
     "directory": "public/",
     "type": "file",
-    "previewSrc": "https://raw.githubusercontent.com/jhuggett/website/master/public/atlassianProfilePic.jpg"
+    "previewSrc": "https://raw.githubusercontent.com/jhuggett/website/master/public/B58A2B5E-F421-4754-81AC-82AAB3BEED0A_1_105_c.jpeg"
   }
 }
