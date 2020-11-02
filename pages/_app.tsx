@@ -4,6 +4,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { useMemo, useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import { SwapTheme } from '../components';
+import { Menu } from '../components/Menu';
 
 
 function App({pageProps, Component}) {
@@ -41,6 +42,7 @@ function App({pageProps, Component}) {
         <Head>
           <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
         </Head>
+        <Menu></Menu>
         <SwapTheme themeHandler={themeHandler}></SwapTheme>
         <GlobalTheme />
         <TinaProvider cms={memoizedCms}>
