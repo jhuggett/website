@@ -30,7 +30,7 @@ background: ${props => props.theme.primary};
 color: ${props => props.theme.background};
 
 :hover {
-  padding: 25px 25px 25px 25px;
+  cursor: pointer;
   background: ${props => props.theme.secondary};
   color: ${props => props.theme.background};
 }

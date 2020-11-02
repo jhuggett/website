@@ -3,7 +3,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-import { EditLink } from '../components'
+import { EditLink, HeaderLink } from '../components'
 import { SwapTheme } from '../components/SwapTheme'
 
 export default function Home({file, cms, themeHandler}) {
@@ -18,10 +18,6 @@ export default function Home({file, cms, themeHandler}) {
       {
         name: 'blurb',
         component: 'text'
-      },
-      {
-        name: 'hero_image',
-        component: 'image'
       }
     ]
   }
@@ -33,11 +29,15 @@ export default function Home({file, cms, themeHandler}) {
 
   return (
     <Container>
-      <Header></Header>
+      <Header>
+        <HeaderLink name={"Programming"} link={"/Programming"} />
+        <HeaderLink name={"Woodworking"} link={"/woodworking"} />
+        <HeaderLink name={"Blacksmithing"} link={"/blacksmithing"} />
+        <HeaderLink name={"Detecting"} link={"/detecting"} />
+      </Header>
 
       <Body>
         <Title>{data.title}</Title>
-        <img src={data.hero_image.previewSrc}></img>
         <Blurb>{data.blurb}</Blurb>
       </Body>
 
@@ -87,6 +87,12 @@ const Header = styled.div`
   width: 100%;
 
   flex-grow: 1;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
   
 `
 
