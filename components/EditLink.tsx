@@ -7,12 +7,31 @@ export interface EditLinkProps {
 
 export const EditLink = ({ cms }: EditLinkProps) => {
   return (
-    <Button onClick={() => cms.toggle()}>
-      {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-    </Button>
+    <div>
+      <Button onClick={() => cms.toggle()}>
+        {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
+      </Button>
+    </div>
   )
 }
 
 const Button = styled.div`
+  padding: 15px 15px 15px 15px;
+
+  margin: 10px 10px 10px 10px;
+
+  border-radius: 12px;
+
+  font-family: ${props => props.theme.font.family};
+
+  transition-duration: 0.25s;
+  background: ${props => props.theme.primary};
+  color: ${props => props.theme.background};
+
+  :hover {
+    padding: 25px 25px 25px 25px;
+    background: ${props => props.theme.secondary};
+    color: ${props => props.theme.background};
+  }
 
 `

@@ -103,14 +103,24 @@ const themes: ThemeOption[] = [
     name: 'Light',
     theme: {
       primary: 'black',
-      background: 'white'
+      secondary: 'brown',
+      background: 'white',
+
+      font: {
+        family: 'Didot'
+      }
     }
   },
   {
     name: 'Dark',
     theme: {
       primary: 'white',
-      background: 'black'
+      secondary: 'brown',
+      background: 'black',
+
+      font: {
+        family: 'Lucida Bright'
+      }
     }
   }
 ]

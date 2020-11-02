@@ -1,4 +1,11 @@
 {
   "title": "A great website.",
-  "blurb": "Blurb"
+  "blurb": "Blurb",
+  "hero_image": {
+    "id": "public/atlassianProfilePic.jpg",
+    "filename": "atlassianProfilePic.jpg",
+    "directory": "public/",
+    "type": "file",
+    "previewSrc": "https://raw.githubusercontent.com/jhuggett/website/master/public/atlassianProfilePic.jpg"
+  }
 }
