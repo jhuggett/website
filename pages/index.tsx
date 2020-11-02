@@ -43,7 +43,7 @@ export default function Home({file, cms, themeHandler}) {
 
       <Footer>
         <EditLink cms={cms}></EditLink>
-        <SwapTheme themeHandler={themeHandler}></SwapTheme>
+        
       </Footer>
     </Container>
   )
