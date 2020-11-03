@@ -5,6 +5,7 @@ import { useMemo, useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import { SwapTheme } from '../components';
 import { Menu } from '../components/Menu';
+import { Persistor } from '../Persistancy';
 
 
 function App({pageProps, Component}) {
@@ -33,6 +34,16 @@ function App({pageProps, Component}) {
 
     return cms;
   }, []);
+
+  useEffect(() => {
+
+    const name = Persistor.retrieve('theme-name')?.name 
+
+    if(name) {
+      themeHandler.setThemeTo(name)
+    }
+
+  }, [])
   
     return (
       /**
@@ -136,9 +147,18 @@ const themes: ThemeOption[] = [
 export class ThemeHandler {
   constructor(public currentTheme: ThemeOption, private setTheme) {}
 
+  setThemeTo(name: string) {
+    this.currentTheme = themes.filter(theme => theme.name == name)[0]
+    this.setTheme(this.currentTheme.theme)
+
+    Persistor.persist('theme-name', {name: name})
+  }
+
   swapThemes() {
     this.currentTheme = themes.filter((theme) => this.currentTheme.name != theme.name)[0]
     this.setTheme(this.currentTheme.theme)
+
+    Persistor.persist('theme-name', {name: this.currentTheme.name})
   }
 
   setSetTheme(set) {

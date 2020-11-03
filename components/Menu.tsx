@@ -36,19 +36,25 @@ const MenuContainer = styled.div`
     if (props.open) {
       return `
         width: 25em;
-        height: 80%;
         border-radius: 12px;
 
         padding: 1em 1em 1em 1em;
 
         background: ${ props.theme.primary};
         color: ${ props.theme.background};
+
+
+      height: 80%;
+        transition: height 0.25s ease-in;
       `
     } else {
       return `
       margin: .5em 0 0 .5em;
 
       font-size: 2em;
+
+      
+        transition: height 0.25s ease-in;
 
       color: ${props.theme.primary};
       
