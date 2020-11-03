@@ -30,10 +30,10 @@ export default function Home({file, cms, themeHandler}) {
   return (
     <Container>
       <Header>
-        <HeaderLink name={"Programming"} link={"/Programming"} />
+        {/* <HeaderLink name={"Programming"} link={"/Programming"} />
         <HeaderLink name={"Woodworking"} link={"/woodworking"} />
         <HeaderLink name={"Blacksmithing"} link={"/blacksmithing"} />
-        <HeaderLink name={"Detecting"} link={"/detecting"} />
+        <HeaderLink name={"Detecting"} link={"/detecting"} /> */}
       </Header>
 
       <Body>
@@ -43,7 +43,7 @@ export default function Home({file, cms, themeHandler}) {
 
       <Footer>
         <EditLink cms={cms}></EditLink>
-        <SwapTheme themeHandler={themeHandler}></SwapTheme>
+        
       </Footer>
     </Container>
   )

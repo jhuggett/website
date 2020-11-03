@@ -2,6 +2,10 @@ import { TinaCMS, TinaProvider } from 'tinacms'
 import { GithubClient, TinacmsGithubProvider, GithubMediaStore } from 'react-tinacms-github'
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { useMemo, useState, useRef, useEffect } from 'react';
+import Head from 'next/head'
+import { SwapTheme } from '../components';
+import { Menu } from '../components/Menu';
+import { Persistor } from '../Persistancy';
 
 
 function App({pageProps, Component}) {
@@ -30,12 +34,27 @@ function App({pageProps, Component}) {
 
     return cms;
   }, []);
+
+  useEffect(() => {
+
+    const name = Persistor.retrieve('theme-name')?.name 
+
+    if(name) {
+      themeHandler.setThemeTo(name)
+    }
+
+  }, [])
   
     return (
       /**
        * 5. Wrap the page Component with the Tina and Github providers
        */
       <ThemeProvider theme={theme}>
+        <Head>
+          <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
+        </Head>
+        <Menu></Menu>
+        <SwapTheme themeHandler={themeHandler}></SwapTheme>
         <GlobalTheme />
         <TinaProvider cms={memoizedCms}>
           <TinacmsGithubProvider
@@ -128,9 +147,18 @@ const themes: ThemeOption[] = [
 export class ThemeHandler {
   constructor(public currentTheme: ThemeOption, private setTheme) {}
 
+  setThemeTo(name: string) {
+    this.currentTheme = themes.filter(theme => theme.name == name)[0]
+    this.setTheme(this.currentTheme.theme)
+
+    Persistor.persist('theme-name', {name: name})
+  }
+
   swapThemes() {
     this.currentTheme = themes.filter((theme) => this.currentTheme.name != theme.name)[0]
     this.setTheme(this.currentTheme.theme)
+
+    Persistor.persist('theme-name', {name: this.currentTheme.name})
   }
 
   setSetTheme(set) {
