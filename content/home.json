@@ -7,5 +7,15 @@
     "directory": "public/",
     "type": "file",
     "previewSrc": "https://raw.githubusercontent.com/jhuggett/website/dev/public/IMG_4412.jpeg"
-  }
+  },
+  "blocks": [
+    {
+      "_template": "hero",
+      "subtext": "This is a blurb.",
+      "background_color": "#000000",
+      "text_color": "#FFFFFF",
+      "align": "center",
+      "headline": "A Great Sight"
+    }
+  ]
 }
