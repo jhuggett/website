@@ -9,8 +9,10 @@ import { Persistor } from '../Persistancy';
 import styled from 'styled-components'
 
 function App({pageProps, Component}) {
-
+  console.log(pageProps);
+  
   const [theme, setTheme] = useState(themes[0].theme)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   themeHandler.setSetTheme(setTheme)
 
@@ -43,6 +45,12 @@ function App({pageProps, Component}) {
     }
 
   }, [])
+
+  const openToggle = (isOpen: boolean) => {
+    console.log(isOpen);
+    
+    setMenuIsOpen(isOpen)
+  }
   
     return (
       /**
@@ -52,8 +60,8 @@ function App({pageProps, Component}) {
         <Head>
           <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
         </Head>
-        <Menu></Menu>
-        <SwapTheme themeHandler={themeHandler}></SwapTheme>
+        <Menu openToggle={openToggle} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
+        <SwapTheme themeHandler={themeHandler} moveDown={pageProps.preview ? '62px' : '0px'}></SwapTheme>
         <GlobalTheme />
         <TinaProvider cms={memoizedCms}>
           <TinacmsGithubProvider
@@ -63,9 +71,9 @@ function App({pageProps, Component}) {
           >
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <div className="content">
+            <Content menuIsOpen={menuIsOpen}>
               <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
-            </div>
+            </Content>
             
           </TinacmsGithubProvider>
         </TinaProvider>
@@ -74,7 +82,21 @@ function App({pageProps, Component}) {
   
 }
 
+const Content = styled.div`
+  width: 100vw;
+  height: 100vh;
 
+  ${props => props.menuIsOpen ? `
+    transform: rotate(10deg);
+    filter: blur(10px);
+  ` : ''}
+
+  
+  opacity: ${props => props.menuIsOpen ? '.25' : '1'};
+  margin-left: ${props => props.menuIsOpen ? '350px' : '0'};
+
+  transition: .25s;
+`
 
 
 const onLogin = async () => {
@@ -113,7 +135,9 @@ const GlobalTheme = createGlobalStyle`
     height: 100%;
     width: 100%;
 
-    color: ${props => props.theme.primary}
+    color: ${props => props.theme.primary};
+
+    overflow-x: hidden;
   }
 
 `
@@ -132,7 +156,16 @@ const themes: ThemeOption[] = [
       background: '#FFFFFA',
 
       font: {
-        family: 'Didot'
+        title: {
+          family: 'Georgia',
+          size: '4em',
+          weight: 'bold'
+        },
+        general: {
+          family: 'Tahoma',
+          size: '1.25em',
+          weight: 'normal'
+        }
       }
     }
   },
@@ -144,7 +177,16 @@ const themes: ThemeOption[] = [
       background: '#171219',
 
       font: {
-        family: 'Didot'
+        title: {
+          family: 'Georgia',
+          size: '4em',
+          weight: 'bold'
+        },
+        general: {
+          family: 'Tahoma',
+          size: '1.25em',
+          weight: 'normal'
+        }
       }
     }
   }

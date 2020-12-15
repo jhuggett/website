@@ -27,7 +27,7 @@ export default function Home({file, cms, themeHandler}) {
 
         <BodyCenter>
           <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
-          <EditLink cms={cms} />
+          
         </BodyCenter>
 
         <BodyRight>
