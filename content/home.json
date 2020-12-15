@@ -11,11 +11,11 @@
   "blocks": [
     {
       "_template": "hero",
-      "subtext": "Iteration after Iteration",
-      "background_color": "#000000",
-      "text_color": "#FFFFFF",
-      "align": "center",
-      "headline": "My Forge"
+      "headline": "My Forge",
+      "subtext": "Over the year...",
+      "background_color": "background",
+      "text_color": "primary",
+      "align": "center"
     },
     {
       "_template": "paragraph",
