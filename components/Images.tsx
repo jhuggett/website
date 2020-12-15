@@ -39,7 +39,7 @@ function Images({ data, index }) {
 }
 
 const Image = styled(InlineImage)`
-max-width: 100%;
+width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -55,9 +55,6 @@ const ImageSection = styled.div`
   justify-content: center;
   align-items: center;
 
-
-
-  
 `
 
 const Gallery = styled.div`
@@ -65,7 +62,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-height: 100%;
 `
 
 const Container = styled.div`
