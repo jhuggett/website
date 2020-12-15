@@ -7,15 +7,14 @@ export interface EditLinkProps {
 
 export const EditLink = ({ cms }: EditLinkProps) => {
   return (
-    <div>
       <Button onClick={() => cms.toggle()}>
         {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
       </Button>
-    </div>
   )
 }
 
 const Button = styled.div`
+  display: inline-block;
   padding: 15px 15px 15px 15px;
 
   margin: 10px 10px 10px 10px;

@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { SwapTheme } from '../components';
 import { Menu } from '../components/Menu';
 import { Persistor } from '../Persistancy';
-
+import styled from 'styled-components'
 
 function App({pageProps, Component}) {
 
@@ -36,7 +36,6 @@ function App({pageProps, Component}) {
   }, []);
 
   useEffect(() => {
-
     const name = Persistor.retrieve('theme-name')?.name 
 
     if(name) {
@@ -64,13 +63,19 @@ function App({pageProps, Component}) {
           >
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
+            <div className="content">
+              <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
+            </div>
+            
           </TinacmsGithubProvider>
         </TinaProvider>
       </ThemeProvider>
     )
   
 }
+
+
+
 
 const onLogin = async () => {
   const token = localStorage.getItem('tinacms-github-token') || null
@@ -107,9 +112,10 @@ const GlobalTheme = createGlobalStyle`
   html, body, #__next {
     height: 100%;
     width: 100%;
+
+    color: ${props => props.theme.primary}
   }
 
-  
 `
 
 interface ThemeOption {
