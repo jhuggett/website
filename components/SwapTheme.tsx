@@ -3,13 +3,14 @@ import styled from 'styled-components'
 
 export interface SwapThemeProps {
   themeHandler: ThemeHandler
+  moveDown: string
 }
 
-export const SwapTheme = ({ themeHandler }: SwapThemeProps) => {
+export const SwapTheme = ({ themeHandler, moveDown }: SwapThemeProps) => {
 
 
   return (
-    <Button onClick={() => themeHandler.swapThemes()}>
+    <Button onClick={() => themeHandler.swapThemes()} moveDown={moveDown}>
       {themeHandler.currentTheme.name == "Light" &&
         <i className="fal fa-lightbulb-on"></i>
       }
@@ -27,12 +28,11 @@ line-height: 0;
 
 
 position: absolute;
-top: 10px;
-right: 10px;
+top: ${props => props.moveDown};
+right: 0px;
 
-padding: 15px 15px 15px 15px;
 
-margin: 10px 10px 10px 10px;
+margin: 1em 1em 0 0em;
 
 border-radius: 50%;
 

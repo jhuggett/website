@@ -8,9 +8,9 @@ export default function BlogTemplate(props) {
     
       <article>
         <h1>{props.frontmatter.title}</h1>
-        <div>
+        
           <ReactMarkdown source={props.markdownBody} />
-        </div>
+        
       </article>
   )
 }
