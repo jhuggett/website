@@ -9,7 +9,6 @@ import { Persistor } from '../Persistancy';
 import styled from 'styled-components'
 
 function App({pageProps, Component}) {
-  console.log(pageProps);
   
   const [theme, setTheme] = useState(themes[0].theme)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -46,10 +45,12 @@ function App({pageProps, Component}) {
 
   }, [])
 
-  const openToggle = (isOpen: boolean) => {
-    console.log(isOpen);
-    
-    setMenuIsOpen(isOpen)
+  const openToggle = () => {
+    setMenuIsOpen(true)
+  }
+
+  const closeMenu = () => {
+    setMenuIsOpen(false)
   }
   
     return (
@@ -60,7 +61,7 @@ function App({pageProps, Component}) {
         <Head>
           <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
         </Head>
-        <Menu openToggle={openToggle} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
+        <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
         <SwapTheme themeHandler={themeHandler} moveDown={pageProps.preview ? '62px' : '0px'}></SwapTheme>
         <GlobalTheme />
         <TinaProvider cms={memoizedCms}>
@@ -71,9 +72,12 @@ function App({pageProps, Component}) {
           >
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <Content menuIsOpen={menuIsOpen}>
-              <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
-            </Content>
+            <Page onClick={() => { if (menuIsOpen) closeMenu() }}>
+              <Content menuIsOpen={menuIsOpen} >
+                <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
+              </Content>
+            </Page>
+            
             
           </TinacmsGithubProvider>
         </TinaProvider>
@@ -81,6 +85,11 @@ function App({pageProps, Component}) {
     )
   
 }
+
+const Page = styled.div`
+  width: 100vw;
+  height: 100vh;
+`
 
 const Content = styled.div`
   width: 100vw;

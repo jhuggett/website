@@ -5,35 +5,27 @@ import { EditLink } from '.'
 export interface MenuProps {
   cms: any
   moveDown: string
-  openToggle: (isOpen) => void
-  close: () => void
+  openToggle: () => void
+  isOpen: boolean
 }
 
-export const Menu = ({cms, moveDown, openToggle} : MenuProps) => {
-
-  const [open, setOpen] = useState(false)
-
-  useEffect(() => {
-    openToggle(open)
-  }, [open])
+export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
 
 
   return (
     <>
-    <MenuToggle open={open} onClick={() => setOpen(true)} moveDown={moveDown}>
-        <Compass open={open}>
-        {open ? (<i className="fal fa-compass"></i>) : (<i className="fal fa-compass"></i>) }
+    <MenuToggle open={isOpen} onClick={() => openToggle()} moveDown={moveDown}>
+        <Compass open={isOpen}>
+        {isOpen ? (<i className="fal fa-compass"></i>) : (<i className="fal fa-compass"></i>) }
         </Compass>
       </MenuToggle>
-    <MenuContainer open={open} moveDown={moveDown}> 
+    <MenuContainer open={isOpen} moveDown={moveDown}> 
       
       
 
       <MenuContent>
       <Top>
-        <CloseButton onClick={() => setOpen(false)}>
-          X
-        </CloseButton>
+        
       </Top>
         <Main>
           test
