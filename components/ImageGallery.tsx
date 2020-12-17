@@ -16,10 +16,10 @@ function ImageGallery({ index }) {
 
 
 const StyledInlineBlocks = styled(InlineBlocks)`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 3rem;
-grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+  grid-template-rows: auto;
 
   
 
@@ -37,18 +37,7 @@ export const imageGalleryBlock = {
           src: 'src',
           alt: 'alt',
           size: 1,
-        },
-        {
-          _template: 'image',
-          src: 'src',
-          alt: 'alt',
-          size: 1,
-        },
-        {
-          _template: 'image',
-          src: 'src',
-          alt: 'alt',
-          size: 1,
+          orientation: 'Horizontal'
         },
       ],
     },

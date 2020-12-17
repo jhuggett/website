@@ -3,12 +3,44 @@ import { BlocksControls, InlineTextarea, InlineImage } from 'react-tinacms-inlin
 import styled from 'styled-components'
 import * as NextImage from 'next/image'
 
-export function Image({ index, size }) {
+function getBaseDimentions(orientation) {
+  switch(orientation) {
+    case 'Horizontal': {
+      return {
+        width: 200,
+        height: 150
+      }
+    }
+    case 'Vertical': {
+      return {
+        width: 150,
+        height: 200
+      }
+    }
+    case 'Square': {
+      return {
+        width: 200,
+        height: 200
+      }
+    }
+  }
+
+  return {
+    width: 100,
+    height: 100
+  }
+}
+
+export function Image({ index, data }) {
+  console.log(data);
+
+  const baseDimentions = getBaseDimentions(data.orientation)
+  
   return (
     <Container>
     <BlocksControls index={index}>
       <ImageStyle
-            name={`${index}-image`}
+            name={`name`}
             parse={media => `/${media.filename}`}
             uploadDir={() => '/public'}
             previewSrc={(src) => src}
@@ -16,7 +48,7 @@ export function Image({ index, size }) {
             alt={''}
           >
 
-          {props => <StyledNextImage src={props.src} alt={props.alt} width={200 * size} height={150 * size} />}
+          {props => <StyledNextImage src={props.src} alt={props.alt} width={baseDimentions.width * data.size || 1} height={baseDimentions.height * data.size || 1} />}
         </ImageStyle>
     </BlocksControls>
     </Container>
@@ -48,13 +80,19 @@ export const imageBlock = {
       size: 1,
       src: '/ivan-bandura-unsplash-square.jpg',
       alt: 'ocean',
-      
+      orientation: 'Horizontal'
     },
     fields: [
       {
         name: 'size',
         label: 'Size Multiplier',
         component: 'number'
+      },
+      {
+        name: 'orientation',
+        label: 'Orientation',
+        component: 'select',
+        options: ['Horizontal', 'Vertical', 'Square']
       },
         ],
   },
