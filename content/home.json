@@ -23,14 +23,16 @@
     },
     {
       "_template": "images",
-      "left": {
-        "src": "/Screen Shot 2020-06-24 at 11.18.18 PM.png",
-        "alt": "ocean"
-      },
-      "right": {
-        "src": "/Screen Shot 2020-06-24 at 11.17.47 PM.png",
-        "alt": "dunes"
-      }
+      "images": [
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 4,
+          "orientation": "Horizontal",
+          "name": "/IMG_4412.jpeg"
+        }
+      ]
     },
     {
       "_template": "paragraph",

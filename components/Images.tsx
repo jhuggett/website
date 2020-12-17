@@ -1,6 +1,8 @@
 import React from 'react'
 import { BlocksControls, InlineImage } from 'react-tinacms-inline'
 import styled from 'styled-components'
+import Image from 'next/image'
+
 
 /**
  * 1. Define the Block Component
@@ -11,24 +13,28 @@ function Images({ data, index }) {
       <Container>
         <Gallery>
           <ImageSection>
-          <Image
+          <ImageStyle
             name="left.src"
             parse={media => `/${media.filename}`}
             uploadDir={() => '/public'}
             previewSrc={(src) => src}
             focusRing={false}
             alt={data.left.alt}
-          />
+          >
+            {props => <Image src={props.src} alt={data.alt} width={500} height={250} />}
+            </ImageStyle>
           </ImageSection>
           <ImageSection>
-          <Image
+          <ImageStyle
             name="right.src"
             parse={media => `/${media.filename}`}
             uploadDir={() => '/public'}
             previewSrc={(src) => src}
             focusRing={false}
             alt={data.left.alt}
-          />
+          >
+              {props => <Image src={props.src} alt={data.alt} width={500} height={250} />}
+            </ImageStyle>
           </ImageSection>
           
           
@@ -38,7 +44,7 @@ function Images({ data, index }) {
   )
 }
 
-const Image = styled(InlineImage)`
+const ImageStyle = styled(InlineImage)`
 width: 100%;
 display: flex;
 justify-content: center;

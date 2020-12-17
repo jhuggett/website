@@ -1,0 +1,99 @@
+import React from 'react'
+import { BlocksControls, InlineTextarea, InlineImage } from 'react-tinacms-inline'
+import styled from 'styled-components'
+import * as NextImage from 'next/image'
+
+function getBaseDimentions(orientation) {
+  switch(orientation) {
+    case 'Horizontal': {
+      return {
+        width: 200,
+        height: 150
+      }
+    }
+    case 'Vertical': {
+      return {
+        width: 150,
+        height: 200
+      }
+    }
+    case 'Square': {
+      return {
+        width: 200,
+        height: 200
+      }
+    }
+  }
+
+  return {
+    width: 100,
+    height: 100
+  }
+}
+
+export function Image({ index, data }) {
+  console.log(data);
+
+  const baseDimentions = getBaseDimentions(data.orientation)
+  
+  return (
+    <Container>
+    <BlocksControls index={index}>
+      <ImageStyle
+            name={`name`}
+            parse={media => `/${media.filename}`}
+            uploadDir={() => '/public'}
+            previewSrc={(src) => src}
+            focusRing={false}
+            alt={''}
+          >
+
+          {props => <StyledNextImage src={props.src} alt={props.alt} width={baseDimentions.width * data.size || 1} height={baseDimentions.height * data.size || 1} />}
+        </ImageStyle>
+    </BlocksControls>
+    </Container>
+  )
+}
+
+const StyledNextImage = styled(NextImage.default)`
+  // position: relative;
+
+  // & < img {
+  //   position: relative !important;
+  // }
+
+`
+
+const Container = styled.div`
+`
+
+const ImageStyle = styled(InlineImage)`
+
+`
+
+export const imageBlock = {
+  Component: Image,
+  template: {
+    label: 'Image',
+    
+    defaultItem: {
+      size: 1,
+      src: '/ivan-bandura-unsplash-square.jpg',
+      alt: 'ocean',
+      orientation: 'Horizontal'
+    },
+    fields: [
+      {
+        name: 'size',
+        label: 'Size Multiplier',
+        component: 'number'
+      },
+      {
+        name: 'orientation',
+        label: 'Orientation',
+        component: 'select',
+        options: ['Horizontal', 'Vertical', 'Square']
+      },
+        ],
+  },
+}

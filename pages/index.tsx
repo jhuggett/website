@@ -10,6 +10,7 @@ import { heroBlock } from '../components/Hero'
 import { ContentBody, BodyCenter, BodyRight, BodyLeft } from '../components/PageLayout'
 import { imagesBlock } from '../components/Images'
 import { paragraphBlock } from '../components/Paragraph'
+import { imageGalleryBlock } from '../components/ImageGallery'
 
 export default function Home({file, cms, themeHandler}) {
 
@@ -41,7 +42,7 @@ export default function Home({file, cms, themeHandler}) {
 
 const TESTIMONIAL_BLOCKS = {
   hero: heroBlock,
-  images: imagesBlock,
+  images: imageGalleryBlock,
   paragraph: paragraphBlock
 }
 
