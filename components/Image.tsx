@@ -55,20 +55,22 @@ export function Image({ index, data }) {
 }
 
 const StyledNextImage = styled(NextImage.default)`
-  // position: relative;
-
-  // & < img {
-  //   position: relative !important;
-  // }
-
+  width: 100%;
+  height: 100%;
 `
 
 const Container = styled.div`
-
+ width: 100%;
+ height: 100%;
 `
 
 const ImageStyle = styled(InlineImage)`
+width: 100%;
+height: 100%;
 
+display: flex;
+align-items: center;
+justify-content: center;
 `
 
 export const imageBlock = {

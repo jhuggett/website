@@ -138,8 +138,8 @@ const Main = styled.div`
 
   
 
-  border-top: 5px solid ${props => props.theme.background};
-  border-bottom: 5px solid ${props => props.theme.background};
+  border-top: 2px solid ${props => props.theme.background};
+  border-bottom: 2px solid ${props => props.theme.background};
 
   font-family: ${props => props.theme.font.general.family};
   font-size: 1.2em;
