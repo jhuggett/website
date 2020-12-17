@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { EditLink } from '.'
+import Link from 'next/link'
 
 export interface MenuProps {
   cms: any
@@ -28,7 +29,20 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
         
       </Top>
         <Main>
-          test
+          <ul>
+            <li>
+            <Link href={"/"}>
+            Home
+          </Link>
+            </li>
+            <li>
+            <Link href="/posts/forge">
+            First Post
+          </Link>
+            </li>
+          </ul>
+          
+          
         </Main>
         <Bottom>
           <EditLink cms={cms} />
@@ -88,7 +102,7 @@ const Main = styled.div`
   width: 100%;
   
 
-
+  color: ${props => props.theme.background};
 
   flex: 3;
 `

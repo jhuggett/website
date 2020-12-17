@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async function({
   previewData,
   ...ctx
 }) {
+  
   const { slug } = ctx.params
   if (preview) {
     return getGithubPreviewProps({
@@ -65,7 +66,7 @@ export const getStaticProps: GetStaticProps = async function({
       preview: false,
       file: {
         fileRelativePath: 'content/home.json',
-        data: (await import(`content/posts/${slug}.json`)).default
+        data: (await import(`../../content/posts/${slug}.json`)).default
       }
     }
   }
@@ -76,20 +77,19 @@ export async function getStaticPaths() {
   //get all .md files in the posts dir
   const blogs = glob.sync('content/posts/*.json')
 
-  console.log(blogs);
-  
 
   //remove path and extension to leave filename only
   const blogSlugs = blogs.map(file =>
     file
       .split('/')[2]
       .replace(/ /g, '-')
-      .slice(0, -3)
+      .slice(0, -5)
       .trim()
   )
 
   // create paths with `slug` param
   const paths = blogSlugs.map(slug => `/posts/${slug}`)  
+
   
   return {
     paths,
