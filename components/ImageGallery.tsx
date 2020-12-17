@@ -21,6 +21,9 @@ const StyledInlineBlocks = styled(InlineBlocks)`
   
   grid-template-rows: auto;
 
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
 
 `
