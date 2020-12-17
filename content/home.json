@@ -16,46 +16,6 @@
       "background_color": "background",
       "text_color": "primary",
       "align": "center"
-    },
-    {
-      "_template": "paragraph",
-      "text": "    Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 4,
-          "orientation": "Horizontal",
-          "name": "/IMG_4412.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
-    },
-    {
-      "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
-    },
-    {
-      "_template": "images",
-      "left": {
-        "src": "/Screen Shot 2020-06-24 at 11.18.40 PM.png",
-        "alt": "ocean"
-      },
-      "right": {
-        "src": "/IMG_4412.jpeg",
-        "alt": "dunes"
-      }
-    },
-    {
-      "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
     }
   ]
 }
