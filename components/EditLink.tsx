@@ -15,7 +15,8 @@ export const EditLink = ({ cms }: EditLinkProps) => {
 
 const Button = styled.div`
   display: inline-block;
-  padding: 15px 15px 15px 15px;
+  
+  padding: .5em .5em .5em .5em;
 
   margin: 10px 10px 10px 10px;
 
@@ -27,11 +28,20 @@ const Button = styled.div`
   background: ${props => props.theme.primary};
   color: ${props => props.theme.background};
 
+  border: 2px solid ${props => props.theme.background};
+
+  font-family: ${props => props.theme.font.title.family};
+  font-size: 1em;
+  font-weight: ${props => props.theme.font.title.weight};
+
+  transition: .25s;
+
   :hover {
-    
+
+    transform: translate(-2px, -2px);
     cursor: pointer;
-    background: ${props => props.theme.secondary};
-    color: ${props => props.theme.background};
+    border: 2px solid ${props => props.theme.secondary};
+    color: ${props => props.theme.secondary};
   }
 
 `
