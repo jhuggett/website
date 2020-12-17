@@ -1,13 +1,4 @@
 {
-  "title": "A great website.",
-  "blurb": "Here's a blurb.",
-  "hero_image": {
-    "id": "public/IMG_4412.jpeg",
-    "filename": "IMG_4412.jpeg",
-    "directory": "public/",
-    "type": "file",
-    "previewSrc": "https://raw.githubusercontent.com/jhuggett/website/dev/public/IMG_4412.jpeg"
-  },
   "blocks": [
     {
       "_template": "hero",
