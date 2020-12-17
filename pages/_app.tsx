@@ -46,7 +46,7 @@ function App({pageProps, Component}) {
   }, [])
 
   const openToggle = () => {
-    setMenuIsOpen(true)
+    setMenuIsOpen(!menuIsOpen)
   }
 
   const closeMenu = () => {

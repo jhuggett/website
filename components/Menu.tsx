@@ -10,6 +10,10 @@ export interface MenuProps {
   isOpen: boolean
 }
 
+const closeMenu = (closeFunction) => {
+  setTimeout(closeFunction, 0)
+}
+
 export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
 
 
@@ -27,18 +31,27 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
       <MenuContent>
       <Top>
         
+          Navigation
+        
       </Top>
         <Main>
           <ul>
-            <li>
-            <Link href={"/"}>
-            Home
-          </Link>
+            <li onClick={() => closeMenu(openToggle)}>
+              <LinkItem>
+                <Link href={"/"}>
+                  Home
+                </Link>
+              </LinkItem>
+              
             </li>
-            <li>
-            <Link href="/posts/forge">
-            First Post
-          </Link>
+            
+            <li onClick={() => closeMenu(openToggle)}>
+              <LinkItem>
+                <Link href="/posts/forge">
+                  The Forge
+                </Link>
+              </LinkItem>
+              
             </li>
           </ul>
           
@@ -57,6 +70,19 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
   )
 }
 
+const LinkItem = styled.div`
+  & a {
+    text-decoration: none;
+    color: ${props => props.theme.background};
+
+    transition: .1s;
+
+    :hover {
+      text-decoration: underline;
+      color: ${props => props.theme.secondary};
+    }
+  }
+`
 
 
 const CloseButton = styled.div`
@@ -81,8 +107,15 @@ const Top = styled.div`
   width: 100%;
   flex: 1;
 
+  font-family: ${props => props.theme.font.title.family};
+  font-size: 2em;
+  font-weight: ${props => props.theme.font.title.weight};
+
+  color: ${props => props.theme.background};
+
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 `
 
 const MenuContent = styled.div`
@@ -102,9 +135,21 @@ const Main = styled.div`
   width: 100%;
   
 
+
+  
+
+  border-top: 5px solid ${props => props.theme.background};
+  border-bottom: 5px solid ${props => props.theme.background};
+
+  font-family: ${props => props.theme.font.general.family};
+  font-size: 1.2em;
+  font-weight: ${props => props.theme.font.general.weight};
+
   color: ${props => props.theme.background};
 
   flex: 3;
+
+  
 `
 
 const Bottom = styled.div`
@@ -148,6 +193,7 @@ const MenuToggle = styled.div`
   top: ${props => props.moveDown};
   left: 0;
 
+
   margin: 1em 0 0 1em;
 
   font-size: 2em;
@@ -156,6 +202,10 @@ const MenuToggle = styled.div`
 const MenuContainer = styled.div`
   top: ${props => props.moveDown};
   position: fixed;
+
+
+  max-width: 100vw;
+  max-height: 90vh;
 
   border-bottom-right-radius: 25px;
 
@@ -166,7 +216,7 @@ const MenuContainer = styled.div`
 
   transition-duration: .25s;
   
-  min-height: 500px;
+  height: 500px;
 
   
 
