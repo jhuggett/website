@@ -23,14 +23,29 @@
     },
     {
       "_template": "images",
-      "left": {
-        "src": "/Screen Shot 2020-06-24 at 11.18.18 PM.png",
-        "alt": "ocean"
-      },
-      "right": {
-        "src": "/Screen Shot 2020-06-24 at 11.17.47 PM.png",
-        "alt": "dunes"
-      }
+      "images": [
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 1,
+          "0-image": "/Screen Shot 2020-06-24 at 11.17.47 PM.png"
+        },
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 1,
+          "1-image": "/Screen Shot 2020-06-24 at 11.18.18 PM.png"
+        },
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 1,
+          "2-image": "/Screen Shot 2020-06-24 at 11.18.40 PM.png"
+        }
+      ]
     },
     {
       "_template": "paragraph",
