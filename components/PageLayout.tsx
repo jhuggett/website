@@ -13,7 +13,7 @@ justify-items: center;
 
 export const BodyCenter = styled.div`
 
-width: 50em;
+width: 55em;
 height: 100%;
 min-height: 5em;
 
