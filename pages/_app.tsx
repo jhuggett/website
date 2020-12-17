@@ -223,6 +223,6 @@ export class ThemeHandler {
   }
 }
 
-const themeHandler = new ThemeHandler(themes[0], null)
+const themeHandler = new ThemeHandler(themes[1], null)
 
 export default App
