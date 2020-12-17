@@ -2,11 +2,11 @@
   "blocks": [
     {
       "_template": "hero",
-      "headline": "My Forge",
-      "subtext": "Over my first year at the anvil...",
+      "headline": "The Forge",
       "background_color": "background",
       "text_color": "primary",
-      "align": "center"
+      "align": "center",
+      "subtext": "And it's many iterations during my first year at the anvil"
     },
     {
       "_template": "paragraph",
