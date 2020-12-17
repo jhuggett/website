@@ -3,8 +3,10 @@ import styled from 'styled-components'
 export const ContentBody = styled.div`
 
 width: 100%;
-height: 100%;
+min-height: 100vh;
 display: flex;
+
+
 
 flex-direction: row;
 align-items: center;
@@ -12,10 +14,14 @@ justify-items: center;
 `
 
 export const BodyCenter = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
 
 width: 55em;
 height: 100%;
 min-height: 5em;
+
 
 `
 

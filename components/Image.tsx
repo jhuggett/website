@@ -32,7 +32,6 @@ function getBaseDimentions(orientation) {
 }
 
 export function Image({ index, data }) {
-  console.log(data);
 
   const baseDimentions = getBaseDimentions(data.orientation)
   
@@ -48,7 +47,7 @@ export function Image({ index, data }) {
             alt={''}
           >
 
-          {props => <StyledNextImage src={props.src} alt={props.alt} width={baseDimentions.width * data.size || 1} height={baseDimentions.height * data.size || 1} />}
+          {props => <StyledNextImage src={props.src} alt={props.alt} layout="fill" width={baseDimentions.width * data.size || 1} height={baseDimentions.height * data.size || 1} />}
         </ImageStyle>
     </BlocksControls>
     </Container>
@@ -65,6 +64,7 @@ const StyledNextImage = styled(NextImage.default)`
 `
 
 const Container = styled.div`
+
 `
 
 const ImageStyle = styled(InlineImage)`

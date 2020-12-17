@@ -145,7 +145,7 @@ const MenuContainer = styled.div`
 
   border-bottom-right-radius: 25px;
 
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.primary};
   width: ${props => props.open ? '350px;' : '350px'};
 
   left: ${props => props.open ? '0' : '-350px'};
