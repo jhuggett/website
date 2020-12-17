@@ -11,8 +11,8 @@
   "blocks": [
     {
       "_template": "hero",
-      "headline": "My Forge",
-      "subtext": "Over the year...",
+      "headline": "J. T. Huggett",
+      "subtext": "Software Engineer, Blacksmith, and Woodwright",
       "background_color": "background",
       "text_color": "primary",
       "align": "center"
