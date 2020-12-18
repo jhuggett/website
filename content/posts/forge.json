@@ -122,7 +122,7 @@
           "src": "src",
           "alt": "alt",
           "size": 2,
-          "orientation": "Square",
+          "orientation": "Vertical",
           "name": "/8E473176-2246-4D8A-9842-27BEED2A0F4A_1_105_c.jpeg"
         },
         {
@@ -130,7 +130,7 @@
           "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
-          "orientation": "Square",
+          "orientation": "Vertical",
           "name": "/533AC324-35AF-47D3-B2CC-78E0080FBAFD_1_105_c.jpeg"
         }
       ]
@@ -147,7 +147,7 @@
           "src": "src",
           "alt": "alt",
           "size": 2,
-          "orientation": "Square",
+          "orientation": "Vertical",
           "name": "/37B169A5-EC74-4489-A66B-FD62ABC9FF01_1_105_c.jpeg"
         },
         {
@@ -155,7 +155,7 @@
           "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
-          "orientation": "Square",
+          "orientation": "Vertical",
           "name": "/43F4980C-9FFE-4FA3-82B9-CFAC8AB1CABA_1_105_c.jpeg"
         }
       ]
