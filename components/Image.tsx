@@ -13,7 +13,7 @@ function getBaseDimentions(orientation) {
     }
     case 'Vertical': {
       return {
-        width: 150,
+        width: 175,
         height: 200
       }
     }
