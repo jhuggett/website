@@ -96,7 +96,7 @@ const Content = styled.div`
   height: 100vh;
 
   ${props => props.menuIsOpen ? `
-    transform: rotate(10deg);
+    // transform: rotate(6deg);
     filter: blur(10px);
   ` : ''}
 

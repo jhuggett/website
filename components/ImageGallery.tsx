@@ -20,9 +20,7 @@ const StyledInlineBlocks = styled(InlineBlocks)`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   
   grid-template-rows: auto;
-
-  align-items: center;
-  justify-content: center;
+  
 
   width: 100%;
 
