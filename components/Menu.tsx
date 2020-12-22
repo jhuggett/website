@@ -171,7 +171,8 @@ const Compass = styled.div`
   
 
   transition-duration: .25s;
-  margin: 0 0 1em 0;
+  
+  
 
   opacity: ${props => props.open ? '0' : '1'};
 
@@ -189,12 +190,10 @@ const MenuToggle = styled.div`
 
   transition-duration: .25s;
 
-  position: fixed;
+  
   top: ${props => props.moveDown};
-  left: 0;
 
 
-  margin: 1em 0 0 1em;
 
   font-size: 2em;
 `

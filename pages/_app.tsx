@@ -61,8 +61,7 @@ function App({pageProps, Component}) {
         <Head>
           <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
         </Head>
-        <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
-        <SwapTheme themeHandler={themeHandler} moveDown={pageProps.preview ? '62px' : '0px'}></SwapTheme>
+        
         <GlobalTheme />
         <TinaProvider cms={memoizedCms}>
           <TinacmsGithubProvider
@@ -73,6 +72,15 @@ function App({pageProps, Component}) {
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
             <Page onClick={() => { if (menuIsOpen) closeMenu() }}>
+              <TopBar>
+                <TopLeft>
+                  <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
+                </TopLeft>
+                <TopRight>
+                  <SwapTheme themeHandler={themeHandler} moveDown={pageProps.preview ? '62px' : '0px'}></SwapTheme>
+                </TopRight>
+                
+              </TopBar>
               <Content menuIsOpen={menuIsOpen} >
                 <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
               </Content>
@@ -86,14 +94,47 @@ function App({pageProps, Component}) {
   
 }
 
+const TopBar = styled.div`
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  @media (max-width: 62em) {
+    position: relative;
+  } 
+  
+
+  display: flex;
+`
+
+const TopRight = styled.div`
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+
+  padding-right: 2em;
+  `
+
+const TopLeft = styled.div`
+  flex: 1;
+
+
+  padding-left: 2em;
+  
+  display: flex;
+  align-items: center;
+`
+
 const Page = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 75px);
 `
 
 const Content = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 75px);
 
   ${props => props.menuIsOpen ? `
     // transform: rotate(6deg);
@@ -105,6 +146,7 @@ const Content = styled.div`
   margin-left: ${props => props.menuIsOpen ? '350px' : '0'};
 
   transition: .25s;
+
 `
 
 

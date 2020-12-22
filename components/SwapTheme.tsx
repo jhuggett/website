@@ -27,13 +27,6 @@ line-height: 0;
 
 
 
-position: absolute;
-top: ${props => props.moveDown};
-right: 0px;
-
-
-margin: 1em 1em 0 0em;
-
 border-radius: 50%;
 
 text-shadow: 0px 0px 8px 2px #888888;
