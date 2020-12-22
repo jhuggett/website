@@ -191,6 +191,23 @@ const GlobalTheme = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.25em;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px grey;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.primary};
+    border-radius: 1em;
+    opacity: .5;
+  }
+
 `
 
 interface ThemeOption {
