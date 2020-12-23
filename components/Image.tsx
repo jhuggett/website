@@ -57,6 +57,8 @@ export function Image({ index, data }) {
 const StyledNextImage = styled(NextImage.default)`
   width: 100%;
   height: 100%;
+
+  border-radius: 4px;
 `
 
 const Container = styled.div`
@@ -71,6 +73,9 @@ justify-content: center;
 const ImageStyle = styled(InlineImage)`
 width: 90%;
 height: 100%;
+
+padding-top: 1em;
+padding-bottom: 1em;
 
 display: flex;
 align-items: center;
