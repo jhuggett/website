@@ -6,7 +6,14 @@
       "background_color": "background",
       "text_color": "primary",
       "align": "center",
-      "subtext": "And it's many iterations during my first year at the anvil\n(22 of December, 2020)"
+      "subtext": "And it's many iterations during my first year at the anvil"
+    },
+    {
+      "_template": "hero",
+      "subtext": "(22 of December, 2020)",
+      "background_color": "background",
+      "text_color": "primary",
+      "align": "center"
     },
     {
       "_template": "paragraph",
