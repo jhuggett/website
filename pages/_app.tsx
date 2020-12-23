@@ -10,7 +10,7 @@ import styled from 'styled-components'
 
 function App({pageProps, Component}) {
   
-  const [theme, setTheme] = useState(themes[0].theme)
+  const [theme, setTheme] = useState(themes[1].theme)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   themeHandler.setSetTheme(setTheme)
@@ -186,7 +186,7 @@ const GlobalTheme = createGlobalStyle`
     height: 100%;
     width: 100%;
 
-    color: ${props => props.theme.primary};
+    
 
     overflow-x: hidden;
   }
@@ -230,9 +230,9 @@ const themes: ThemeOption[] = [
           weight: 'bold'
         },
         general: {
-          family: 'Tahoma',
-          size: '1.25em',
-          weight: 'normal'
+          family: 'Arial',
+          size: '1.2em',
+          weight: 'thin'
         }
       }
     }
@@ -251,9 +251,9 @@ const themes: ThemeOption[] = [
           weight: 'bold'
         },
         general: {
-          family: 'Tahoma',
-          size: '1.25em',
-          weight: 'normal'
+          family: 'Arial',
+          size: '1.2em',
+          weight: 'thin'
         }
       }
     }

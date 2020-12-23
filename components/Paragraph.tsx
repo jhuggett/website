@@ -31,6 +31,10 @@ const Container = styled.div`
 const Text = styled.p`
   width: 100%;
   margin: 0 1em 0 1em;
+
+  color: ${props => props.theme.primary};
+
+  text-indent: 2cm;
   
   font-family: ${props => props.theme.font.general.family};
   font-size: ${props => props.theme.font.general.size};
