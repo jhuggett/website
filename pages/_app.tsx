@@ -134,13 +134,13 @@ const Page = styled.div`
   width: 100vw;
   height: 100vh;
 
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
 
 
-  @media (max-width: 62em) {
-    height: calc(100vh - 75px);
-  } 
+  // @media (max-width: 62em) {
+  //   height: calc(100vh - 75px);
+  // } 
 `
 
 const Content = styled.div`
@@ -155,9 +155,7 @@ const Content = styled.div`
     filter: blur(10px);
   ` : ''}
 
-  overflow-y: auto;
-  overflow-x: hidden;
-
+  
   
   opacity: ${props => props.menuIsOpen ? '.25' : '1'};
   margin-left: ${props => props.menuIsOpen ? '350px' : '0'};
@@ -165,9 +163,9 @@ const Content = styled.div`
   transition: .25s;
 
 
-  @media (max-width: 62em) {
-    height: calc(100vh - 75px);
-  } 
+  // @media (max-width: 62em) {
+  //   height: calc(100vh - 75px);
+  // } 
 
 `
 
@@ -205,7 +203,7 @@ const GlobalTheme = createGlobalStyle`
   }
 
   html, body, #__next {
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
     overflow-y: hidden;
