@@ -10,7 +10,7 @@ import styled from 'styled-components'
 
 function App({pageProps, Component}) {
   
-  const [theme, setTheme] = useState(themes[0].theme)
+  const [theme, setTheme] = useState(themes[1].theme)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   themeHandler.setSetTheme(setTheme)
