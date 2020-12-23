@@ -128,7 +128,7 @@
     },
     {
       "_template": "paragraph",
-      "text": "So I made a new forge out of mud and rocks and it was so so much better."
+      "text": "So I made a new forge out of mud and rocks and it was so very much better."
     },
     {
       "_template": "images",
@@ -152,8 +152,7 @@
       ]
     },
     {
-      "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "_template": "paragraph"
     },
     {
       "_template": "images",
@@ -178,7 +177,10 @@
     },
     {
       "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "text": "By building it out of dirt, it became easy to change and iterate. At first I tried adding a roof to keep the heat in. It seemed unnecessary and the high heat kept shattering the top stone. So I kept it open and slowly built up the sides with more mud so that charcoal could sit in a heap."
+    },
+    {
+      "_template": "paragraph"
     },
     {
       "_template": "images",
