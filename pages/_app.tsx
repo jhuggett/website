@@ -130,6 +130,9 @@ const TopLeft = styled.div`
 const Page = styled.div`
   width: 100vw;
   height: calc(100vh - 75px);
+
+  overflow-y: hidden;
+  overflow-x: hidden;
 `
 
 const Content = styled.div`
@@ -140,6 +143,9 @@ const Content = styled.div`
     // transform: rotate(6deg);
     filter: blur(10px);
   ` : ''}
+
+  overflow-y: auto;
+  overflow-x: hidden;
 
   
   opacity: ${props => props.menuIsOpen ? '.25' : '1'};
@@ -186,6 +192,7 @@ const GlobalTheme = createGlobalStyle`
     height: 100%;
     width: 100%;
 
+    overflow-y: hidden;
     
 
     overflow-x: hidden;
