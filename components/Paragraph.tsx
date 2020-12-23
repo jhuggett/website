@@ -34,7 +34,7 @@ const Text = styled.p`
 
   color: ${props => props.theme.primary};
 
-  text-indent: 2cm;
+  text-indent: 2em;
   
   font-family: ${props => props.theme.font.general.family};
   font-size: ${props => props.theme.font.general.size};

@@ -128,16 +128,27 @@ const TopLeft = styled.div`
 `
 
 const Page = styled.div`
+
+
+
   width: 100vw;
-  height: calc(100vh - 75px);
+  height: 100vh;
 
   overflow-y: hidden;
   overflow-x: hidden;
+
+
+  @media (max-width: 62em) {
+    height: calc(100vh - 75px);
+  } 
 `
 
 const Content = styled.div`
+
+
+
   width: 100vw;
-  height: calc(100vh - 75px);
+  height: 100vh;
 
   ${props => props.menuIsOpen ? `
     // transform: rotate(6deg);
@@ -152,6 +163,11 @@ const Content = styled.div`
   margin-left: ${props => props.menuIsOpen ? '350px' : '0'};
 
   transition: .25s;
+
+
+  @media (max-width: 62em) {
+    height: calc(100vh - 75px);
+  } 
 
 `
 
@@ -189,7 +205,7 @@ const GlobalTheme = createGlobalStyle`
   }
 
   html, body, #__next {
-    height: 100%;
+    height: 100vh;
     width: 100%;
 
     overflow-y: hidden;
