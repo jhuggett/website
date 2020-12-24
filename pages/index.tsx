@@ -11,15 +11,42 @@ import { ContentBody, BodyCenter, BodyRight, BodyLeft } from '../components/Page
 import { imagesBlock } from '../components/Images'
 import { paragraphBlock } from '../components/Paragraph'
 import { imageGalleryBlock } from '../components/ImageGallery'
+import { useEffect, useState } from 'react'
 
 export default function Home({file, cms, themeHandler}) {
 
   const [data, form] = useGithubJsonForm(file)
   usePlugin(form)
 
+  const [enterPressed, setEnterPressed] = useState(false)
+
   useGithubToolbarPlugins()
 
-  return (
+  useEffect(() => {
+
+    const onKeyPress = (e) => {
+      if (e.key == 'Enter' && !enterPressed) {
+        setEnterPressed(true)
+      }
+    }
+
+
+    const onKeyUp = (e) => {
+      if (e.key == 'Enter') {
+        window.location.href = '/backdoor'
+      }
+    }
+
+    window.addEventListener('keydown', onKeyPress)
+    window.addEventListener('keyup', onKeyUp)
+
+    return () => {
+      window.removeEventListener('keydown', onKeyPress)
+      window.removeEventListener('keyup', onKeyUp)
+    }
+  }, [])
+
+  return enterPressed ? <></> : (
     <InlineForm form={form}>
       <ContentBody>
         <BodyLeft>
