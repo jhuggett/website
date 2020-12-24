@@ -13,6 +13,8 @@ function App({pageProps, Component}) {
   const [theme, setTheme] = useState(themes[1].theme)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
+  const [showTopBar, setTopBar] = useState(true)
+
   themeHandler.setSetTheme(setTheme)
 
   const memoizedCms = useMemo(() => {
@@ -72,7 +74,7 @@ function App({pageProps, Component}) {
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
             <Page onClick={() => { if (menuIsOpen) closeMenu() }}>
-              <TopBar>
+              <TopBar show={showTopBar}>
                 <TopLeft>
                   <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
                 </TopLeft>
@@ -82,7 +84,7 @@ function App({pageProps, Component}) {
                 
               </TopBar>
               <Content menuIsOpen={menuIsOpen} >
-                <Component cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
+                <Component cms={memoizedCms} themeHandler={themeHandler} hideTopBar={setTopBar} {...pageProps} />
               </Content>
             </Page>
             
@@ -95,6 +97,8 @@ function App({pageProps, Component}) {
 }
 
 const TopBar = styled.div`
+  
+
   width: 100%;
   height: 75px;
   position: fixed;
@@ -103,7 +107,7 @@ const TopBar = styled.div`
   } 
   
 
-  display: flex;
+  display: ${props => props.show ? 'flex' : 'none'};
 `
 
 const TopRight = styled.div`
