@@ -92,7 +92,7 @@ export class CanvasContext {
 
   canvas?
 
-  events: [{ name: string, actions: [(e) => void] }]
+  events: { name: string, actions: ((e) => void)[] }[]
 
   handleKeyDown?: (e) => void
 
@@ -100,7 +100,7 @@ export class CanvasContext {
     this.canvas = canvas
   }
 
-  constructor(drawer: CanvasDrawer, events: [{ name: string, actions: [(e) => void] }]) {
+  constructor(drawer: CanvasDrawer, events: { name: string, actions: ((e) => void)[] }[]) {
     this.drawer = drawer
 
     this.events = events
