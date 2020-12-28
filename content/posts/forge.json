@@ -263,13 +263,26 @@
       "text": "And this is the state of my forge, nearly a year after I started blacksmithing. I think it's come a long way, though the road ahead still appears unending. "
     },
     {
-      "_template": "paragraph"
+      "_template": "images",
+      "images": [
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 3,
+          "orientation": "Vertical",
+          "name": "/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg"
+        }
+      ]
     },
     {
       "_template": "hero",
       "background_color": "background",
       "text_color": "primary",
       "align": "center"
+    },
+    {
+      "_template": "paragraph"
     }
   ]
 }
