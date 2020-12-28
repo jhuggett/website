@@ -7,19 +7,6 @@
       "background_color": "background",
       "text_color": "primary",
       "align": "center"
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
-          "name": "/97C0556A-A4A6-43B5-99A7-B8B3BF6A5615_1_105_c.jpeg"
-        }
-      ]
     }
   ]
 }
