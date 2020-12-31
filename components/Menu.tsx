@@ -53,6 +53,14 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
               </LinkItem>
               
             </li>
+            <li onClick={() => closeMenu(openToggle)}>
+              <LinkItem>
+                <Link href="/posts/knife">
+                  The Knife
+                </Link>
+              </LinkItem>
+              
+            </li>
           </ul>
           
           
