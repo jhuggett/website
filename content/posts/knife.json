@@ -1,5 +1,12 @@
 {
   "blocks": [
-    
+    {
+      "_template": "hero",
+      "headline": "The Knife",
+      "subtext": "My fourth knife; a belt knife",
+      "background_color": "background",
+      "text_color": "primary",
+      "align": "center"
+    }
   ]
 }
