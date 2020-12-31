@@ -15,8 +15,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/915560A7-3DF1-404A-834A-E6E55651B88F_1_105_c.jpeg"
         }
       ]
@@ -32,7 +32,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/1E532FF3-14F6-4559-B612-CE1EC2F8EB0A_1_105_c.jpeg"
         }
@@ -45,13 +45,13 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/11CEFCB8-D3DF-4D2D-B731-D843F2219E02_1_105_c.jpeg"
         },
         {
           "_template": "image",
-          "size": 1,
+          "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
           "orientation": "Horizontal",
@@ -66,13 +66,13 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/340A11ED-6F59-4FF0-A2A2-93765B5AEB4E_1_105_c.jpeg"
         },
         {
           "_template": "image",
-          "size": 1,
+          "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
           "orientation": "Horizontal",
@@ -91,8 +91,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 3,
+          "orientation": "Vertical",
           "name": "/110BFA1B-3120-4122-BFC4-8EC2B213F879_1_105_c.jpeg"
         }
       ]
@@ -108,8 +108,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 3,
+          "orientation": "Vertical",
           "name": "/30E7BB5C-C821-4C17-B4D7-FCBC057BF14D_1_105_c.jpeg"
         }
       ]
@@ -125,8 +125,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/44154A2D-5460-479C-84FA-523761217E9B_1_105_c.jpeg"
         }
       ]
@@ -138,8 +138,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/47D24377-D359-46D2-9E2D-CD8B9A1CAFDF_1_105_c.jpeg"
         }
       ]
@@ -155,7 +155,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/FE1C63E2-E10B-4033-8D51-E6F3DA6B6891_1_105_c.jpeg"
         }
@@ -168,7 +168,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/E275629F-6703-4C4E-AB13-5576D2B9D562_1_105_c.jpeg"
         }
@@ -181,7 +181,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/168EA9B5-0BF2-4B98-93C7-6A04ED740EF5_1_105_c.jpeg"
         }
@@ -198,7 +198,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/A9102CCA-D33D-4D4B-A32D-3C0CFCD32780_1_105_c.jpeg"
         }
@@ -211,7 +211,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/2D6B53B4-C9CB-4307-879C-49F707FE32FD_1_105_c.jpeg"
         }
@@ -228,8 +228,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 3,
+          "orientation": "Vertical",
           "name": "/29A4B9AF-5C7C-44AE-8FB9-68A9A089D883_1_105_c.jpeg"
         }
       ]
@@ -245,8 +245,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/124CEBDA-7E7B-4ABA-854E-246D6FF2EB18_1_105_c.jpeg"
         }
       ]
@@ -262,8 +262,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 3,
+          "orientation": "Vertical",
           "name": "/8119C4D9-EC83-49F0-A0E7-0C04B60480AE_1_105_c.jpeg"
         }
       ]
@@ -279,13 +279,13 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/9B9F19AC-3DF9-49FC-A4F9-91A0A9BFC54B_1_105_c.jpeg"
         },
         {
           "_template": "image",
-          "size": 1,
+          "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
           "orientation": "Horizontal",
@@ -300,13 +300,13 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 2,
           "orientation": "Horizontal",
           "name": "/2564C801-DBDC-4196-946F-CFB195C37CD5_1_105_c.jpeg"
         },
         {
           "_template": "image",
-          "size": 1,
+          "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
           "orientation": "Horizontal",
@@ -325,8 +325,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/12386927-CE43-4ADB-9F8C-0D5EB0CD363D_1_105_c.jpeg"
         }
       ]
@@ -342,7 +342,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/1E2B0658-2590-40A7-9328-C182ACB16291_1_105_c.jpeg"
         }
@@ -359,16 +359,16 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/7ADA682B-9C07-40A3-9DBA-0AC4E51A6003_1_105_c.jpeg"
         },
         {
           "_template": "image",
-          "size": 1,
+          "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
-          "orientation": "Horizontal",
+          "orientation": "Vertical",
           "name": "/607F205D-4D40-4A3B-B662-1DA131D313C8_1_105_c.jpeg"
         }
       ]
@@ -384,7 +384,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/CC785079-FB6E-4975-A104-BB214ABE64B2_1_105_c.jpeg"
         }
@@ -401,8 +401,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/A5E1FC13-249E-495A-9816-74F24A36FBD3_1_105_c.jpeg"
         }
       ]
@@ -418,8 +418,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/6AA64900-4590-4D84-879D-9D1E0CFE13C0_1_105_c.jpeg"
         }
       ]
@@ -431,8 +431,8 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
-          "orientation": "Horizontal",
+          "size": 2,
+          "orientation": "Vertical",
           "name": "/A4781088-DE03-4247-9DC9-4558EB7123D3_1_105_c.jpeg"
         }
       ]
@@ -444,7 +444,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/B9AD2E43-451D-4880-915D-6E8DF11FE04B_1_105_c.jpeg"
         }
@@ -461,7 +461,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/9580D54E-6CEC-41F1-AA58-87F3DD574E98_1_105_c.jpeg"
         }
@@ -474,7 +474,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/7A1292FF-D2E4-4A52-9298-DE6A2D521888_1_105_c.jpeg"
         }
@@ -487,7 +487,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 1,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/931D9D04-1353-4287-B7B7-5C14574823DD_1_105_c.jpeg"
         }
