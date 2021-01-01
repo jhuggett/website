@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async function({
   previewData,
   ...ctx
 }) {
+  console.log(preview, previewData, ctx);
   
   const { slug } = ctx.params
   if (preview) {
@@ -65,7 +66,7 @@ export const getStaticProps: GetStaticProps = async function({
       error: null,
       preview: false,
       file: {
-        fileRelativePath: 'content/home.json',
+        fileRelativePath: 'content/posts/${slug}.json',
         data: (await import(`../../content/posts/${slug}.json`)).default
       }
     }

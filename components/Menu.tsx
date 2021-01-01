@@ -45,7 +45,7 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
               
             </li>
             
-            <li onClick={() => closeMenu(openToggle)}>
+            <li onClick={() => {closeMenu(openToggle); window.location.href = '/posts/forge'}}>
               <LinkItem>
                 <Link href="/posts/forge">
                   The Forge
@@ -53,7 +53,7 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
               </LinkItem>
               
             </li>
-            <li onClick={() => closeMenu(openToggle)}>
+            <li onClick={() => {closeMenu(openToggle); window.location.href = '/posts/knife'}}>
               <LinkItem>
                 <Link href="/posts/knife">
                   The Knife
