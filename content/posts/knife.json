@@ -23,7 +23,19 @@
     },
     {
       "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "text": "Having been blacksmithing for about a year now, I've made a few things. Among them, three knives. Each one has been a drastic improvement upon the last. So, having some time off at the end of the year I decided to forge a fourth, and so forth came this."
+    },
+    {
+      "_template": "paragraph",
+      "text": "In the image above are the three main pieces that composed it. A piece of wood for the handle, copper for the bolster, and high carbon steel for the blade. The wood was hard maple, taken down by a storm in my own backyard, to which I split and dried. The copper came from some scrap plumbing pipe; cut and hammered flat. Finally the steel was from a Swedish made chisel that had snapped at the neck. It had been further used and abused so that what was left of the neck had mushroomed out."
+    },
+    {
+      "_template": "spacer",
+      "size": 6
+    },
+    {
+      "_template": "paragraph",
+      "text": "The first step, that is after gathering the materials, was to forge the blade to shape. It didn't take much effort since the stock was already quite close to the size. But it did take quite a bit of time because of how much care had to be taken, for one foul blow would have crumpled the blade."
     },
     {
       "_template": "images",
@@ -32,7 +44,7 @@
           "_template": "image",
           "src": "src",
           "alt": "alt",
-          "size": 2,
+          "size": 3,
           "orientation": "Horizontal",
           "name": "/1E532FF3-14F6-4559-B612-CE1EC2F8EB0A_1_105_c.jpeg"
         }
@@ -46,7 +58,7 @@
           "src": "src",
           "alt": "alt",
           "size": 2,
-          "orientation": "Horizontal",
+          "orientation": "Vertical",
           "name": "/11CEFCB8-D3DF-4D2D-B731-D843F2219E02_1_105_c.jpeg"
         },
         {
@@ -75,14 +87,14 @@
           "size": 2,
           "src": "/ivan-bandura-unsplash-square.jpg",
           "alt": "ocean",
-          "orientation": "Horizontal",
+          "orientation": "Vertical",
           "name": "/32E46F87-6DCC-4069-9E69-9D8A8E681B42_1_105_c.jpeg"
         }
       ]
     },
     {
       "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "text": "Below is how it looked after forging. It came very close to the desired outcome, tho the tang was a bit misshapen. Nothing a file can't handle, of course."
     },
     {
       "_template": "images",
@@ -99,7 +111,7 @@
     },
     {
       "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "text": "Some rough filing out of the way now. Also the blades shoulders started having some definition."
     },
     {
       "_template": "images",
@@ -116,7 +128,7 @@
     },
     {
       "_template": "paragraph",
-      "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+      "text": "What followed was a lot more filing, then sanding, many, many times. "
     },
     {
       "_template": "images",
@@ -128,17 +140,12 @@
           "size": 2,
           "orientation": "Vertical",
           "name": "/44154A2D-5460-479C-84FA-523761217E9B_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
           "size": 2,
+          "src": "/ivan-bandura-unsplash-square.jpg",
+          "alt": "ocean",
           "orientation": "Vertical",
           "name": "/47D24377-D359-46D2-9E2D-CD8B9A1CAFDF_1_105_c.jpeg"
         }
@@ -170,7 +177,7 @@
           "alt": "alt",
           "size": 2,
           "orientation": "Horizontal",
-          "name": "/E275629F-6703-4C4E-AB13-5576D2B9D562_1_105_c.jpeg"
+          "name": "/168EA9B5-0BF2-4B98-93C7-6A04ED740EF5_1_105_c.jpeg"
         }
       ]
     },
