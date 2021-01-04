@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { EditLink } from '.'
-import Link from 'next/link'
+import Link from './Link'
+import paths from '../paths'
 
 export interface MenuProps {
   cms: any
@@ -38,24 +39,24 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
           <ul>
             <li onClick={() => closeMenu(openToggle)}>
               <LinkItem>
-                <Link href={"/"}>
+                <Link to={paths.home} prefetch={true}>
                   Home
                 </Link>
               </LinkItem>
               
             </li>
             
-            <li onClick={() => {closeMenu(openToggle); window.location.href = '/posts/forge'}}>
+            <li onClick={() => {closeMenu(openToggle)}}>
               <LinkItem>
-                <Link href="/posts/forge">
+                <Link to={paths.posts({ name: 'forge' })} prefetch={true}>
                   The Forge
                 </Link>
               </LinkItem>
               
             </li>
-            <li onClick={() => {closeMenu(openToggle); window.location.href = '/posts/knife'}}>
+            <li onClick={() => {closeMenu(openToggle)}}>
               <LinkItem>
-                <Link href="/posts/knife">
+                <Link to={paths.posts({ name: 'knife' })} prefetch={true}>
                   The Knife
                 </Link>
               </LinkItem>
