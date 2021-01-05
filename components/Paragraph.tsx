@@ -40,7 +40,7 @@ const Text = styled.p`
   font-size: ${props => props.theme.font.general.size};
   font-weight: ${props => props.theme.font.general.weight};
 
-  text-align: justify;
+  text-align: left;
   line-height: 1.75;
 `
 

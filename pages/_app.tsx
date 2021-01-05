@@ -248,7 +248,7 @@ interface ThemeOption {
 const font = {
   title: {
     family: 'Cinzel',
-    size: '5em',
+    size: 'clamp(2em, 15vw, 5em)',
     weight: 'bold'
   },
   general: {
