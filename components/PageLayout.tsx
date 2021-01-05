@@ -18,7 +18,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 
-width: 55em;
+width: 60em;
 height: 100%;
 min-height: 5em;
 
