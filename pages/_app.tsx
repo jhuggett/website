@@ -252,8 +252,8 @@ const font = {
     weight: 'bold'
   },
   general: {
-    family: 'DOS',
-    size: '1.95em',
+    family: 'Montserrat',
+    size: '1.3em',
     weight: ''
   }
 }
