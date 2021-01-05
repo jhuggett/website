@@ -24,9 +24,10 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
   font-family: ${props => props.theme.font.general.family};
-  font-size: ${props => props.theme.font.general.size};
+  font-size: calc(.25em + ${props => props.theme.font.general.size});
   font-weight: ${props => props.theme.font.general.weight};
 
+  
   width: 75%;
 `
 

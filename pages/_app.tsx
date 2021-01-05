@@ -103,7 +103,7 @@ const TopBar = styled.div`
   width: 100%;
   height: 75px;
   position: fixed;
-  @media (max-width: 62em) {
+  @media (max-width: 67em) {
     position: relative;
   } 
   
@@ -219,7 +219,7 @@ const GlobalTheme = createGlobalStyle`
 
   /* width */
   ::-webkit-scrollbar {
-    width: 0.25em;
+    width: .5em;
   }
 
   /* Track */
