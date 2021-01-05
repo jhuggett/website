@@ -62,6 +62,7 @@ function App({pageProps, Component}) {
       <ThemeProvider theme={theme}>
         <Head>
           <script src="https://kit.fontawesome.com/7e915e0cd1.js" crossOrigin="anonymous"></script>
+          <link href="/fonts/style.css" rel="stylesheet" />
         </Head>
         
         <GlobalTheme />
@@ -233,6 +234,10 @@ const GlobalTheme = createGlobalStyle`
     opacity: .5;
   }
 
+
+  
+
+
 `
 
 interface ThemeOption {
@@ -240,26 +245,28 @@ interface ThemeOption {
   theme: any
 }
 
+const font = {
+  title: {
+    family: 'Cinzel',
+    size: '4em',
+    weight: 'bold'
+  },
+  general: {
+    family: 'DOS',
+    size: '1.3em',
+    weight: 'normal'
+  }
+}
+
 const themes: ThemeOption[] = [
   {
     name: 'Light',
     theme: {
-      primary: '#171219',
-      secondary: '#928C6F',
-      background: '#FFFFFA',
+      primary: '#34252f',
+      secondary: '#3b5249',
+      background: '#cfd5c3',
 
-      font: {
-        title: {
-          family: 'Georgia',
-          size: '4em',
-          weight: 'bold'
-        },
-        general: {
-          family: 'Arial',
-          size: '1.2em',
-          weight: 'thin'
-        }
-      }
+      font: font
     }
   },
   {
@@ -269,18 +276,7 @@ const themes: ThemeOption[] = [
       secondary: '#934B00',
       background: '#171219',
 
-      font: {
-        title: {
-          family: 'Georgia',
-          size: '4em',
-          weight: 'bold'
-        },
-        general: {
-          family: 'Arial',
-          size: '1.2em',
-          weight: 'thin'
-        }
-      }
+      font: font
     }
   }
 ]
