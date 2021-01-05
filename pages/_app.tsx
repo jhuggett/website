@@ -265,7 +265,7 @@ const themes: ThemeOption[] = [
       primary: '#34252f',
       secondary: '#3b5249',
       background: '#cfd5c3',
-
+      loadingImageColor: '#b8c1a6',
       font: font
     }
   },
@@ -275,7 +275,7 @@ const themes: ThemeOption[] = [
       primary: '#FFFFFA',
       secondary: '#934B00',
       background: '#171219',
-
+      loadingImageColor: '#251d28',
       font: font
     }
   }
