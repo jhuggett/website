@@ -59,15 +59,16 @@ const StyledNextImage = styled(NextImage.default)`
   height: 100%;
 
   border-radius: 4px;
+  background: ${props => props.theme.loadingImageColor};
 `
 
 const Container = styled.div`
- width: 100%;
- height: 100%;
+  width: 100%;
+  height: 100%;
  
- display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const ImageStyle = styled(InlineImage)`
