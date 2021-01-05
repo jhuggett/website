@@ -1,0 +1,15 @@
+
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  src: url('CinzelDecorative-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'DOS';
+  font-style: normal;
+  font-weight: 400;
+  src: url('PerfectDOSVGA437.ttf');
+}
