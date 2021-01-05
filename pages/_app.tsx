@@ -248,13 +248,13 @@ interface ThemeOption {
 const font = {
   title: {
     family: 'Cinzel',
-    size: '4em',
+    size: '5em',
     weight: 'bold'
   },
   general: {
     family: 'DOS',
-    size: '1.3em',
-    weight: 'normal'
+    size: '1.95em',
+    weight: ''
   }
 }
 
@@ -264,8 +264,8 @@ const themes: ThemeOption[] = [
     theme: {
       primary: '#34252f',
       secondary: '#3b5249',
-      background: '#cfd5c3',
-      loadingImageColor: '#b8c1a6',
+      background: '#fbf0e6',
+      loadingImageColor: '#FCF5ED',
       font: font
     }
   },
