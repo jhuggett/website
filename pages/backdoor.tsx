@@ -161,7 +161,7 @@ const Background = styled.div`
 `
 
 const Question = styled.div`
-  font-family: 'Courier New';
+  font-family: 'DOS';
   font-size: 2em;
   color: green;
 
@@ -170,7 +170,7 @@ const Question = styled.div`
 `
 
 const Answer = styled.div`
-  font-family: 'Courier New';
+  font-family: 'DOS';
   font-size: 1.5em;
   color: green;
 
