@@ -51,7 +51,6 @@ const events = [
     name: 'keydown',
     actions: [
       (e) => {
-        console.log(e);
         switch(e.key) {
           case 'ArrowUp': {
             if (gameMap[player.location.y - 1]?.[player.location.x] != 1) return
@@ -79,7 +78,7 @@ const events = [
   }
 ]
 
-const canvasDrawer = new CanvasDrawer((canvasRef) => {
+const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   canvasDrawer.drawnSquares = 0
 
   const canvas = canvasRef.current
@@ -91,18 +90,23 @@ const canvasDrawer = new CanvasDrawer((canvasRef) => {
   context.canvas.width = window.innerWidth
   context.canvas.height = window.innerHeight
 
+  
 
   const center = {
     width: Math.floor(window.innerWidth / 2) + (0 - player.location.x * canvasDrawer.tileSize.width - Math.floor(canvasDrawer.tileSize.width / 2)),
     height: Math.floor(window.innerHeight / 2) + ( 0 - player.location.y * canvasDrawer.tileSize.height - Math.floor(canvasDrawer.tileSize.height / 2))
   }
 
+  ctx.drawer.xOffset = center.width
+  ctx.drawer.yOffset = center.height
+
   context.translate(center.width, center.height)
 
   
   const size = canvasDrawer.tileSize
 
-  
+  const x = Math.floor((ctx.mouseHandler.mouseLocation.x - ctx.drawer.xOffset) / ctx.drawer.tileSize.width)
+      const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.yOffset) / ctx.drawer.tileSize.height)
 
   const grid = {
     xstart: Math.floor(-canvasDrawer.xOffset / size.width) - 1,
@@ -110,10 +114,7 @@ const canvasDrawer = new CanvasDrawer((canvasRef) => {
     ystart: Math.floor(-canvasDrawer.yOffset / size.height) - 1,
     yend: Math.floor((-canvasDrawer.yOffset + canvas.height) / size.height) + 1
   }
-
-  console.log(grid);
   
-
   gameMap.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value == 0) return
@@ -128,25 +129,59 @@ const canvasDrawer = new CanvasDrawer((canvasRef) => {
           
         
       }
-    }) 
+    })
+
+    
   })
 
+  if (mapPointExists({x, y})) {
+    if (x != player.location.x || y != player.location.y) {
+      context.fillStyle = 'green'
+      context.fillRect(x * size.width, y * size.height, size.width, size.height)
+    }
+    
+  } 
   
+
   
-  // if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
-  //   context.fillStyle = 'white'
-  //   context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
-  //   // context.fillStyle = 'black'
-  //   // context.textAlign="center"
-  //   // context.textBaseline = "middle"
-  //   // context.fillText(`(${coord.x}, ${coord.y})`, coord.x * size.width + size.width / 2, coord.y * size.height + size.height / 2)
-  //   this.drawnSquares++
-  // }
+
 })
 
+function getProjectedMovementPoints(at: { x: number, y: number }) {
+  
+  return [
+    {
+
+    }
+  ]
+}
+
+function mapPointExists(point: {x: number, y: number}) : boolean {
+  if (gameMap[point.y]) {
+    if (gameMap[point.y][point.x]) {
+      return true
+    }
+  }
+
+  return false
+}
 
 
-const canvasContext = new CanvasContext(canvasDrawer, events)
+const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: CanvasContext) => {
+  ctx.mouseHandler.addMouseMoveAction(
+    () => {
+      const x = Math.floor((ctx.mouseHandler.mouseLocation.x - ctx.drawer.xOffset) / ctx.drawer.tileSize.width)
+      const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.yOffset) / ctx.drawer.tileSize.height)
+      
+      if (mapPointExists({x, y})) {
+        ctx.tileHighlighted = true
+        ctx.draw()
+      } else if (ctx.tileHighlighted) {
+        ctx.draw()
+        ctx.tileHighlighted = false
+      }
+  })
+})
 
 const Background = styled.div`
   width: 100vw;

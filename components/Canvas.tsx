@@ -10,6 +10,49 @@ interface Size {
   height: number
 }
 
+class MouseHandler {
+
+  mouseLocation = {
+    x: 0,
+    y: 0
+  }
+
+  eventActions = {
+    mouseMove: {
+      event: 'mousemove',
+      func: (e) => {
+        this.eventActions.mouseMove.actions.forEach(action => action(e))
+      },
+      actions: []
+    },
+    mouseDown: {
+
+    }
+  }
+
+  registerEvents(window) {
+    window.addEventListener(this.eventActions.mouseMove.event, this.eventActions.mouseMove.func)
+  }
+
+  unregisterEvents(window) {
+    window.removeEventListener(this.eventActions.mouseMove.event, this.eventActions.mouseMove.func)
+  }
+
+
+  addMouseMoveAction(action: any) {
+    this.eventActions.mouseMove.actions.push(action)
+  }
+
+  constructor() {
+    this.addMouseMoveAction((e) => {
+      this.mouseLocation = {
+        x: e.pageX,
+        y: e.pageY
+      }
+    })
+  }
+}
+
 class DragHandler {
   isDown: boolean
   firstOffset: Coord                
@@ -81,16 +124,20 @@ export class CanvasDrawer {
 
   drawnSquares = 0
 
-  constructor(public draw: (canvas) => void) {}
+  constructor(public draw: (context: CanvasContext, canvas) => void) {}
 }
 
 export class CanvasContext {
   
   drawer: CanvasDrawer
 
+  mouseHandler: MouseHandler
+
   dragHandler?: DragHandler
 
   canvas?
+
+  tileHighlighted = false
 
   events: { name: string, actions: ((e) => void)[] }[]
 
@@ -100,50 +147,14 @@ export class CanvasContext {
     this.canvas = canvas
   }
 
-  constructor(drawer: CanvasDrawer, events: { name: string, actions: ((e) => void)[] }[]) {
+  constructor(drawer: CanvasDrawer, events: { name: string, actions: ((e) => void)[] }[], config: (ctx: CanvasContext) => void) {
     this.drawer = drawer
+
+    this.mouseHandler = new MouseHandler()
 
     this.events = events
 
-    // if ( !options || options.draggable) {
-    //   this.dragHandler = new DragHandler( (current, start, initial) => {
-
-    //   }, () => {
-    //     return {
-    //       x: this.drawer.xOffset,
-    //       y: this.drawer.yOffset
-    //     }
-    //   })
-    // }
-
-    // if ( !options || options?.useKeyDown) {
-    //   this.handleKeyDown = (e) => {
-    //     const offsetAmount = 50
-
-    //     switch (e.keyCode) {
-    //       case 37: {
-    //         drawer.xOffset -= offsetAmount
-    //         this.draw()
-    //         break
-    //       }
-    //       case 38: {
-    //         drawer.yOffset -= offsetAmount
-    //         this.draw()
-    //         break
-    //       }
-    //       case 39: {
-    //         drawer.xOffset += offsetAmount
-    //         this.draw()
-    //         break
-    //       }
-    //       case 40: {
-    //         drawer.yOffset += offsetAmount
-    //         this.draw()
-    //         break
-    //       }
-    //     }
-    //   }
-    //}
+    config(this)
   }
 
   registerEvents(window) {
@@ -152,6 +163,7 @@ export class CanvasContext {
         window.addEventListener(event.name, e => { action(e); this.draw(); })
       })
     })
+    this.mouseHandler.registerEvents(window)
   }
 
   unregisterEvents(window) {
@@ -160,11 +172,12 @@ export class CanvasContext {
         window.removeEventListener(event.name, e => { action(e); this.draw(); })
       })
     })
+    this.mouseHandler.unregisterEvents(window)
   }
 
 
   draw() {
-    this.drawer.draw(this.canvas)
+    this.drawer.draw(this, this.canvas)
   }
 
 
@@ -178,11 +191,9 @@ const Canvas = (props) => {
 
   const canvasRef = useRef(null)
 
-  props.context.supplyCanvas(canvasRef)
+  const context: CanvasContext = props.context
 
-  
-  
-  
+  context.supplyCanvas(canvasRef)
   
   useEffect(() => {
     function handleResize() {
@@ -191,37 +202,13 @@ const Canvas = (props) => {
 
     window.addEventListener('resize', handleResize)
 
+    context.registerEvents(window)
 
-    props.context.registerEvents(window)
-
-
-    // function handleScroll(e) {
-    //   console.log(e);
-    //   if (e.deltaY > 0) {
-    //     canvasDrawer.current.tileSize = {
-    //       width: canvasDrawer.current.tileSize.width + 1,
-    //       height: canvasDrawer.current.tileSize.height + 1
-    //     }
-
-    //     canvasDrawer.current.draw(growthMap.current)
-    //   } else {
-    //     if (canvasDrawer.current.tileSize.width <= 1 || canvasDrawer.current.tileSize.height <= 1) return
-    //     canvasDrawer.current.tileSize = {
-    //       width: canvasDrawer.current.tileSize.width - 1,
-    //       height: canvasDrawer.current.tileSize.height - 1
-    //     }
-
-    //     canvasDrawer.current.draw(growthMap.current)
-    //   }
-    // }
-
-    // window.addEventListener('wheel', handleScroll)
-
-    props.context.draw()
+    context.draw()
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      props.context.unregisterEvents(window)
+      context.unregisterEvents(window)
     }
   }, [])
   
