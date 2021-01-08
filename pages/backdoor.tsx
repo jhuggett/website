@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import Canvas, { CanvasContext, CanvasDrawer } from '../components/Canvas'
+import { chown } from 'fs/promises'
 
 export default function Backdoor({file, cms, themeHandler, hideTopBar}) {
 
@@ -34,16 +35,25 @@ export default function Backdoor({file, cms, themeHandler, hideTopBar}) {
   )
 }
 
-const gameMap = [
-  [0, 1, 0, 1, 1],
-  [1, 1, 1, 1, 1],
-  [0, 0, 1, 1, 0],
-  [1, 1, 1, 1, 1],
-  [1, 1, 0, 1, 0],
+const gameMap: number[][] = [
+  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+  [0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+  [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1],
+  [0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1],
+  [0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0],
+  [0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1],
+  [0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1],
+  [1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+  [1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+  [1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1],
+  [1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+  [1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0],
+  [0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0]
 ]
 
 const player = {
-  location: { x: 2, y: 2 } 
+  location: { x: 7, y: 7 } 
 }
 
 const events = [
@@ -90,8 +100,6 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   context.canvas.width = window.innerWidth
   context.canvas.height = window.innerHeight
 
-  
-
   const center = {
     width: Math.floor(window.innerWidth / 2) + (0 - player.location.x * canvasDrawer.tileSize.width - Math.floor(canvasDrawer.tileSize.width / 2)),
     height: Math.floor(window.innerHeight / 2) + ( 0 - player.location.y * canvasDrawer.tileSize.height - Math.floor(canvasDrawer.tileSize.height / 2))
@@ -101,7 +109,6 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   ctx.drawer.yOffset = center.height
 
   context.translate(center.width, center.height)
-
   
   const size = canvasDrawer.tileSize
 
@@ -125,9 +132,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
         if (player.location.x == coord.x && player.location.y == coord.y) {
           context.fillStyle = 'red'
           context.fillRect(coord.x * size.width + 2.5, coord.y * size.height + 2.5, size.width - 5, size.height - 5)
-        } 
-          
-        
+        }
       }
     })
 
@@ -142,10 +147,138 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
     
   } 
   
+  const newPoints = aStar(player.location, {x, y}, gameMap)
+  
+  console.log(newPoints);
 
+  if (!newPoints) {
+    console.log('no new points');
+    return
+  }
   
 
+
+  newPoints.forEach(point => {
+    if (pointsAreSame(player.location, point)) return
+    context.fillStyle = 'green'
+      context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
+  })
+
 })
+
+interface Point {
+  x: number
+  y: number
+}
+
+interface Node {
+  g: number
+  h: number
+  f: number
+
+  parent?: Node
+
+  location: Point
+}
+
+function pointsAreSame(first: Point, second: Point) : boolean {
+  return first.x == second.x && first.y == second.y
+}
+
+
+function aStar(start: Point, end: Point, grid: number[][]) {
+  let open: Node[] = []
+  let closed: Node[] = []
+
+  const startNode = {
+    g: 0,
+    h: 0,
+    f: 0,
+    location: start
+  }
+
+  const endNode = {
+    g: 0,
+    h: 0,
+    f: 0,
+    location: end
+  }
+
+  open.push(startNode)
+
+  while(open.length > 0) {
+
+    let currentNode = open[0]
+    let currentIndex = 0
+
+    open.forEach((item, index) => {
+      if (item.f < currentNode.f) {
+        currentNode = item
+        currentIndex = index
+      }
+    })
+
+    open = open.filter(item => !pointsAreSame(item.location, currentNode.location))
+    closed.push(currentNode)
+
+    if (pointsAreSame(currentNode.location, endNode.location)) {
+      let path = []
+      let current = currentNode
+      while (current) {
+        path.push(current.location)
+        current = current.parent
+      }
+      return path.reverse()
+    }
+
+    let children = []
+    
+    const adjacents = [[0, -1], [0, 1], [-1, 0], [1, 0]]
+    
+    adjacents.forEach(item => {
+      const nodePosition: Point = {
+        x: currentNode.location.x + item[0], 
+        y: currentNode.location.y + item[1]
+      }
+
+      if (nodePosition.x > grid[0].length - 1 || nodePosition.x < 0 || nodePosition.y > grid.length - 1 || nodePosition.y < 0) return
+
+      if (grid[nodePosition.y][nodePosition.x] == 0) return
+
+      const newNode: Node = {
+        g: 0,
+        h: 0,
+        f: 0,
+        parent: currentNode,
+        location: nodePosition
+      }
+
+      children.push(newNode)
+    });
+
+    children.forEach((child: Node) => {
+
+      let childInClosed = false
+      closed.forEach((closedChild: Node) => {
+        if ( pointsAreSame(child.location, closedChild.location)) childInClosed = true
+      })
+      if (childInClosed) return
+      // ((child.position[0] - end_node.position[0]) ** 2) + ((child.position[1] - end_node.position[1]) ** 2)
+      child.g = currentNode.g + 1
+      child.h = ((child.location.x - end.x) ** 2) + ((child.location.y - end.y) ** 2)
+      child.f = child.g + child.h
+
+      let childInOpen = false
+      open.forEach(openNode => {
+        if ( pointsAreSame(child.location, openNode.location) && child.g > openNode.g) childInOpen = true
+      })
+      if (childInOpen) return
+
+      open.push(child)
+    })
+  }
+
+}
 
 function getProjectedMovementPoints(at: { x: number, y: number }) {
   
