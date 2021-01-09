@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react"
+import { Coor } from "../game"
 
 interface Coord {
   x: number
@@ -26,21 +27,31 @@ class MouseHandler {
       actions: []
     },
     mouseDown: {
-
+      event: 'mousedown',
+      func: (e) => {
+        this.eventActions.mouseDown.actions.forEach(action => action(e))
+      },
+      actions: []
     }
   }
 
   registerEvents(window) {
     window.addEventListener(this.eventActions.mouseMove.event, this.eventActions.mouseMove.func)
+    window.addEventListener(this.eventActions.mouseDown.event, this.eventActions.mouseDown.func)
   }
 
   unregisterEvents(window) {
     window.removeEventListener(this.eventActions.mouseMove.event, this.eventActions.mouseMove.func)
+    window.removeEventListener(this.eventActions.mouseDown.event, this.eventActions.mouseDown.func)
   }
 
 
   addMouseMoveAction(action: any) {
     this.eventActions.mouseMove.actions.push(action)
+  }
+
+  addMouseDownAction(action: any) {
+    this.eventActions.mouseDown.actions.push(action)
   }
 
   constructor() {
@@ -137,7 +148,7 @@ export class CanvasContext {
 
   canvas?
 
-  tileHighlighted = false
+  tileHighlighted?: Coor
 
   events: { name: string, actions: ((e) => void)[] }[]
 
