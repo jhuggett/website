@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react"
+import { Coor } from "../game"
 
 interface Coord {
   x: number
@@ -137,7 +138,7 @@ export class CanvasContext {
 
   canvas?
 
-  tileHighlighted = false
+  tileHighlighted?: Coor
 
   events: { name: string, actions: ((e) => void)[] }[]
 
