@@ -102,9 +102,21 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
         }
       }
     })
-
-    
   })
+
+  // player.location.scan(1).forEach(point => {
+    
+  //   if (!gameMap[point.y] || !gameMap[point.y][point.x] || gameMap[point.y][point.x] == 0) return
+  //     const coord = point
+  //     if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
+  //       context.fillStyle = 'white'
+  //       context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
+  //       if (player.location.x == coord.x && player.location.y == coord.y) {
+  //         context.fillStyle = 'red'
+  //         context.fillRect(coord.x * size.width + 2.5, coord.y * size.height + 2.5, size.width - 5, size.height - 5)
+  //       }
+  //     }
+  // })
 
   if (mapPointExists({x, y})) {
     if (x != player.location.x || y != player.location.y) {
@@ -160,4 +172,13 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
         ctx.tileHighlighted = null
       }
   })
+
+  ctx.mouseHandler.addMouseDownAction(
+    () => {
+      if (ctx.tileHighlighted) {
+        player.location = ctx.tileHighlighted
+        ctx.draw()
+      }
+    }
+  )
 })
