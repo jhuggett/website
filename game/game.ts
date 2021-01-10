@@ -79,8 +79,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   
   const size = canvasDrawer.tileSize
 
-  const x = Math.floor((ctx.mouseHandler.mouseLocation.x - ctx.drawer.xOffset) / ctx.drawer.tileSize.width)
-      const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.yOffset) / ctx.drawer.tileSize.height)
+  
 
   const grid = {
     xstart: Math.floor(-canvasDrawer.xOffset / size.width) - 1,
@@ -92,6 +91,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   gameMap.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value == 0) return
+      // context.globalAlpha = getRandomNumber(10, 100) / 100
       const coord = { x, y }
       if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
         context.fillStyle = 'white'
@@ -118,31 +118,36 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   //     }
   // })
 
-  if (mapPointExists({x, y})) {
-    if (x != player.location.x || y != player.location.y) {
-      context.fillStyle = 'green'
-      context.fillRect(x * size.width, y * size.height, size.width, size.height)
+
+  if (ctx.tileHighlighted) {
+    const x = ctx.tileHighlighted.x
+    const y = ctx.tileHighlighted.y
+    
+    if (mapPointExists({x, y})) {
+      if (x != player.location.x || y != player.location.y) {
+        context.fillStyle = 'green'
+        context.fillRect(x * size.width, y * size.height, size.width, size.height)
+      }
+      
+    } 
+    
+    const newPoints = aStar(player.location, new Coor(x, y), gameMap)
+    
+    console.log(newPoints);
+  
+    if (!newPoints) {
+      console.log('no new points');
+      return
     }
     
-  } 
   
-  const newPoints = aStar(player.location, new Coor(x, y), gameMap)
   
-  console.log(newPoints);
-
-  if (!newPoints) {
-    console.log('no new points');
-    return
+    newPoints.forEach(point => {
+      if (player.location.sameAs(point)) return
+      context.fillStyle = 'green'
+        context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
+    })
   }
-  
-
-
-  newPoints.forEach(point => {
-    if (player.location.sameAs(point)) return
-    context.fillStyle = 'green'
-      context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
-  })
-
 })
 
 function mapPointExists(point: {x: number, y: number}) : boolean {
@@ -155,6 +160,17 @@ function mapPointExists(point: {x: number, y: number}) : boolean {
   return false
 }
 
+function movePlayer(i: number, steps: Coor[], ctx: CanvasContext) {
+  player.location = steps[i]
+  ctx.draw()
+
+  if (i + 1 == steps.length) {
+    ctx.enableUserInteraction()
+    return
+  } else {
+    setTimeout(() => { movePlayer(i + 1, steps, ctx) }, 100)
+  }
+}
 
 export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: CanvasContext) => {
   ctx.mouseHandler.addMouseMoveAction(
@@ -163,7 +179,7 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
       const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.yOffset) / ctx.drawer.tileSize.height)
       
       if (mapPointExists({x, y})) {
-        if (!ctx.tileHighlighted || ctx.tileHighlighted && !ctx.tileHighlighted.sameAs(new Coor(x, y))) {
+        if (!ctx.tileHighlighted || !ctx.tileHighlighted.sameAs(new Coor(x, y))) {
           ctx.tileHighlighted = new Coor(x, y)
           ctx.draw()
         }
@@ -176,8 +192,13 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
   ctx.mouseHandler.addMouseDownAction(
     () => {
       if (ctx.tileHighlighted) {
-        player.location = ctx.tileHighlighted
-        ctx.draw()
+
+        const steps = aStar(player.location, ctx.tileHighlighted, gameMap)
+
+        ctx.tileHighlighted = null
+
+        ctx.disableUserInteraction()
+        movePlayer(0, steps, ctx)
       }
     }
   )
