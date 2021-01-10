@@ -13,6 +13,8 @@ interface Size {
 
 class MouseHandler {
 
+  userInteractionEnabled = true
+
   mouseLocation = {
     x: 0,
     y: 0
@@ -22,6 +24,7 @@ class MouseHandler {
     mouseMove: {
       event: 'mousemove',
       func: (e) => {
+        if (!this.userInteractionEnabled) return
         this.eventActions.mouseMove.actions.forEach(action => action(e))
       },
       actions: []
@@ -29,6 +32,7 @@ class MouseHandler {
     mouseDown: {
       event: 'mousedown',
       func: (e) => {
+        if (!this.userInteractionEnabled) return
         this.eventActions.mouseDown.actions.forEach(action => action(e))
       },
       actions: []
@@ -139,6 +143,8 @@ export class CanvasDrawer {
 }
 
 export class CanvasContext {
+
+  userInteractionEnabled = true
   
   drawer: CanvasDrawer
 
@@ -153,6 +159,16 @@ export class CanvasContext {
   events: { name: string, actions: ((e) => void)[] }[]
 
   handleKeyDown?: (e) => void
+
+  enableUserInteraction() {
+    this.userInteractionEnabled = true
+    this.mouseHandler.userInteractionEnabled = true
+  }
+
+  disableUserInteraction() {
+    this.userInteractionEnabled = false
+    this.mouseHandler.userInteractionEnabled = false
+  }
 
   supplyCanvas(canvas) {
     this.canvas = canvas
