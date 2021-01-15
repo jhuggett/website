@@ -1,23 +1,9 @@
 import { Coor, aStar } from "."
 
 import { CanvasDrawer, CanvasContext } from "../components/Canvas"
+import { GameMap } from "./map"
 
-const gameMap: number[][] = [
-  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-  [0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-  [0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1],
-  [0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1],
-  [0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0],
-  [0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1],
-  [0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1],
-  [1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1],
-  [1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
-  [1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0],
-  [1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1],
-  [1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0],
-  [1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0],
-  [0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0]
-]
+const gameMap = new GameMap()
 
 const player = {
   location: new Coor(7, 7)
@@ -30,22 +16,22 @@ const events = [
       (e) => {
         switch(e.key) {
           case 'ArrowUp': {
-            if (gameMap[player.location.y - 1]?.[player.location.x] != 1) return
+            if (gameMap.getPointAt(new Coor(player.location.x, player.location.y - 1)) != 1) return
             player.location.y -= 1
             break
           }
           case 'ArrowRight': {
-            if (gameMap[player.location.y]?.[player.location.x + 1] != 1) return
+            if (gameMap.getPointAt(new Coor(player.location.x + 1, player.location.y)) != 1) return
             player.location.x += 1
             break
           }
           case 'ArrowDown': {
-            if (gameMap[player.location.y + 1]?.[player.location.x] != 1) return
+            if (gameMap.getPointAt(new Coor(player.location.x, player.location.y + 1)) != 1) return
             player.location.y += 1
             break
           }
           case 'ArrowLeft': {
-            if (gameMap[player.location.y]?.[player.location.x - 1] != 1) return
+            if (gameMap.getPointAt(new Coor(player.location.x - 1, player.location.y)) != 1) return
             player.location.x -= 1
             break
           }
@@ -88,7 +74,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
     yend: Math.floor((-canvasDrawer.yOffset + canvas.height) / size.height) + 1
   }
   
-  gameMap.forEach((row, y) => {
+  gameMap.getAllPoints().forEach((row, y) => {
     row.forEach((value, x) => {
       if (value == 0) return
       // context.globalAlpha = getRandomNumber(10, 100) / 100
@@ -122,8 +108,8 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   if (ctx.tileHighlighted) {
     const x = ctx.tileHighlighted.x
     const y = ctx.tileHighlighted.y
-    
-    if (mapPointExists({x, y})) {
+
+    if (gameMap.getPointAt(new Coor(x, y))) {
       if (x != player.location.x || y != player.location.y) {
         context.fillStyle = 'green'
         context.fillRect(x * size.width, y * size.height, size.width, size.height)
@@ -131,7 +117,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
       
     } 
     
-    const newPoints = aStar(player.location, new Coor(x, y), gameMap)
+    const newPoints = aStar(player.location, new Coor(x, y), gameMap.getAllPoints())
     
     console.log(newPoints);
   
@@ -149,16 +135,6 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
     })
   }
 })
-
-function mapPointExists(point: {x: number, y: number}) : boolean {
-  if (gameMap[point.y]) {
-    if (gameMap[point.y][point.x]) {
-      return true
-    }
-  }
-
-  return false
-}
 
 function movePlayer(i: number, steps: Coor[], ctx: CanvasContext) {
   player.location = steps[i]
@@ -178,14 +154,15 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
       const x = Math.floor((ctx.mouseHandler.mouseLocation.x - ctx.drawer.xOffset) / ctx.drawer.tileSize.width)
       const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.yOffset) / ctx.drawer.tileSize.height)
       
-      if (mapPointExists({x, y})) {
+      if (gameMap.getPointAt(new Coor(x, y))) {
         if (!ctx.tileHighlighted || !ctx.tileHighlighted.sameAs(new Coor(x, y))) {
           ctx.tileHighlighted = new Coor(x, y)
           ctx.draw()
         }
       } else if (ctx.tileHighlighted) {
-        ctx.draw()
+        
         ctx.tileHighlighted = null
+        ctx.draw()
       }
   })
 
@@ -193,7 +170,7 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
     () => {
       if (ctx.tileHighlighted) {
 
-        const steps = aStar(player.location, ctx.tileHighlighted, gameMap)
+        const steps = aStar(player.location, ctx.tileHighlighted, gameMap.getAllPoints())
 
         ctx.tileHighlighted = null
 
