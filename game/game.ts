@@ -41,6 +41,75 @@ const events = [
   }
 ]
 
+function getLine(from: Coor, to: Coor) : Coor[] {
+  let points: Coor[] = []
+
+  let x0 = from.x
+  let y0 = from.y
+  let x1 = to.x
+  let y1 = to.y
+
+  const dx = Math.abs(x1 - x0)
+  const sx = x0 < x1 ? 1 : -1
+
+  const dy = Math.abs(y1 - y0)
+  const sy = y0 < y1 ? 1 : -1
+
+  let err = dx - dy
+
+  while (true) {
+    points.push(new Coor(x0, y0))
+    if (x0 == x1 && y0 == y1) break
+
+    const e2 = 2 * err
+    if (e2 > -dy) {
+      err -= dy
+      x0 += sx
+    }
+    if (e2 < dx) {
+      err += dx
+      y0 += sy
+    }
+  }
+
+  return points
+}
+
+function getLineOfSight(point: Coor, gameMap: GameMap) : Coor[] {
+  let points: Coor[] = []
+
+
+  let shouldContinue = true
+  let distance = 1
+  while (shouldContinue) {
+    shouldContinue = false
+
+    point.ring(distance).forEach(newPoint => {
+      const line: Coor[] = getLine(newPoint, point)
+
+      let isLineBroken = false
+
+      for (const step of line) {
+        if (gameMap.getPointAt(step) != 1) {
+          isLineBroken = true
+          break
+        }
+      }
+
+      if (!isLineBroken) {
+        points.push(newPoint)
+        shouldContinue = true
+      }
+      
+    })
+
+    distance++
+  }
+
+
+  return points
+}
+
 const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   canvasDrawer.drawnSquares = 0
 
@@ -74,21 +143,21 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
     yend: Math.floor((-canvasDrawer.yOffset + canvas.height) / size.height) + 1
   }
   
-  gameMap.getAllPoints().forEach((row, y) => {
-    row.forEach((value, x) => {
-      if (value == 0) return
-      // context.globalAlpha = getRandomNumber(10, 100) / 100
-      const coord = { x, y }
-      if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
-        context.fillStyle = 'white'
-        context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
-        if (player.location.x == coord.x && player.location.y == coord.y) {
-          context.fillStyle = 'red'
-          context.fillRect(coord.x * size.width + 2.5, coord.y * size.height + 2.5, size.width - 5, size.height - 5)
-        }
-      }
-    })
-  })
+  // gameMap.getAllPoints().forEach((row, y) => {
+  //   row.forEach((value, x) => {
+  //     if (value == 0) return
+  //     // context.globalAlpha = getRandomNumber(10, 100) / 100
+  //     const coord = { x, y }
+  //     if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
+  //       context.fillStyle = 'white'
+  //       context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
+  //       if (player.location.x == coord.x && player.location.y == coord.y) {
+  //         context.fillStyle = 'red'
+  //         context.fillRect(coord.x * size.width + 2.5, coord.y * size.height + 2.5, size.width - 5, size.height - 5)
+  //       }
+  //     }
+  //   })
+  // })
 
   // player.location.scan(1).forEach(point => {
     
@@ -104,10 +173,22 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   //     }
   // })
 
+  getLineOfSight(player.location, gameMap).forEach(point => {
+    if (gameMap.getPointAt(point) != 1) return
+        const coord = point
+        if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
+          context.fillStyle = 'white'
+          context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
+        }
+  })
+
+  context.fillStyle = 'red'
+  context.fillRect(player.location.x * size.width + 2.5, player.location.y * size.height + 2.5, size.width - 5, size.height - 5)
 
   if (ctx.tileHighlighted) {
     const x = ctx.tileHighlighted.x
     const y = ctx.tileHighlighted.y
+
 
     if (gameMap.getPointAt(new Coor(x, y))) {
       if (x != player.location.x || y != player.location.y) {
@@ -133,6 +214,14 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
       context.fillStyle = 'green'
         context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
     })
+
+
+    // getLine(player.location, ctx.tileHighlighted).forEach(point => {
+    //   context.fillStyle = 'blue'
+    //   context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
+    // })
+
+
   }
 })
 
