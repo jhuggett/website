@@ -85,11 +85,13 @@ function getLineOfSight(point: Coor, gameMap: GameMap) : Coor[] {
     shouldContinue = false
 
     point.ring(distance).forEach(newPoint => {
-      const line: Coor[] = getLine(newPoint, point)
+      const pointToNewPoint: Coor[] = getLine(point, newPoint)
+
+      const newPointToPoint: Coor[] = getLine(newPoint, point)
 
       let isLineBroken = false
 
-      for (const step of line) {
+      for (const step of pointToNewPoint) {
         if (gameMap.getPointAt(step) != 1) {
           isLineBroken = true
           break
@@ -99,6 +101,19 @@ function getLineOfSight(point: Coor, gameMap: GameMap) : Coor[] {
       if (!isLineBroken) {
         points.push(newPoint)
         shouldContinue = true
+      } else {
+        isLineBroken = false
+        for (const step of newPointToPoint) {
+          if (gameMap.getPointAt(step) != 1) {
+            isLineBroken = true
+            break
+          }
+        }
+  
+        if (!isLineBroken) {
+          points.push(newPoint)
+          shouldContinue = true
+        }
       }
       
     })
@@ -173,7 +188,11 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   //     }
   // })
 
-  getLineOfSight(player.location, gameMap).forEach(point => {
+
+  const lineOfSight = getLineOfSight(player.location, gameMap)
+  lineOfSight.push(player.location)
+
+  lineOfSight.forEach(point => {
     if (gameMap.getPointAt(point) != 1) return
         const coord = point
         if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
@@ -185,7 +204,16 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   context.fillStyle = 'red'
   context.fillRect(player.location.x * size.width + 2.5, player.location.y * size.height + 2.5, size.width - 5, size.height - 5)
 
-  if (ctx.tileHighlighted) {
+
+  // player.location.scan(2).forEach(point => {
+  //   context.fillStyle = 'purple'
+  //   context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
+  // })
+
+
+  if (ctx.tileHighlighted && lineOfSight.filter(point => point.sameAs(ctx.tileHighlighted)).length > 0) {
+
+
     const x = ctx.tileHighlighted.x
     const y = ctx.tileHighlighted.y
 
@@ -197,6 +225,8 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
       }
       
     } 
+
+    
     
     const newPoints = aStar(player.location, new Coor(x, y), gameMap.getAllPoints())
     
@@ -257,7 +287,7 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
 
   ctx.mouseHandler.addMouseDownAction(
     () => {
-      if (ctx.tileHighlighted) {
+      if (ctx.tileHighlighted && getLineOfSight(player.location, gameMap).filter(point => point.sameAs(ctx.tileHighlighted)).length > 0) {
 
         const steps = aStar(player.location, ctx.tileHighlighted, gameMap.getAllPoints())
 
