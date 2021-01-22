@@ -196,10 +196,21 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
     if (gameMap.getPointAt(point) != 1) return
         const coord = point
         if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
+          const xDiff = Math.abs(point.x - player.location.x)
+          const yDiff = Math.abs(point.y - player.location.y)
+          const ringLevel = xDiff > yDiff ? xDiff : yDiff
+          console.log(player.location, point, xDiff, yDiff, ringLevel);
+
+          const alpha = 1 - ringLevel / 5
+          
+          context.globalAlpha = alpha > 0 ? alpha : 0
+
           context.fillStyle = 'white'
           context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
         }
   })
+
+  context.globalAlpha = 1
 
   context.fillStyle = 'red'
   context.fillRect(player.location.x * size.width + 2.5, player.location.y * size.height + 2.5, size.width - 5, size.height - 5)
