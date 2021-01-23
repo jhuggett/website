@@ -192,16 +192,21 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   const lineOfSight = getLineOfSight(player.location, gameMap)
   lineOfSight.push(player.location)
 
+  console.log('start!!!');
+  
   lineOfSight.forEach(point => {
     if (gameMap.getPointAt(point) != 1) return
+    console.log(point);
+    
         const coord = point
         if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
           const xDiff = Math.abs(point.x - player.location.x)
           const yDiff = Math.abs(point.y - player.location.y)
-          const ringLevel = xDiff > yDiff ? xDiff : yDiff
-          console.log(player.location, point, xDiff, yDiff, ringLevel);
+          let ringLevel = xDiff > yDiff ? xDiff : yDiff
+          
+          //console.log(player.location, point, xDiff, yDiff, ringLevel);
 
-          const alpha = 1 - ringLevel / 5
+          const alpha = 1 - ringLevel / 6
           
           context.globalAlpha = alpha > 0 ? alpha : 0
 
