@@ -45,8 +45,8 @@ export class Coor {
 
     range(this.x - distance, this.x + distance).forEach(x => points.push(new Coor(x, this.y + distance)))
     range(this.x - distance, this.x + distance).forEach(x => points.push(new Coor(x, this.y - distance)))
-    range(this.y - distance, this.y + distance).forEach(y => points.push(new Coor(this.x + distance, y)))
-    range(this.y - distance, this.y + distance).forEach(y => points.push(new Coor(this.x - distance, y)))
+    range(this.y - distance + 1, this.y + distance - 1).forEach(y => points.push(new Coor(this.x + distance, y)))
+    range(this.y - distance + 1, this.y + distance - 1).forEach(y => points.push(new Coor(this.x - distance, y)))
 
     return points
   }
