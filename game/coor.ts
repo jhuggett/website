@@ -11,6 +11,13 @@ export function range(start: number, end: number) : Array<number> {
   return numbers
 }
 
+export enum Direction {
+  north,
+  east,
+  south,
+  west
+}
+
 export class Coor {
   constructor(public x: number, public y: number) {}
 
@@ -49,5 +56,31 @@ export class Coor {
     range(this.y - distance + 1, this.y + distance - 1).forEach(y => points.push(new Coor(this.x - distance, y)))
 
     return points
+  }
+
+  offsetTo(direction: Direction) : Coor {
+    switch (direction) {
+      case Direction.north: {
+        return new Coor(this.x, this.y - 1)
+      }
+      case Direction.east: {
+        return new Coor(this.x + 1, this.y)
+      }
+      case Direction.south: {
+        return new Coor(this.x, this.y + 1)
+      }
+      case Direction.west: {
+        return new Coor(this.x - 1, this.y)
+      }
+    }
+  }
+
+  adjacentPoints() : Coor[] {
+    return [
+      this.offsetTo(Direction.north),
+      this.offsetTo(Direction.east),
+      this.offsetTo(Direction.south),
+      this.offsetTo(Direction.west)
+    ]
   }
 }

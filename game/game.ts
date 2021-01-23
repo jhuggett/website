@@ -6,7 +6,7 @@ import { GameMap } from "./map"
 const gameMap = new GameMap()
 
 const player = {
-  location: new Coor(7, 7)
+  location: new Coor(0, 0)
 }
 
 const events = [
@@ -75,7 +75,7 @@ function getLine(from: Coor, to: Coor) : Coor[] {
   return points
 }
 
-function getLineOfSight(point: Coor, gameMap: GameMap) : Coor[] {
+function getLineOfSight(point: Coor, gameMap: GameMap, maxDistance?: number) : Coor[] {
   let points: Coor[] = []
 
 
@@ -83,6 +83,8 @@ function getLineOfSight(point: Coor, gameMap: GameMap) : Coor[] {
   let distance = 1
   while (shouldContinue) {
     shouldContinue = false
+
+    if (maxDistance && distance == maxDistance) return points
 
     point.ring(distance).forEach(newPoint => {
       const pointToNewPoint: Coor[] = getLine(point, newPoint)
@@ -189,14 +191,11 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
   // })
 
 
-  const lineOfSight = getLineOfSight(player.location, gameMap)
+  const lineOfSight = getLineOfSight(player.location, gameMap, 10)
   lineOfSight.push(player.location)
-
-  console.log('start!!!');
   
   lineOfSight.forEach(point => {
     if (gameMap.getPointAt(point) != 1) return
-    console.log(point);
     
         const coord = point
         if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
@@ -206,21 +205,21 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
           
           //console.log(player.location, point, xDiff, yDiff, ringLevel);
 
-          const alpha = 1 - ringLevel / 6
+          const alpha = 1 - ringLevel / 10
           
           context.globalAlpha = alpha > 0 ? alpha : 0
 
-          context.fillStyle = 'white'
+          context.fillStyle = '#E3BAAA'
           context.fillRect(coord.x * size.width, coord.y * size.height, size.width, size.height)
         }
   })
 
   context.globalAlpha = 1
 
-  context.fillStyle = 'red'
-  context.fillRect(player.location.x * size.width + 2.5, player.location.y * size.height + 2.5, size.width - 5, size.height - 5)
-
-
+  context.fillStyle = 'green'
+  // context.fillRect(player.location.x * size.width + 2.5, player.location.y * size.height + 2.5, size.width - 5, size.height - 5)
+  context.arc(player.location.x * size.width + (size.width / 2), player.location.y * size.height + size.height / 2, (size.width / 3), 0, 2 * Math.PI, false)
+  context.fill()
   // player.location.scan(2).forEach(point => {
   //   context.fillStyle = 'purple'
   //   context.fillRect(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4), Math.floor(size.width / 2), Math.floor(size.height / 2))
@@ -244,7 +243,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
 
     
     
-    const newPoints = aStar(player.location, new Coor(x, y), gameMap.getAllPoints())
+    const newPoints = aStar(player.location, new Coor(x, y), gameMap)
     
     console.log(newPoints);
   
@@ -272,6 +271,7 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext, canvasRef) => {
 })
 
 function movePlayer(i: number, steps: Coor[], ctx: CanvasContext) {
+  if (!steps) { ctx.enableUserInteraction(); return }
   player.location = steps[i]
   ctx.draw()
 
@@ -305,7 +305,7 @@ export const canvasContext = new CanvasContext(canvasDrawer, events, (ctx: Canva
     () => {
       if (ctx.tileHighlighted && getLineOfSight(player.location, gameMap).filter(point => point.sameAs(ctx.tileHighlighted)).length > 0) {
 
-        const steps = aStar(player.location, ctx.tileHighlighted, gameMap.getAllPoints())
+        const steps = aStar(player.location, ctx.tileHighlighted, gameMap)
 
         ctx.tileHighlighted = null
 
