@@ -1,4 +1,5 @@
 import { Coor } from "."
+import { GameMap } from "./map"
 
 
 interface Node {
@@ -12,7 +13,7 @@ interface Node {
 }
 
 
-export function aStar(start: Coor, end: Coor, grid: number[][]) {
+export function aStar(start: Coor, end: Coor, grid: GameMap) {
   let open: Node[] = []
   let closed: Node[] = []
 
@@ -68,9 +69,7 @@ export function aStar(start: Coor, end: Coor, grid: number[][]) {
         currentNode.location.y + item[1]
       )
 
-      if (nodePosition.x > grid[0].length - 1 || nodePosition.x < 0 || nodePosition.y > grid.length - 1 || nodePosition.y < 0) return
-
-      if (grid[nodePosition.y][nodePosition.x] == 0) return
+      if (grid.getPointAt(nodePosition) != 1) return
 
       const newNode: Node = {
         g: 0,
