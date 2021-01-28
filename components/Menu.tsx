@@ -62,6 +62,14 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
               </LinkItem>
               
             </li>
+            <li onClick={() => {closeMenu(openToggle)}}>
+              <LinkItem>
+                <Link to={paths.posts({ name: 'pomelo-sweetmeat' })} prefetch={true}>
+                  Pomelo Sweetmeat
+                </Link>
+              </LinkItem>
+              
+            </li>
           </ul>
           
           
