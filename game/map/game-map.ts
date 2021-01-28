@@ -7,7 +7,9 @@ export class GameMap {
   gameMap: BaseLandGenerator = new BaseLandGenerator()
 
   constructor() {
-    this.gameMap.growAmount(500, BaseLandType.land, .1)
+    this.gameMap.growAmount(500, BaseLandType.land, 0.5)
+    this.gameMap.growAmount(200,  BaseLandType.scaffold, 0.5)
+    this.gameMap.growAmount(300, BaseLandType.land, 0.5)
   }
   
 
