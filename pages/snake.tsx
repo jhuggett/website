@@ -18,9 +18,9 @@ export default function Snake({file, cms, themeHandler, hideTopBar}) {
 
       <BodyCenter>
         
-      <Canvas context={canvasContext}>
+      {/* <Canvas context={canvasContext}>
       
-      </Canvas>
+      </Canvas> */}
         
       </BodyCenter>
 

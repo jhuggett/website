@@ -1,3 +1,8 @@
+
+
+export const typescriptStopBeingAPain = 'please!'
+
+
 // import { Coor, aStar } from "."
 
 // import { CanvasDrawer, CanvasContext } from "../components/Canvas"
