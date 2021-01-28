@@ -1,3 +1,33 @@
 {
-  
+  "blocks": [
+    {
+      "_template": "hero",
+      "headline": "Pomelo Sweetmeat",
+      "subtext": "Turning bitter rind into candy",
+      "background_color": "background",
+      "text_color": "primary",
+      "align": "center"
+    },
+    {
+      "_template": "paragraph",
+      "text": "I love pomelos. A lot."
+    },
+    {
+      "_template": "paragraph",
+      "text": "The other day I came across how to candy citrus rinds in 1800s. It seemed straightforward, and pomelos do have thick rind. So why not give it a go; this is how it went."
+    },
+    {
+      "_template": "images",
+      "images": [
+        {
+          "_template": "image",
+          "src": "src",
+          "alt": "alt",
+          "size": 1,
+          "orientation": "Horizontal",
+          "name": "/B2A1FBCB-FEDD-4DC1-9021-6742C6D1F712_1_105_c.jpeg"
+        }
+      ]
+    }
+  ]
 }
