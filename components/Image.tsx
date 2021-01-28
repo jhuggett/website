@@ -38,7 +38,7 @@ export function Image({ index, data }) {
   return (
     <Container>
     <BlocksControls index={index}>
-      <ImageStyle
+      <ImageStyle 
             name={`name`}
             parse={media => `/${media.filename}`}
             uploadDir={() => '/public'}

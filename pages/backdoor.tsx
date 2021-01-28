@@ -14,9 +14,9 @@ export default function Backdoor({file, cms, themeHandler, hideTopBar}) {
 
   return showGame ? (
   <Background>
-    <Canvas context={canvasContext}>
+    {/* <Canvas context={canvasContext}>
       
-    </Canvas>
+    </Canvas> */}
   </Background>
   ) : (
     <Background>

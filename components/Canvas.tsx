@@ -1,14 +1,13 @@
 import { useRef, useEffect } from "react"
 import { Coor } from "../game"
 
-interface Coord {
-  x: number
-  y: number
-}
+export class RectangleSize {
 
-interface Size {
-  width: number
-  height: number
+  constructor(public width: number, public height: number) {}
+
+  area() : number {
+    return this.width * this.height
+  }
 }
 
 class MouseHandler {
@@ -68,78 +67,106 @@ class MouseHandler {
   }
 }
 
-class DragHandler {
-  isDown: boolean
-  firstOffset: Coord                
-  start: Coord
+// class DragHandler {
+//   isDown: boolean
+//   firstOffset: Coord                
+//   start: Coord
 
-  constructor(public doThisOnDrag: (current: Coord, start: Coord, initial: Coord) => void, public getFirstOffset: () => Coord) {
+//   constructor(public doThisOnDrag: (current: Coord, start: Coord, initial: Coord) => void, public getFirstOffset: () => Coord) {
 
-  }
+//   }
 
-  registerEvents(window) {
-    window.addEventListener('mousedown', this.handleMouseDown(this, true))
-    window.addEventListener('mouseup', this.handleMouseUp(this, true))
-    window.addEventListener('mousemove', this.handleMouseMove(this, true))
+//   registerEvents(window) {
+//     window.addEventListener('mousedown', this.handleMouseDown(this, true))
+//     window.addEventListener('mouseup', this.handleMouseUp(this, true))
+//     window.addEventListener('mousemove', this.handleMouseMove(this, true))
 
-    window.addEventListener('touchstart', this.handleMouseDown(this, false))
-    window.addEventListener('touchend', this.handleMouseUp(this, false))
-    window.addEventListener('touchmove', this.handleMouseMove(this, false))
-  }
+//     window.addEventListener('touchstart', this.handleMouseDown(this, false))
+//     window.addEventListener('touchend', this.handleMouseUp(this, false))
+//     window.addEventListener('touchmove', this.handleMouseMove(this, false))
+//   }
 
-  handleMouseMove(handler: DragHandler, withMouse: boolean) {
-    return (e) => {
-      if (this.isDown) {
-        const current = {
-          x: withMouse ? e.clientX : e.touches[0].pageX,
-          y: withMouse ? e.clientY : e.touches[0].pageY
-        }
-        handler.doThisOnDrag(current, handler.start, handler.firstOffset)
-      }
-    }
-  }
+//   handleMouseMove(handler: DragHandler, withMouse: boolean) {
+//     return (e) => {
+//       if (this.isDown) {
+//         const current = {
+//           x: withMouse ? e.clientX : e.touches[0].pageX,
+//           y: withMouse ? e.clientY : e.touches[0].pageY
+//         }
+//         handler.doThisOnDrag(current, handler.start, handler.firstOffset)
+//       }
+//     }
+//   }
 
-  handleMouseUp(handler: DragHandler, withMouse: boolean) {
-    return () => {
-      handler.isDown = false
-    }
+//   handleMouseUp(handler: DragHandler, withMouse: boolean) {
+//     return () => {
+//       handler.isDown = false
+//     }
     
-  }
+//   }
 
-  handleMouseDown(handler: DragHandler, withMouse: boolean) {
-    return (e) => {
-      handler.isDown = true
-      handler.start = {
-        x: withMouse ? e.clientX : e.touches[0].pageX,
-        y: withMouse ? e.clientY : e.touches[0].pageY
-      }
-      handler.firstOffset = handler.getFirstOffset()
-    }
-  }
+//   handleMouseDown(handler: DragHandler, withMouse: boolean) {
+//     return (e) => {
+//       handler.isDown = true
+//       handler.start = {
+//         x: withMouse ? e.clientX : e.touches[0].pageX,
+//         y: withMouse ? e.clientY : e.touches[0].pageY
+//       }
+//       handler.firstOffset = handler.getFirstOffset()
+//     }
+//   }
 
-  cleanup() {
-    window.removeEventListener('mousedown', this.handleMouseDown(this, true))
-    window.removeEventListener('mouseup', this.handleMouseUp(this, true))
-    window.removeEventListener('mousemove', this.handleMouseMove(this, true))
+//   cleanup() {
+//     window.removeEventListener('mousedown', this.handleMouseDown(this, true))
+//     window.removeEventListener('mouseup', this.handleMouseUp(this, true))
+//     window.removeEventListener('mousemove', this.handleMouseMove(this, true))
 
-    window.removeEventListener('touchstart', this.handleMouseDown(this, false))
-    window.removeEventListener('touchend', this.handleMouseUp(this, false))
-    window.removeEventListener('touchmove', this.handleMouseMove(this, false))
-  }
-}
+//     window.removeEventListener('touchstart', this.handleMouseDown(this, false))
+//     window.removeEventListener('touchend', this.handleMouseUp(this, false))
+//     window.removeEventListener('touchmove', this.handleMouseMove(this, false))
+//   }
+// }
 
 export class CanvasDrawer {
-  xOffset = 0
-  yOffset = 0
-
-  tileSize = {
-    width: 50,
-    height: 50
+  
+  offset = {
+    x: 0,
+    y: 0
   }
 
-  drawnSquares = 0
+  canvasSize: RectangleSize = new RectangleSize(200, 150)
 
-  constructor(public draw: (context: CanvasContext, canvas) => void) {}
+  canvas?
+
+  draw: (ctx: CanvasContext) => void
+  private canvasContext
+
+  constructor(suppliedDraw: (context: CanvasContext) => void) {
+    this.draw = (ctx: CanvasContext) => {
+      if (!this.canvas) return
+
+      this.canvasContext = this.getCanvasContext()
+
+      this.canvasContext.width = this.canvasSize.width
+      this.canvasContext.height = this.canvasSize.height
+
+      suppliedDraw(ctx)
+    }
+  }
+
+  getCanvasContext() {
+    if (this.canvas) return this.canvas.getContext('2d')
+  }
+
+  
+
+  drawRectangle(at: Coor, size: RectangleSize, color: string, opacity?: number) {
+    if (!this.canvas) return
+
+    this.canvasContext.globalAlpha = opacity ? opacity : 1
+    this.canvasContext.fillStyle = color
+    this.canvasContext.fillRect(at.x, at.y, size.width, size.height)
+  }
 }
 
 export class CanvasContext {
@@ -149,16 +176,6 @@ export class CanvasContext {
   drawer: CanvasDrawer
 
   mouseHandler: MouseHandler
-
-  dragHandler?: DragHandler
-
-  canvas?
-
-  tileHighlighted?: Coor
-
-  events: { name: string, actions: ((e) => void)[] }[]
-
-  handleKeyDown?: (e) => void
 
   enableUserInteraction() {
     this.userInteractionEnabled = true
@@ -171,76 +188,52 @@ export class CanvasContext {
   }
 
   supplyCanvas(canvas) {
-    this.canvas = canvas
+    this.drawer.canvas = canvas
   }
 
-  constructor(drawer: CanvasDrawer, events: { name: string, actions: ((e) => void)[] }[], config: (ctx: CanvasContext) => void) {
+  constructor(drawer: CanvasDrawer, config: (ctx: CanvasContext) => void) {
     this.drawer = drawer
 
     this.mouseHandler = new MouseHandler()
 
-    this.events = events
-
     config(this)
   }
 
-  registerEvents(window) {
-    this.events.forEach( event => {
-      event.actions.forEach( action => {
-        window.addEventListener(event.name, e => { action(e); this.draw(); })
-      })
-    })
-    this.mouseHandler.registerEvents(window)
-  }
-
-  unregisterEvents(window) {
-    this.events.forEach( event => {
-      event.actions.forEach( action => {
-        window.removeEventListener(event.name, e => { action(e); this.draw(); })
-      })
-    })
-    this.mouseHandler.unregisterEvents(window)
-  }
+  
 
 
   draw() {
-    this.drawer.draw(this, this.canvas)
+    this.drawer.draw(this)
   }
-
-
 }
 
 export interface CanvasProps {
   context: CanvasContext
 }
 
-const Canvas = (props) => {
+const Canvas = ({ context } : CanvasProps) => {
 
   const canvasRef = useRef(null)
 
-  const context: CanvasContext = props.context
-
-  context.supplyCanvas(canvasRef)
+  context.supplyCanvas(canvasRef.current)
   
   useEffect(() => {
     function handleResize() {
-      props.context.draw()
+      context.draw()
     }
 
     window.addEventListener('resize', handleResize)
 
-    context.registerEvents(window)
 
     context.draw()
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      context.unregisterEvents(window)
     }
   }, [])
   
   return (
-    <canvas className={'canvas'} ref={canvasRef} {...props} />
+    <canvas className={'canvas'} ref={canvasRef} />
   )
 }
 
