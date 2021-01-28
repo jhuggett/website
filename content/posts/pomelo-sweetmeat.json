@@ -17,6 +17,18 @@
       "text": "The other day I came across how to candy citrus rinds in 1800s. It seemed straightforward, and pomelos do have thick rind. So why not give it a go; this is how it went. test"
     },
     {
+      "_template": "spacer",
+      "size": 6
+    },
+    {
+      "_template": "hero",
+      "headline": "This is a test",
+      "subtext": "This is the subtext.",
+      "background_color": "background",
+      "text_color": "primary",
+      "align": "center"
+    },
+    {
       "_template": "images",
       "images": [
         {
