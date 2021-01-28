@@ -23,7 +23,7 @@
     },
     {
       "_template": "hero",
-      "subtext": "(22 of December, 2020)",
+      "subtext": "22 of December, 2020",
       "background_color": "background",
       "text_color": "primary",
       "align": "center"
