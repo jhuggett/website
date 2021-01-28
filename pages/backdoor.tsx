@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import Canvas from '../components/Canvas'
-import { canvasContext } from '../game'
+// import { canvasContext } from '../game'
 
 export default function Backdoor({file, cms, themeHandler, hideTopBar}) {
 
