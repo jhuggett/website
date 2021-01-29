@@ -35,6 +35,13 @@ export function Image({ index, data }) {
 
   const baseDimentions = getBaseDimentions(data.orientation)
   
+
+  console.log({
+    index,
+    data
+  });
+  
+
   return (
     <Container>
     <BlocksControls index={index}>
