@@ -10,6 +10,7 @@ import { GetStaticProps } from 'next'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { useEffect, useState } from 'react'
 import { spacerBlock } from '../../components/Spacer'
+import { sectionBlock } from '../../components/blocks/Section'
 
 export default function BlogTemplate({file, cms, themeHandler, preview}) {
   
@@ -36,30 +37,13 @@ export default function BlogTemplate({file, cms, themeHandler, preview}) {
   // Render data from `getStaticProps`
   return (
   <InlineForm form={form}>
-    <ContentBody>
-      <BodyLeft>
-
-      </BodyLeft>
-
-      <BodyCenter>
         <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
-        
-      </BodyCenter>
-
-      <BodyRight>
-        
-      </BodyRight>
-
-    </ContentBody>
   </InlineForm>
 )
 }
 
 const TESTIMONIAL_BLOCKS = {
-hero: heroBlock,
-images: imageGalleryBlock,
-paragraph: paragraphBlock,
-spacer: spacerBlock
+section: sectionBlock
 }
 
 export const getStaticProps: GetStaticProps = async function({

@@ -1,5 +1,6 @@
 import { TinaCMS, TinaProvider } from 'tinacms'
 import { GithubClient, TinacmsGithubProvider, GithubMediaStore } from 'react-tinacms-github'
+import { NextGithubMediaStore } from 'next-tinacms-github'
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { useMemo, useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
