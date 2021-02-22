@@ -3,32 +3,34 @@ import { useState, useEffect } from 'react'
 import { EditLink } from '.'
 import Link from './Link'
 import paths from '../paths'
+import { SwapTheme } from './SwapTheme'
+import { ThemeHandler } from '../pages/_app'
 
 export interface MenuProps {
   cms: any
   moveDown: string
   openToggle: () => void
   isOpen: boolean
+  themeHandler: ThemeHandler
 }
 
 const closeMenu = (closeFunction) => {
   setTimeout(closeFunction, 0)
 }
 
-export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
+export const Menu = ({cms, moveDown, openToggle, isOpen, themeHandler} : MenuProps) => {
 
 
   return (
     <>
-    <MenuToggle open={isOpen} onClick={() => openToggle()} moveDown={moveDown}>
-        <Compass open={isOpen}>
-        {isOpen ? (<i className="fal fa-compass"></i>) : (<i className="fal fa-compass"></i>) }
+    <MenuToggle open={isOpen} moveDown={moveDown}>
+        <Compass open={isOpen} onClick={() => openToggle()}>
+        {isOpen ? (<i className="fas fa-compass"></i>) : (<i className="fas fa-compass"></i>) }
         </Compass>
       </MenuToggle>
     <MenuContainer open={isOpen} moveDown={moveDown}> 
       
       
-
       <MenuContent>
       <Top>
         
@@ -76,6 +78,7 @@ export const Menu = ({cms, moveDown, openToggle, isOpen} : MenuProps) => {
         </Main>
         <Bottom>
           <EditLink cms={cms} />
+          <SwapTheme themeHandler={themeHandler} moveDown={moveDown} />
         </Bottom>
 
 
@@ -180,18 +183,28 @@ const Bottom = styled.div`
 
   align-items: center;
   justify-content: flex-end;
+
+  padding: 1em 0 1em 0;
   
 
 `
 
 const Compass = styled.div`
-  
+  position: absolute;
+
+  margin: 1em 0 0 1em;
 
   transition-duration: .25s;
   
-  
+  color: ${props => props.theme.primary};
 
+  border-radius: 50%;
+  line-height: 0;
   opacity: ${props => props.open ? '0' : '1'};
+
+
+
+  font-size: 1.5em;
 
   :hover {
     
@@ -218,6 +231,8 @@ const MenuToggle = styled.div`
 const MenuContainer = styled.div`
   top: ${props => props.moveDown};
   position: fixed;
+
+  z-index: 99999999;
 
 
   max-width: 100vw;

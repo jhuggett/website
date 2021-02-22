@@ -25,6 +25,7 @@ export const SwapTheme = ({ themeHandler, moveDown }: SwapThemeProps) => {
 const Button = styled.div`
 line-height: 0;
 
+margin: .25em 0 0 0;
 
 
 border-radius: 50%;
@@ -36,7 +37,7 @@ font-size: 2em;
 font-family: ${props => props.theme.font.family};
 
 transition-duration: 0.25s;
-color: ${props => props.theme.primary};
+color: ${props => props.theme.background};
 
 :hover {
   box-shadow: 0 0 0 0;

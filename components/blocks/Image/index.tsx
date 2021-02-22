@@ -33,13 +33,10 @@ function getBaseDimentions(orientation) {
 
 export function Image({ index, data }) {
 
-  const baseDimentions = getBaseDimentions(data.orientation)
+  // const baseDimentions = getBaseDimentions(data.orientation)
   
-
-  console.log({
-    index,
-    data
-  });
+  // baseDimentions.height * data.size || 1
+  // baseDimentions.width * data.size || 1
   
 
   return (
@@ -54,7 +51,7 @@ export function Image({ index, data }) {
             alt={''}
           >
 
-          {props => <StyledNextImage src={props.src} alt={props.alt} layout="fill" width={baseDimentions.width * data.size || 1} height={baseDimentions.height * data.size || 1} />}
+          {props => <StyledNextImage src={props.src} alt={props.alt} layout="fill" width={data.width} height={data.height} />}
         </ImageStyle>
     </BlocksControls>
     </Container>
@@ -99,20 +96,20 @@ export const imageBlock = {
       size: 1,
       src: '/ivan-bandura-unsplash-square.jpg',
       alt: 'ocean',
-      orientation: 'Horizontal'
+      width: '500',
+      height: '200'
     },
     fields: [
       {
-        name: 'size',
-        label: 'Size Multiplier',
-        component: 'number'
+        name: 'width',
+        label: 'Width',
+        component: 'text'
       },
       {
-        name: 'orientation',
-        label: 'Orientation',
-        component: 'select',
-        options: ['Horizontal', 'Vertical', 'Square']
-      },
-        ],
+        name: 'height',
+        label: 'Height',
+        component: 'text'
+      }
+    ],
   },
 }

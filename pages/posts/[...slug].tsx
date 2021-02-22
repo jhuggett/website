@@ -11,33 +11,25 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { useEffect, useState } from 'react'
 import { spacerBlock } from '../../components/Spacer'
 import { sectionBlock } from '../../components/blocks/Section'
+import { Page, Space, Content } from '../../components/Layout'
 
 export default function BlogTemplate({file, cms, themeHandler, preview}) {
   
-  console.log('reload');
-  console.log({data: file.data});
-  console.log({preview});
-  
-  
   const [_, form] = useGithubJsonForm(file)
-  
-
-  
   usePlugin(form)
 
   useGithubToolbarPlugins()
 
-
-  useEffect(() => {
-    console.log({form: form.values});
-    
-  }, [form])
-  
-  
   // Render data from `getStaticProps`
   return (
   <InlineForm form={form}>
-        <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
+        <Page>
+          <Space />
+          <Content>
+            <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
+          </Content>
+          <Space />
+        </Page>
   </InlineForm>
 )
 }

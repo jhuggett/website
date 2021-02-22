@@ -71,7 +71,6 @@ const HeroContainer = styled.div`
   color: ${props => props.theme[props.text_color] || "black"};
   
 
-  height: 100%;
 
   text-align: center;
   

@@ -31,7 +31,7 @@ function App({pageProps, Component}) {
       apis: {
         github,
       },
-      media: new GithubMediaStore(github),
+      media: new NextGithubMediaStore(github),
       sidebar: pageProps.preview,
       toolbar: pageProps.preview,
     });
@@ -76,15 +76,7 @@ function App({pageProps, Component}) {
             {/* <EditLink cms={memoizedCms} />
             <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
             <Page onClick={() => { if (menuIsOpen) closeMenu() }}>
-              <TopBar show={showTopBar}>
-                <TopLeft>
-                  <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'}></Menu>
-                </TopLeft>
-                <TopRight>
-                  <SwapTheme themeHandler={themeHandler} moveDown={pageProps.preview ? '62px' : '0px'}></SwapTheme>
-                </TopRight>
-                
-              </TopBar>
+              <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'} themeHandler={themeHandler}></Menu>
               <Content menuIsOpen={menuIsOpen} >
                 <Component cms={memoizedCms} themeHandler={themeHandler} hideTopBar={setTopBar} {...pageProps} />
               </Content>
@@ -157,21 +149,20 @@ const Content = styled.div`
   height: 100vh;
 
   ${props => props.menuIsOpen ? `
-    // transform: rotate(6deg);
     filter: blur(10px);
   ` : ''}
 
   
   
   opacity: ${props => props.menuIsOpen ? '.25' : '1'};
-  margin-left: ${props => props.menuIsOpen ? '350px' : '0'};
+  margin-left: 0;
 
   transition: .25s;
 
 
-  // @media (max-width: 62em) {
-  //   height: calc(100vh - 75px);
-  // } 
+  /* @media (max-width: 62em) {
+   height: calc(100vh - 75px);
+  }  */
 
 `
 
