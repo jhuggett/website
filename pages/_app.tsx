@@ -12,9 +12,6 @@ import styled from 'styled-components'
 function App({pageProps, Component}) {
   
   const [theme, setTheme] = useState(themes[1].theme)
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
-
-  const [showTopBar, setTopBar] = useState(true)
 
   themeHandler.setSetTheme(setTheme)
 
@@ -47,14 +44,9 @@ function App({pageProps, Component}) {
     }
 
   }, [])
+  
+  const blurNotifier = new Notifier()
 
-  const openToggle = () => {
-    setMenuIsOpen(!menuIsOpen)
-  }
-
-  const closeMenu = () => {
-    setMenuIsOpen(false)
-  }
   
     return (
       /**
@@ -73,16 +65,11 @@ function App({pageProps, Component}) {
             onLogout={onLogout}
             error={pageProps.error}
           >
-            {/* <EditLink cms={memoizedCms} />
-            <button onClick={() => themeHandler.current.swapThemes()}>Swap theme</button> */}
-            <Page onClick={() => { if (menuIsOpen) closeMenu() }}>
-              <Menu openToggle={openToggle} isOpen={menuIsOpen} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'} themeHandler={themeHandler}></Menu>
-              <Content menuIsOpen={menuIsOpen} >
-                <Component cms={memoizedCms} themeHandler={themeHandler} hideTopBar={setTopBar} {...pageProps} />
-              </Content>
-            </Page>
             
-            
+              <Menu blurNotifier={blurNotifier} cms={memoizedCms} moveDown={pageProps.preview ? '62px' : '0px'} themeHandler={themeHandler}></Menu>
+              
+              <Component blurNotifier={blurNotifier} cms={memoizedCms} themeHandler={themeHandler} {...pageProps} />
+              
           </TinacmsGithubProvider>
         </TinaProvider>
       </ThemeProvider>
@@ -90,81 +77,6 @@ function App({pageProps, Component}) {
   
 }
 
-const TopBar = styled.div`
-  
-
-  width: 100%;
-  height: 75px;
-  position: fixed;
-  @media (max-width: 67em) {
-    position: relative;
-  } 
-  
-
-  display: ${props => props.show ? 'flex' : 'none'};
-`
-
-const TopRight = styled.div`
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-
-  padding-right: 2em;
-  `
-
-const TopLeft = styled.div`
-  flex: 1;
-
-
-  padding-left: 2em;
-  
-  display: flex;
-  align-items: center;
-`
-
-const Page = styled.div`
-
-
-
-  width: 100vw;
-  height: 100vh;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-
-  // @media (max-width: 62em) {
-  //   height: calc(100vh - 75px);
-  // } 
-`
-
-const Content = styled.div`
-
-
-
-  width: 100vw;
-  height: 100vh;
-
-  ${props => props.menuIsOpen ? `
-    filter: blur(10px);
-  ` : ''}
-
-  
-  
-  opacity: ${props => props.menuIsOpen ? '.25' : '1'};
-  margin-left: 0;
-
-  transition: .25s;
-
-
-  /* @media (max-width: 62em) {
-   height: calc(100vh - 75px);
-  }  */
-
-`
 
 
 const onLogin = async () => {
@@ -189,7 +101,19 @@ const onLogout = () => {
 }
 
 
+export class Notifier {
+  emit(payload?: any) {
+    this.recievers.forEach(reciever => {
+      reciever(payload)
+    })
+  }
 
+  recievers: ((payload?: any) => void)[] = []
+
+  subscribe(subscription: (payload?: any) => void) {
+    this.recievers.push(subscription)
+  }
+}
 
 
 const GlobalTheme = createGlobalStyle`
@@ -203,7 +127,6 @@ const GlobalTheme = createGlobalStyle`
     height: 100%;
     width: 100%;
 
-    overflow-y: hidden;
     
 
     overflow-x: hidden;
@@ -225,11 +148,6 @@ const GlobalTheme = createGlobalStyle`
     border-radius: 1em;
     opacity: .5;
   }
-
-
-  
-
-
 `
 
 interface ThemeOption {

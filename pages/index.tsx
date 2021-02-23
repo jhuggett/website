@@ -12,8 +12,10 @@ import { imagesBlock } from '../components/Images'
 import { paragraphBlock } from '../components/Paragraph'
 import { imageGalleryBlock } from '../components/ImageGallery'
 import { useEffect, useState } from 'react'
+import { WithLayout } from '../components/Layout'
+import { sectionBlock } from '../components/blocks/Section'
 
-export default function Home({file, cms, themeHandler}) {
+export default function Home({file, blurNotifier, cms, themeHandler}) {
 
   const [data, form] = useGithubJsonForm(file)
   usePlugin(form)
@@ -48,29 +50,15 @@ export default function Home({file, cms, themeHandler}) {
 
   return enterPressed ? <></> : (
     <InlineForm form={form}>
-      <ContentBody>
-        <BodyLeft>
-
-        </BodyLeft>
-
-        <BodyCenter>
-          <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
-          
-        </BodyCenter>
-
-        <BodyRight>
-          
-        </BodyRight>
-
-      </ContentBody>
+      <WithLayout toggleBlur={blurNotifier}>
+      <InlineBlocks name="blocks" className="inline-block" blocks={TESTIMONIAL_BLOCKS} />
+      </WithLayout>
     </InlineForm>
   )
 }
 
 const TESTIMONIAL_BLOCKS = {
-  hero: heroBlock,
-  images: imageGalleryBlock,
-  paragraph: paragraphBlock
+  section: sectionBlock
 }
 
 export const getStaticProps: GetStaticProps = async function({

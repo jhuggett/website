@@ -21,11 +21,12 @@ const StyledInlineBlocks = styled(InlineBlocks)`
   display: flex;
   flex-flow: ${props => props.direction == 'vertical' ? 'column' : 'row'};
 
-  padding-right: ${props => `${props.max_width}%`};
-  padding-left: ${props => `${props.max_width}%`};
+  width: 100%;
+  max-width: 100%;
 
   flex-wrap: wrap;
   
+
   align-items: center;
   justify-content: center;
   

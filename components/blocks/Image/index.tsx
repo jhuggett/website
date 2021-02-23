@@ -2,6 +2,7 @@ import React from 'react'
 import { BlocksControls, InlineTextarea, InlineImage } from 'react-tinacms-inline'
 import styled from 'styled-components'
 import * as NextImage from 'next/image'
+import { useCMS } from 'tinacms'
 
 function getBaseDimentions(orientation) {
   switch(orientation) {
@@ -37,16 +38,15 @@ export function Image({ index, data }) {
   
   // baseDimentions.height * data.size || 1
   // baseDimentions.width * data.size || 1
-  
+  const cms = useCMS()
 
   return (
     <Container>
     <BlocksControls index={index}>
       <ImageStyle 
-            name={`name`}
-            parse={media => `/${media.filename}`}
-            uploadDir={() => '/public'}
-            previewSrc={(src) => src}
+            name={`src`}
+            parse={media => `${media.directory || '/'}${media.filename}`}
+            uploadDir={() => ''}
             focusRing={false}
             alt={''}
           >
