@@ -30,6 +30,14 @@
           "align": "center"
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg",
+          "alt": "ocean",
+          "width": "500",
+          "height": "600"
+        },
+        {
           "_template": "paragraph",
           "text": "I've wanted to forge as far back as I can remember. About a year ago I decided to take the plunge and pick up the hammer. I had no clue what I was doing and knew no smiths. So, when someone suggested to cut a propane tank in two lined with refectory cement and use it as a forge I did. Little did I know there's a far easier method for starting out, but hindsight is never helpful the first time."
         },
