@@ -9,7 +9,7 @@
         {
           "_template": "heading",
           "headline": "This is a headline",
-          "subtext": "Blacksmith, Woodwright,",
+          "subtext": "Blacksmith, Woodwright",
           "background_color": "background",
           "text_color": "primary",
           "align": "center"
