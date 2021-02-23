@@ -214,8 +214,24 @@
           "text": "Only one thing was left, raising the forge up off the ground. My table building skills shouldn't even be dignified by calling them lacking, but alas I managed to slap something together. It proved that it could work, I no longer had to jump up every time I was ready to hammer at the anvil."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/F785D756-12B9-49CF-B33A-DBD763290C91_1_105_c.jpeg",
+          "alt": "ocean",
+          "width": "600",
+          "height": "500"
+        },
+        {
           "_template": "paragraph",
           "text": "There was a problem though, it was, well, wobbly. Which really isn't the way I'd want to describe something holding heat upwards of 2000 degrees Fahrenheit from falling on me. So after a while of me trying to find a solution - I was planning to do some elaborate joiner that would have taken me ages - my grandfather told me he had a pair of old steel workhorses. After installing those under the forge, it's a solid as I can hope for."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/5BA03F25-59BF-4D06-9DAD-715E8D0FCC4F_1_105_c.jpeg",
+          "alt": "ocean",
+          "width": "750",
+          "height": "500"
         },
         {
           "_template": "paragraph",
