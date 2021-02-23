@@ -1,2 +1,35 @@
 {
+  "blocks": [
+    {
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
+        {
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "Blacksmith, Woodwright,",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "title",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center",
+          "headline": "J. T. Huggett"
+        },
+        {
+          "_template": "heading",
+          "headline": "This is a headline",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center",
+          "subtext": "and Adventurer"
+        }
+      ]
+    }
+  ]
 }
