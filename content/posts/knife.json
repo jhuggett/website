@@ -184,6 +184,17 @@
           "text": "The heat treating itself went quite well. First it was normalized three times (heated till it glows then let it cool back down in the air). Followed by a fourth heat and plunged into warmed oil. It looked pretty good."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/29A4B9AF-5C7C-44AE-8FB9-68A9A089D883_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Then it needed to be tempered to release it's brittleness. A heat at 450 F for an hour and a half worked the trick. As the steel heats up it goes through an array of colours, straw is the one I was going for and it looks like it hit the mark."
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
