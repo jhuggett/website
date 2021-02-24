@@ -206,6 +206,17 @@
           "text": "More sanding and polishing to get it back to where it was."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/8119C4D9-EC83-49F0-A0E7-0C04B60480AE_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "450px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Finally it was time for assembly. The blade fit in quite well but just to be safe I filled it with glue to make sure it stays in place."
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
