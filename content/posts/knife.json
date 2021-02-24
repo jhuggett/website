@@ -272,6 +272,72 @@
           "text": "The bolster did end up coming loose; the shoulders of the blade didn't perfectly sit on it. But nothing some super glue couldn't fix."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/12386927-CE43-4ADB-9F8C-0D5EB0CD363D_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Carving the handle down to shape was the next step."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/1E2B0658-2590-40A7-9328-C182ACB16291_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "600px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "It was a rather short handle, but by leaving a ball on the end, it fit well in the palm."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/7ADA682B-9C07-40A3-9DBA-0AC4E51A6003_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/607F205D-4D40-4A3B-B662-1DA131D313C8_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now that it was rough carved to shape, the edges were filed down and sanded smooth."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/CC785079-FB6E-4975-A104-BB214ABE64B2_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now, the maple wood was very nice, though the plain whiteness felt rather dull. So I applied a technique that I've used in the past to draw out the grain. Simple burn it with a torch. Well I know that isn't at all novel, but the added step I used is I then sand it back down. Then I repeat this process a few times, leaving more grain mark than those nasty burn marks."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/A5E1FC13-249E-495A-9816-74F24A36FBD3_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "600px"
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
