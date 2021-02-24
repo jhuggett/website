@@ -37,8 +37,7 @@ const Button = styled.div`
   transition: .25s;
 
   :hover {
-
-    transform: translate(-2px, -2px);
+    /* transform: translate(-2px, -2px); */
     cursor: pointer;
     border: 2px solid ${props => props.theme.secondary};
     color: ${props => props.theme.secondary};

@@ -1,520 +1,410 @@
 {
   "blocks": [
     {
-      "_template": "hero",
-      "headline": "The Knife",
-      "subtext": "My fourth knife; a belt knife",
-      "background_color": "background",
-      "text_color": "primary",
-      "align": "center"
-    },
-    {
-      "_template": "images",
-      "images": [
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/915560A7-3DF1-404A-834A-E6E55651B88F_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Having been blacksmithing for about a year now, I've made a few things. Among them, three knives. Each one has been a drastic improvement upon the last. So, having some time off at the end of the year I decided to forge a fourth, and so forth came this."
-    },
-    {
-      "_template": "paragraph",
-      "text": "In the image above are the three main pieces that composed it. A piece of wood for the handle, copper for the bolster, and high carbon steel for the blade. The wood was hard maple, taken down by a storm in my own backyard, to which I split and dried. The copper came from some scrap plumbing pipe; cut and hammered flat. Finally the steel was from a Swedish made chisel that had snapped at the neck. It had been further used and abused so that what was left of the neck had mushroomed out."
-    },
-    {
-      "_template": "spacer",
-      "size": 6
-    },
-    {
-      "_template": "paragraph",
-      "text": "The first step, that is after gathering the materials, was to forge the blade to shape. It didn't take much effort since the stock was already quite close to the size. But it did take quite a bit of time because of how much care had to be taken, for one foul blow would have crumpled the blade."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "_template": "title",
+          "headline": "The Knife",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/1E532FF3-14F6-4559-B612-CE1EC2F8EB0A_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/11CEFCB8-D3DF-4D2D-B731-D843F2219E02_1_105_c.jpeg"
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "My fourth knife; a belt knife",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/915560A7-3DF1-404A-834A-E6E55651B88F_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Horizontal",
-          "name": "/33A38B7C-33ED-4101-A8BE-712C1C76D4BF_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "500px"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/340A11ED-6F59-4FF0-A2A2-93765B5AEB4E_1_105_c.jpeg"
+          "_template": "paragraph",
+          "text": "Having been blacksmithing for about a year now, I've made a few things. Among them, three knives. Each one has been a drastic improvement upon the last. So, having some time off at the end of the year I decided to forge a fourth, and so forth came this."
+        },
+        {
+          "_template": "paragraph",
+          "text": "In the image above are the three main pieces that composed it. A piece of wood for the handle, copper for the bolster, and high carbon steel for the blade. The wood was hard maple, taken down by a storm in my own backyard, to which I split and dried. The copper came from some scrap plumbing pipe; cut and hammered flat. Finally the steel was from a Swedish made chisel that had snapped at the neck. It had been further used and abused so that what was left of the neck had mushroomed out."
+        },
+        {
+          "_template": "paragraph",
+          "text": "The first step, that is after gathering the materials, was to forge the blade to shape. It didn't take much effort since the stock was already quite close to the size. But it did take quite a bit of time because of how much care had to be taken, for one foul blow would have crumpled the blade."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/11CEFCB8-D3DF-4D2D-B731-D843F2219E02_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/33A38B7C-33ED-4101-A8BE-712C1C76D4BF_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/340A11ED-6F59-4FF0-A2A2-93765B5AEB4E_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/32E46F87-6DCC-4069-9E69-9D8A8E681B42_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "Below is how it looked after forging. It came very close to the desired outcome, tho the tang was a bit misshapen. Nothing a file can't handle, of course."
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/110BFA1B-3120-4122-BFC4-8EC2B213F879_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Vertical",
-          "name": "/32E46F87-6DCC-4069-9E69-9D8A8E681B42_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Below is how it looked after forging. It came very close to the desired outcome, tho the tang was a bit misshapen. Nothing a file can't handle, of course."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "500px"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/110BFA1B-3120-4122-BFC4-8EC2B213F879_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Some rough filing out of the way now. Also the blades shoulders started having some definition."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/30E7BB5C-C821-4C17-B4D7-FCBC057BF14D_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "What followed was a lot more filing, then sanding, many, many times. "
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/44154A2D-5460-479C-84FA-523761217E9B_1_105_c.jpeg"
+          "_template": "paragraph",
+          "text": "Some rough filing out of the way now. Also the blades shoulders started having some definition."
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/30E7BB5C-C821-4C17-B4D7-FCBC057BF14D_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Vertical",
-          "name": "/47D24377-D359-46D2-9E2D-CD8B9A1CAFDF_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "By incrementing the grit of sandpaper, some fine whetstones, and some honing compound on a leather strop, a mirror-ish finish was achieved."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "500px"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/FE1C63E2-E10B-4033-8D51-E6F3DA6B6891_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "_template": "paragraph",
+          "text": "What followed was a lot more filing, then sanding, many, many times."
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/E275629F-6703-4C4E-AB13-5576D2B9D562_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/44154A2D-5460-479C-84FA-523761217E9B_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/47D24377-D359-46D2-9E2D-CD8B9A1CAFDF_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/168EA9B5-0BF2-4B98-93C7-6A04ED740EF5_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "During this time, I also cut the handle to length and bored out a hole for the tand. Then I filed in the tang slot on for the bolster, it was my second attempt, the first one was a little to wide in the opening."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/A9102CCA-D33D-4D4B-A32D-3C0CFCD32780_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/2D6B53B4-C9CB-4307-879C-49F707FE32FD_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Then was burning in the tang and heat treating the blade. The handle burned in very nicely. I find merely pushing the blade into the handle cause the sides of the slot to burn wider than wanted, gently tapping the blade down with a mallet seems to help."
-    },
-    {
-      "_template": "paragraph",
-      "text": "The heat treating itself went quite well. First it was normalized three times (heated till it glows then let it cool back down in the air). Followed by a fourth heat and plunged into warmed oil. It looked pretty good."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/29A4B9AF-5C7C-44AE-8FB9-68A9A089D883_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Then it needed to be tempered to release it's brittleness. A heat at 450 F for an hour and a half worked the trick. As the steel heats up it goes through an array of colours, straw is the one I was going for and it looks like it hit the mark. "
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/124CEBDA-7E7B-4ABA-854E-246D6FF2EB18_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "More sanding and polishing to get it back to where it was."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/8119C4D9-EC83-49F0-A0E7-0C04B60480AE_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Finally it was time for assembly. The blade fit in quite well but just to be safe I filled it with glue to make sure it stays in place."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/9B9F19AC-3DF9-49FC-A4F9-91A0A9BFC54B_1_105_c.jpeg"
+          "_template": "paragraph",
+          "text": "By incrementing the grit of sandpaper, some fine whetstones, and some honing compound on a leather strop, a mirror-ish finish was achieved."
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/FE1C63E2-E10B-4033-8D51-E6F3DA6B6891_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Horizontal",
-          "name": "/B46569CF-2EA8-4107-A5A9-31F6715CB0B5_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Horizontal",
-          "name": "/2564C801-DBDC-4196-946F-CFB195C37CD5_1_105_c.jpeg"
+          "max_width": "650px"
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/E275629F-6703-4C4E-AB13-5576D2B9D562_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Horizontal",
-          "name": "/4630B01D-76C9-4A0F-B32B-B7CE89EFBD4D_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "The bolster did end up coming loose; the shoulders of the blade didn't perfectly sit on it. But nothing some super glue couldn't fix."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/12386927-CE43-4ADB-9F8C-0D5EB0CD363D_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Carving the handle down to shape was the next step."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/1E2B0658-2590-40A7-9328-C182ACB16291_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "It was a rather short handle, but by leaving a ball on the end, it fit well in the palm."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/7ADA682B-9C07-40A3-9DBA-0AC4E51A6003_1_105_c.jpeg"
+          "max_width": "650px"
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-knife/168EA9B5-0BF2-4B98-93C7-6A04ED740EF5_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Vertical",
-          "name": "/607F205D-4D40-4A3B-B662-1DA131D313C8_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Now that it was rough carved to shape, the edges were filed down and sanded smooth."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "650px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "During this time, I also cut the handle to length and bored out a hole for the tang. Then I filed in the tang slot on for the bolster, it was my second attempt, the first one was a little too wide in the opening."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/CC785079-FB6E-4975-A104-BB214ABE64B2_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Now, the maple wood was very nice, though the plain whiteness felt rather dull. So I applied a technique that I've used in the past to draw out the grain. Simple burn it with a torch. Well I know that isn't at all novel, but the added step I used is I then sand it back down. Then I repeat this process a few times, leaving more grain mark than those nasty burn marks."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/A9102CCA-D33D-4D4B-A32D-3C0CFCD32780_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/A5E1FC13-249E-495A-9816-74F24A36FBD3_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "To give it a little extra character, I moved on to the wood burner. This was the only step I didn't technically do by hand, the burner is run off electricity but I'm not really interested in heating up thing rod of steel to get the same effect. I've done it before and it really isn't worth the effort. "
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/2D6B53B4-C9CB-4307-879C-49F707FE32FD_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "450px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Then was burning in the tang and heat treating the blade. The handle burned in very nicely. I find merely pushing the blade into the handle cause the sides of the slot to burn wider than wanted, gently tapping the blade down with a mallet seems to help."
+        },
+        {
+          "_template": "paragraph",
+          "text": "The heat treating itself went quite well. First it was normalized three times (heated till it glows then let it cool back down in the air). Followed by a fourth heat and plunged into warmed oil. It looked pretty good."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/6AA64900-4590-4D84-879D-9D1E0CFE13C0_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/29A4B9AF-5C7C-44AE-8FB9-68A9A089D883_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Then it needed to be tempered to release it's brittleness. A heat at 450 F for an hour and a half worked the trick. As the steel heats up it goes through an array of colours, straw is the one I was going for and it looks like it hit the mark."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/A4781088-DE03-4247-9DC9-4558EB7123D3_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/124CEBDA-7E7B-4ABA-854E-246D6FF2EB18_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "More sanding and polishing to get it back to where it was."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/B9AD2E43-451D-4880-915D-6E8DF11FE04B_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "To finish it off, I coated it in double boiled linseed oil. It takes a while to dry but it gives a very nice finish."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/8119C4D9-EC83-49F0-A0E7-0C04B60480AE_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "450px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Finally it was time for assembly. The blade fit in quite well but just to be safe I filled it with glue to make sure it stays in place."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/9B9F19AC-3DF9-49FC-A4F9-91A0A9BFC54B_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/B46569CF-2EA8-4107-A5A9-31F6715CB0B5_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/9580D54E-6CEC-41F1-AA58-87F3DD574E98_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/68E4E83E-7FF3-4718-8667-05BB84DB5BFE_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/2564C801-DBDC-4196-946F-CFB195C37CD5_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/4630B01D-76C9-4A0F-B32B-B7CE89EFBD4D_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "The bolster did end up coming loose; the shoulders of the blade didn't perfectly sit on it. But nothing some super glue couldn't fix."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/7A1292FF-D2E4-4A52-9298-DE6A2D521888_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-knife/12386927-CE43-4ADB-9F8C-0D5EB0CD363D_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Carving the handle down to shape was the next step."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/931D9D04-1353-4287-B7B7-5C14574823DD_1_105_c.jpeg"
+          "size": 1,
+          "src": "/the-knife/1E2B0658-2590-40A7-9328-C182ACB16291_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "600px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "It was a rather short handle, but by leaving a ball on the end, it fit well in the palm."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/7ADA682B-9C07-40A3-9DBA-0AC4E51A6003_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/607F205D-4D40-4A3B-B662-1DA131D313C8_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now that it was rough carved to shape, the edges were filed down and sanded smooth."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/CC785079-FB6E-4975-A104-BB214ABE64B2_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now, the maple wood was very nice, though the plain whiteness felt rather dull. So I applied a technique that I've used in the past to draw out the grain. Simple burn it with a torch. Well I know that isn't at all novel, but the added step I used is I then sand it back down. Then I repeat this process a few times, leaving more grain mark than those nasty burn marks."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/A5E1FC13-249E-495A-9816-74F24A36FBD3_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "600px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "To give it a little extra character, I moved on to the wood burner. This was the only step I didn't technically do by hand, the burner is run off electricity but I'm not really interested in heating up thing rod of steel to get the same effect. I've done it before and it really isn't worth the effort."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/6AA64900-4590-4D84-879D-9D1E0CFE13C0_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/A4781088-DE03-4247-9DC9-4558EB7123D3_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/B9AD2E43-451D-4880-915D-6E8DF11FE04B_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "To finish it off, I coated it in double boiled linseed oil. It takes a while to dry but it gives a very nice finish."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/9580D54E-6CEC-41F1-AA58-87F3DD574E98_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/7A1292FF-D2E4-4A52-9298-DE6A2D521888_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "800px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/931D9D04-1353-4287-B7B7-5C14574823DD_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "And there it is, my fourth knife. It isn't perfect; that would take all the fun away after all. But it is a vast improvement over its predecessors."
+        },
+        {
+          "_template": "spacer",
+          "height": "15em",
+          "width": "100%"
         }
       ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "And there it is, my fourth knife. It isn't perfect; that would take all the fun away after all. But it is a vast improvement over its predecessors. "
-    },
-    {
-      "_template": "spacer",
-      "size": "9"
-    },
-    {
-      "_template": "spacer",
-      "size": "9"
     }
   ]
 }

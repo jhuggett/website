@@ -22,7 +22,7 @@
     "react-markdown": "^5.0.2",
     "react-tinacms-github": "^0.32.0",
     "react-tinacms-inline": "^0.34.0",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5",
     "tinacms": "^0.32.0"
   },
   "devDependencies": {

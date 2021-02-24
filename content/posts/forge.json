@@ -1,287 +1,233 @@
 {
   "blocks": [
     {
-      "_template": "hero",
-      "headline": "The Forge",
-      "background_color": "background",
-      "text_color": "primary",
-      "align": "center",
-      "subtext": "And it's many iterations during my first year at the anvil"
-    },
-    {
-      "_template": "images",
-      "images": [
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "hero",
-      "subtext": "22 of December, 2020",
-      "background_color": "background",
-      "text_color": "primary",
-      "align": "center"
-    },
-    {
-      "_template": "paragraph",
-      "text": "I've wanted to forge as far back as I can remember. About a year ago I decided to take the plunge and pick up the hammer. I had no clue what I was doing and knew no smiths. So, when someone suggested to cut a propane tank in two lined with refectory cement and use it as a forge I did. Little did I know there's a far easier method for starting out, but hindsight is never helpful the first time. "
-    },
-    {
-      "_template": "paragraph",
-      "text": "The split tank sat on top of a milk crate, with copper pipping running beneath for airflow. I had planned to use the bicycle foot pump seen in the picture below, but I quickly realized it didn't nearly supply enough air, or more accurately I couldn't keep up with the pumping. So shortly thereafter I switched to a very large air compressor that nearly turned my petty forge into a foundry. And I should mention that I was using charcoal briquettes which was a limitation on the level of heat I could reach and routinely filled the forge belly with ash."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "_template": "title",
+          "headline": "The Forge",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/E784956B-BE2F-45D6-BD85-9DF7AB830DC2_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Not long after I moved the forge into a more usable smithy. My small anvil sat directly on the ground, held down by only some snow, bouncing with every strike. At least, though, I realized I needed to move away from using briquettes. After switching to real charcoal (lump charcoal) things at least got a bit hotter."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Vertical",
-          "name": "/A9FF6A32-652C-4CFB-B85B-303B21F5B12F_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "This all work quite poorly, but just enough to get me hooked. I managed to forge a butterknife out of an old bolt with this setup. Course the knife was rather accidental. I didn't plan to make anything really, I just kept striking hot steel and it just kinda popped out.  "
-    },
-    {
-      "_template": "paragraph",
-      "text": "As much as I liked the ease of using an electrical air compressor, it was really loud and I find I tend towards doing things by hand. Consequently I read and researched many different forms of bellows. A large western double lung would have been great, yet I didn't posses the skills to make one, nor the materials. Thus I settled on a more practical design, the fuigo box. Japanese swordsmith bellows, efficient, cheap, and cool sounding. Though I still didn't think I could make one yet with the little talent I possessed.  "
-    },
-    {
-      "_template": "paragraph",
-      "text": "Instead I came up with my own design, a bucket bellows. Following the same principles as the fuigo box but using resources more readily available for me. And I  finally moved the anvil on to a stump, no longer overly breaking my back."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/DB0694FC-6898-479F-8CFC-B579A01F8F91_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Now, I still think the bucket bellows were a really good idea, but with subpar construction and overuse they broke quite quickly. By moving the anvil to the stump, I was no longer within reach of the air compressor, so I had to find a new solution. Simple, invert the shop vac. This lead to a new issue that took me a long time to realized, I had too much airflow now. Too much airflow will burn through fuel fast and the air was cooling off the steel."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/A6053C97-C654-4AD5-AD9A-2BB3145AD865_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Things were working better. Feeling like I knew to some degree what I was doing, I decided to forge a pair of tongs. It did not go well. Things were good at first but I found that I had forged the ends too thin. Discouraged but enduring, I left the left one half too long in the forge. It burned quite a bit off, driving home the proverbial final nail. Although in making the tongs, I started building up the forge with rocks, a key moment in the evolution of my smithy."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Square",
-          "name": "/3087F309-1242-4F08-A9C0-4A0248851594_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "After the tongs ordeal, I for some reason decided to do something even crazier. I decided that I would forge a seax. This project ended up taking many months. I bought a leaf spring from the local auto dump for $10 and hot cut it to length. Also, I made a stand for the anvil."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/2A03D24B-DC8D-4C5C-BB00-204D700B6A07_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "The stand worked horribly and I quickly realized I needed to go back to the stump. But I was quickly outgrowing the forge. I kept building and adding more rocks to it. Then it hit me, finally, that I don't need refectory cement or steel to make a forge, all I need is mud!"
-    },
-    {
-      "_template": "paragraph",
-      "text": "So I made a new forge out of mud and rocks and it was so very much better."
-    },
-    {
-      "_template": "images",
-      "images": [
-        {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/8E473176-2246-4D8A-9842-27BEED2A0F4A_1_105_c.jpeg"
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "And it's many iterations during my first year at the anvil",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-forge/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Vertical",
-          "name": "/533AC324-35AF-47D3-B2CC-78E0080FBAFD_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph"
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "600px"
+        },
         {
-          "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 2,
-          "orientation": "Vertical",
-          "name": "/37B169A5-EC74-4489-A66B-FD62ABC9FF01_1_105_c.jpeg"
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "22 of December, 2020",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "paragraph",
+          "text": "I've wanted to forge as far back as I can remember. About a year ago I decided to take the plunge and pick up the hammer. I had no clue what I was doing and knew no smiths. So, when someone suggested to cut a propane tank in two lined with refectory cement and use it as a forge I did. Little did I know there's a far easier method for starting out, but hindsight is never helpful the first time."
+        },
+        {
+          "_template": "paragraph",
+          "text": "The split tank sat on top of a milk crate, with copper pipping running beneath for airflow. I had planned to use the bicycle foot pump seen in the picture below, but I quickly realized it didn't nearly supply enough air, or more accurately I couldn't keep up with the pumping. So shortly thereafter I switched to a very large air compressor that nearly turned my petty forge into a foundry. And I should mention that I was using charcoal briquettes which was a limitation on the level of heat I could reach and routinely filled the forge belly with ash."
         },
         {
           "_template": "image",
-          "size": 2,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "size": 1,
+          "src": "/the-forge/E784956B-BE2F-45D6-BD85-9DF7AB830DC2_1_105_c.jpeg",
           "alt": "ocean",
-          "orientation": "Vertical",
-          "name": "/43F4980C-9FFE-4FA3-82B9-CFAC8AB1CABA_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "By building it out of dirt, it became easy to change and iterate. At first I tried adding a roof to keep the heat in. It seemed unnecessary and the high heat kept shattering the top stone. So I kept it open and slowly built up the sides with more mud so that charcoal could sit in a heap."
-    },
-    {
-      "_template": "paragraph",
-      "text": "For a while at this point I had been looking for a better anvil. Finally I found one. A 150 lb Wilkinson Queen Dudley for $500. It was in near perfect condition so the price was fair. This was a dramatic improvement."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "max_width": "35em"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Not long after I moved the forge into a more usable smithy. My small anvil sat directly on the ground, held down by only some snow, bouncing with every strike. At least, though, I realized I needed to move away from using briquettes. After switching to real charcoal (lump charcoal) things at least got a bit hotter."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/A96296A8-2F35-4A31-B798-FBE9D59539D1_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "But something was still missing; I didn't want to be tethered to an electrical cord. So I made up my mind that it was time to build my fuigo box, the more proper way. And I did, it worked out great. In total it was about two days of work and I did all of it by hand. The largest change I made to the traditional design is I had the piston handle extend out the back same as the front instead of only the front. This way, the bellows were bi-directional, same as the forge. Of course this is far less practical indoors but I had all the space in the world outside. "
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-forge/A9FF6A32-652C-4CFB-B85B-303B21F5B12F_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "35em"
+        },
+        {
+          "_template": "paragraph",
+          "text": "This all work quite poorly, but just enough to get me hooked. I managed to forge a butterknife out of an old bolt with this setup. Course the knife was rather accidental. I didn't plan to make anything really, I just kept striking hot steel and it just kinda popped out."
+        },
+        {
+          "_template": "paragraph",
+          "text": "As much as I liked the ease of using an electrical air compressor, it was really loud and I find I tend towards doing things by hand. Consequently I read and researched many different forms of bellows. A large western double lung would have been great, yet I didn't posses the skills to make one, nor the materials. Thus I settled on a more practical design, the fuigo box. Japanese swordsmith bellows, efficient, cheap, and cool sounding. Though I still didn't think I could make one yet with the little talent I possessed."
+        },
+        {
+          "_template": "paragraph",
+          "text": "Instead I came up with my own design, a bucket bellows. Following the same principles as the fuigo box but using resources more readily available for me. And I finally moved the anvil on to a stump, no longer overly breaking my back."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/7CA46F71-1DC0-4A10-80CD-FD028E70518C_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "Another thing I notice is that I kept having trouble keeping the steel above the rim of the tuyere (the pipe from which the air flows). Thus I raised the front and back of the forge so that a pit sat in the centre, with a depth equal to the diameter of the tuyere. It became more of an updraft forge than a side blast. This didn't really fix the problem. Instead it created a new one; ash and debris would fill the pit causing the air to blast upwards along the side of the forge. Then I put into place my final idea. I capped the tuyere and drilled holes along the top of the end so that air would ooze up and out. This finally did the trick."
-    },
-    {
-      "_template": "paragraph",
-      "text": "Only one thing was left, raising the forge up off the ground. My table building skills shouldn't even be dignified by calling them lacking, but alas I managed to slap something together. It proved that it could work, I no longer had to jump up every time I was ready to hammer at the anvil."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-forge/DB0694FC-6898-479F-8CFC-B579A01F8F91_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now, I still think the bucket bellows were a really good idea, but with subpar construction and overuse they broke quite quickly. By moving the anvil to the stump, I was no longer within reach of the air compressor, so I had to find a new solution. Simple, invert the shop vac. This lead to a new issue that took me a long time to realized, I had too much airflow now. Too much airflow will burn through fuel fast and the air was cooling off the steel."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/F785D756-12B9-49CF-B33A-DBD763290C91_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "There was a problem though, it was, well, wobbly. Which really isn't the way I'd want to describe something holding heat upwards of 2000 degrees Fahrenheit from falling on me. So after a while of me trying to find a solution - I was planning to do some elaborate joiner that would have taken me ages - my grandfather told me he had a pair of old steel workhorses. After installing those under the forge, it's a solid as I can hope for."
-    },
-    {
-      "_template": "images",
-      "images": [
+          "size": 1,
+          "src": "/the-forge/A6053C97-C654-4AD5-AD9A-2BB3145AD865_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Things were working better. Feeling like I knew to some degree what I was doing, I decided to forge a pair of tongs. It did not go well. Things were good at first but I found that I had forged the ends too thin. Discouraged but enduring, I left the left one half too long in the forge. It burned quite a bit off, driving home the proverbial final nail. Although in making the tongs, I started building up the forge with rocks, a key moment in the evolution of my smithy."
+        },
         {
           "_template": "image",
-          "src": "src",
-          "alt": "alt",
-          "size": 3,
-          "orientation": "Horizontal",
-          "name": "/5BA03F25-59BF-4D06-9DAD-715E8D0FCC4F_1_105_c.jpeg"
+          "size": 1,
+          "src": "/the-forge/3087F309-1242-4F08-A9C0-4A0248851594_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "40em"
+        },
+        {
+          "_template": "paragraph",
+          "text": "After the tongs ordeal, I for some reason decided to do something even crazier. I decided that I would forge a seax. This project ended up taking many months. I bought a leaf spring from the local auto dump for $10 and hot cut it to length. Also, I made a stand for the anvil."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/2A03D24B-DC8D-4C5C-BB00-204D700B6A07_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "The stand worked horribly and I quickly realized I needed to go back to the stump. But I was quickly outgrowing the forge. I kept building and adding more rocks to it. Then it hit me, finally, that I don't need refectory cement or steel to make a forge, all I need is mud!"
+        },
+        {
+          "_template": "paragraph",
+          "text": "So I made a new forge out of mud and rocks and it was so very much better."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-forge/8E473176-2246-4D8A-9842-27BEED2A0F4A_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-forge/533AC324-35AF-47D3-B2CC-78E0080FBAFD_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-forge/37B169A5-EC74-4489-A66B-FD62ABC9FF01_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-forge/43F4980C-9FFE-4FA3-82B9-CFAC8AB1CABA_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "By building it out of dirt, it became easy to change and iterate. At first I tried adding a roof to keep the heat in. It seemed unnecessary and the high heat kept shattering the top stone. So I kept it open and slowly built up the sides with more mud so that charcoal could sit in a heap."
+        },
+        {
+          "_template": "paragraph",
+          "text": "For a while at this point I had been looking for a better anvil. Finally I found one. A 150 lb Wilkinson Queen Dudley for $500. It was in near perfect condition so the price was fair. This was a dramatic improvement."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/A96296A8-2F35-4A31-B798-FBE9D59539D1_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "But something was still missing; I didn't want to be tethered to an electrical cord. So I made up my mind that it was time to build my fuigo box, the more proper way. And I did, it worked out great. In total it was about two days of work and I did all of it by hand. The largest change I made to the traditional design is I had the piston handle extend out the back same as the front instead of only the front. This way, the bellows were bi-directional, same as the forge. Of course this is far less practical indoors but I had all the space in the world outside."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/7CA46F71-1DC0-4A10-80CD-FD028E70518C_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Another thing I notice is that I kept having trouble keeping the steel above the rim of the tuyere (the pipe from which the air flows). Thus I raised the front and back of the forge so that a pit sat in the centre, with a depth equal to the diameter of the tuyere. It became more of an updraft forge than a side blast. This didn't really fix the problem. Instead it created a new one; ash and debris would fill the pit causing the air to blast upwards along the side of the forge. Then I put into place my final idea. I capped the tuyere and drilled holes along the top of the end so that air would ooze up and out. This finally did the trick."
+        },
+        {
+          "_template": "paragraph",
+          "text": "Only one thing was left, raising the forge up off the ground. My table building skills shouldn't even be dignified by calling them lacking, but alas I managed to slap something together. It proved that it could work, I no longer had to jump up every time I was ready to hammer at the anvil."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/F785D756-12B9-49CF-B33A-DBD763290C91_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "There was a problem though, it was, well, wobbly. Which really isn't the way I'd want to describe something holding heat upwards of 2000 degrees Fahrenheit from falling on me. So after a while of me trying to find a solution - I was planning to do some elaborate joiner that would have taken me ages - my grandfather told me he had a pair of old steel workhorses. After installing those under the forge, it's a solid as I can hope for."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-forge/5BA03F25-59BF-4D06-9DAD-715E8D0FCC4F_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "And this is the state of my forge, nearly a year after I started blacksmithing. I think it's come a long way, though the road ahead still appears unending."
+        },
+        {
+          "_template": "spacer",
+          "height": "15em",
+          "width": "100%"
         }
       ]
-    },
-    {
-      "_template": "paragraph",
-      "text": "And this is the state of my forge, nearly a year after I started blacksmithing. I think it's come a long way, though the road ahead still appears unending. "
-    },
-    {
-      "_template": "spacer",
-      "size": "9"
-    },
-    {
-      "_template": "spacer",
-      "size": "9"
     }
   ]
 }
