@@ -26,7 +26,7 @@
           "size": 1,
           "src": "/the-forge/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg",
           "alt": "ocean",
-          "max_width": "100%"
+          "max_width": "600px"
         },
         {
           "_template": "heading",
@@ -49,7 +49,7 @@
           "size": 1,
           "src": "/the-forge/E784956B-BE2F-45D6-BD85-9DF7AB830DC2_1_105_c.jpeg",
           "alt": "ocean",
-          "max_width": "100%"
+          "max_width": "35em"
         },
         {
           "_template": "paragraph",
@@ -60,7 +60,7 @@
           "size": 1,
           "src": "/the-forge/A9FF6A32-652C-4CFB-B85B-303B21F5B12F_1_105_c.jpeg",
           "alt": "ocean",
-          "max_width": "100%"
+          "max_width": "35em"
         },
         {
           "_template": "paragraph",
@@ -101,7 +101,7 @@
           "size": 1,
           "src": "/the-forge/3087F309-1242-4F08-A9C0-4A0248851594_1_105_c.jpeg",
           "alt": "ocean",
-          "max_width": "100%"
+          "max_width": "40em"
         },
         {
           "_template": "paragraph",
