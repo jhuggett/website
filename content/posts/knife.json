@@ -401,7 +401,7 @@
         },
         {
           "_template": "spacer",
-          "height": "45em",
+          "height": "15em",
           "width": "100%"
         }
       ]
