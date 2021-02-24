@@ -338,6 +338,39 @@
           "max_width": "600px"
         },
         {
+          "_template": "paragraph",
+          "text": "To give it a little extra character, I moved on to the wood burner. This was the only step I didn't technically do by hand, the burner is run off electricity but I'm not really interested in heating up thing rod of steel to get the same effect. I've done it before and it really isn't worth the effort."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/6AA64900-4590-4D84-879D-9D1E0CFE13C0_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/A4781088-DE03-4247-9DC9-4558EB7123D3_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/B9AD2E43-451D-4880-915D-6E8DF11FE04B_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
