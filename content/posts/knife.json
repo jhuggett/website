@@ -268,6 +268,10 @@
           "max_width": "500px"
         },
         {
+          "_template": "paragraph",
+          "text": "The bolster did end up coming loose; the shoulders of the blade didn't perfectly sit on it. But nothing some super glue couldn't fix."
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
