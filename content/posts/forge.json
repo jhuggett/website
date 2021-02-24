@@ -221,6 +221,11 @@
         {
           "_template": "paragraph",
           "text": "And this is the state of my forge, nearly a year after I started blacksmithing. I think it's come a long way, though the road ahead still appears unending."
+        },
+        {
+          "_template": "spacer",
+          "height": "50em",
+          "width": "100%"
         }
       ]
     }
