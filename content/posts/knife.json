@@ -1,3 +1,172 @@
 {
-  
+  "blocks": [
+    {
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
+        {
+          "_template": "title",
+          "headline": "The Knife",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "My fourth knife; a belt knife",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/915560A7-3DF1-404A-834A-E6E55651B88F_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Having been blacksmithing for about a year now, I've made a few things. Among them, three knives. Each one has been a drastic improvement upon the last. So, having some time off at the end of the year I decided to forge a fourth, and so forth came this."
+        },
+        {
+          "_template": "paragraph",
+          "text": "In the image above are the three main pieces that composed it. A piece of wood for the handle, copper for the bolster, and high carbon steel for the blade. The wood was hard maple, taken down by a storm in my own backyard, to which I split and dried. The copper came from some scrap plumbing pipe; cut and hammered flat. Finally the steel was from a Swedish made chisel that had snapped at the neck. It had been further used and abused so that what was left of the neck had mushroomed out."
+        },
+        {
+          "_template": "paragraph",
+          "text": "The first step, that is after gathering the materials, was to forge the blade to shape. It didn't take much effort since the stock was already quite close to the size. But it did take quite a bit of time because of how much care had to be taken, for one foul blow would have crumpled the blade."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/11CEFCB8-D3DF-4D2D-B731-D843F2219E02_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/33A38B7C-33ED-4101-A8BE-712C1C76D4BF_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/340A11ED-6F59-4FF0-A2A2-93765B5AEB4E_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/32E46F87-6DCC-4069-9E69-9D8A8E681B42_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "Below is how it looked after forging. It came very close to the desired outcome, tho the tang was a bit misshapen. Nothing a file can't handle, of course."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/110BFA1B-3120-4122-BFC4-8EC2B213F879_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Some rough filing out of the way now. Also the blades shoulders started having some definition."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/30E7BB5C-C821-4C17-B4D7-FCBC057BF14D_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "What followed was a lot more filing, then sanding, many, many times."
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/44154A2D-5460-479C-84FA-523761217E9B_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/47D24377-D359-46D2-9E2D-CD8B9A1CAFDF_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "paragraph",
+          "text": "By incrementing the grit of sandpaper, some fine whetstones, and some honing compound on a leather strop, a mirror-ish finish was achieved."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/FE1C63E2-E10B-4033-8D51-E6F3DA6B6891_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/E275629F-6703-4C4E-AB13-5576D2B9D562_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/168EA9B5-0BF2-4B98-93C7-6A04ED740EF5_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "During this time, I also cut the handle to length and bored out a hole for the tang. Then I filed in the tang slot on for the bolster, it was my second attempt, the first one was a little too wide in the opening."
+        },
+        {
+          "_template": "spacer",
+          "height": "45em",
+          "width": "100%"
+        }
+      ]
+    }
+  ]
 }
