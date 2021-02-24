@@ -162,6 +162,20 @@
           "text": "During this time, I also cut the handle to length and bored out a hole for the tang. Then I filed in the tang slot on for the bolster, it was my second attempt, the first one was a little too wide in the opening."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/A9102CCA-D33D-4D4B-A32D-3C0CFCD32780_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "650px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/ivan-bandura-unsplash-square.jpg",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
