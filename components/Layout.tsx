@@ -27,15 +27,19 @@ align-items: center;
 justify-content: center;
 
 width: 60em;
-min-width: 100%;
+
+max-width: 100%;
+
 height: 100%;
 min-height: 5em;
+
 `
 
 export const Space = styled.div`
 flex: 1;
 height: 100%;
 min-height: 5em;
+
 `
 
 export interface WithLayoutProps {

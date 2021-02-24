@@ -2,43 +2,10 @@ import React from 'react'
 import { BlocksControls, InlineTextarea, InlineImage } from 'react-tinacms-inline'
 import styled from 'styled-components'
 import * as NextImage from 'next/image'
-import { useCMS } from 'tinacms'
 
-function getBaseDimentions(orientation) {
-  switch(orientation) {
-    case 'Horizontal': {
-      return {
-        width: 200,
-        height: 150
-      }
-    }
-    case 'Vertical': {
-      return {
-        width: 175,
-        height: 200
-      }
-    }
-    case 'Square': {
-      return {
-        width: 200,
-        height: 200
-      }
-    }
-  }
-
-  return {
-    width: 100,
-    height: 100
-  }
-}
 
 export function Image({ index, data }) {
 
-  // const baseDimentions = getBaseDimentions(data.orientation)
-  
-  // baseDimentions.height * data.size || 1
-  // baseDimentions.width * data.size || 1
-  const cms = useCMS()
 
   return (
     <Container>
@@ -51,7 +18,7 @@ export function Image({ index, data }) {
             alt={''}
           >
 
-          {props => <StyledNextImage src={props.src} alt={props.alt} layout="fill" width={data.width} height={data.height} />}
+          {props => <StyledNextImage unsized maxWidth={data.max_width} src={props.src} alt={props.alt} layout="fill"  />}
         </ImageStyle>
     </BlocksControls>
     </Container>
@@ -59,32 +26,36 @@ export function Image({ index, data }) {
 }
 
 const StyledNextImage = styled(NextImage.default)`
-  width: 100%;
-  height: 100%;
+  
+  
 
-  border-radius: 4px;
+  max-width: ${props => props.max_width};
+  border-radius: 20px;
   background: ${props => props.theme.loadingImageColor};
 `
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
+
+  padding: 0 .5em 0 .5em;
+
 `
 
 const ImageStyle = styled(InlineImage)`
-width: 90%;
-height: 100%;
 
-padding-top: 1em;
-padding-bottom: 1em;
+  & div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-display: flex;
-align-items: center;
-justify-content: center;
+padding-top: .5em;
+padding-bottom: .5em;
+
+
+
 `
 
 export const imageBlock = {
@@ -96,18 +67,12 @@ export const imageBlock = {
       size: 1,
       src: '/ivan-bandura-unsplash-square.jpg',
       alt: 'ocean',
-      width: '500',
-      height: '200'
+      max_width: '100%'
     },
     fields: [
       {
-        name: 'width',
-        label: 'Width',
-        component: 'text'
-      },
-      {
-        name: 'height',
-        label: 'Height',
+        name: 'max_width',
+        label: 'Max width',
         component: 'text'
       }
     ],

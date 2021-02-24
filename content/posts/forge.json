@@ -26,8 +26,7 @@
           "size": 1,
           "src": "/the-forge/5E5EBD03-4091-4538-9DE1-DA0908BFC072_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "500",
-          "height": "600"
+          "max_width": "100%"
         },
         {
           "_template": "heading",
@@ -50,8 +49,7 @@
           "size": 1,
           "src": "/the-forge/E784956B-BE2F-45D6-BD85-9DF7AB830DC2_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "500",
-          "height": "600"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -62,8 +60,7 @@
           "size": 1,
           "src": "/the-forge/A9FF6A32-652C-4CFB-B85B-303B21F5B12F_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "500",
-          "height": "600"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -82,8 +79,7 @@
           "size": 1,
           "src": "/the-forge/DB0694FC-6898-479F-8CFC-B579A01F8F91_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "600",
-          "height": "500"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -94,8 +90,7 @@
           "size": 1,
           "src": "/the-forge/A6053C97-C654-4AD5-AD9A-2BB3145AD865_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "600",
-          "height": "400"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -106,8 +101,7 @@
           "size": 1,
           "src": "/the-forge/3087F309-1242-4F08-A9C0-4A0248851594_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "500",
-          "height": "600"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -118,8 +112,7 @@
           "size": 1,
           "src": "/the-forge/2A03D24B-DC8D-4C5C-BB00-204D700B6A07_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "750",
-          "height": "500"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -140,16 +133,14 @@
               "size": 1,
               "src": "/the-forge/8E473176-2246-4D8A-9842-27BEED2A0F4A_1_105_c.jpeg",
               "alt": "ocean",
-              "width": "300",
-              "height": "300"
+              "max_width": "100%"
             },
             {
               "_template": "image",
               "size": 1,
               "src": "/the-forge/533AC324-35AF-47D3-B2CC-78E0080FBAFD_1_105_c.jpeg",
               "alt": "ocean",
-              "width": "300",
-              "height": "300"
+              "max_width": "100%"
             }
           ]
         },
@@ -164,16 +155,14 @@
               "size": 1,
               "src": "/the-forge/37B169A5-EC74-4489-A66B-FD62ABC9FF01_1_105_c.jpeg",
               "alt": "ocean",
-              "width": "300",
-              "height": "300"
+              "max_width": "100%"
             },
             {
               "_template": "image",
               "size": 1,
               "src": "/the-forge/43F4980C-9FFE-4FA3-82B9-CFAC8AB1CABA_1_105_c.jpeg",
               "alt": "ocean",
-              "width": "300",
-              "height": "300"
+              "max_width": "100%"
             }
           ]
         },
@@ -190,8 +179,7 @@
           "size": 1,
           "src": "/the-forge/A96296A8-2F35-4A31-B798-FBE9D59539D1_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "500",
-          "height": "400"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -202,8 +190,7 @@
           "size": 1,
           "src": "/the-forge/7CA46F71-1DC0-4A10-80CD-FD028E70518C_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "750",
-          "height": "500"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -218,8 +205,7 @@
           "size": 1,
           "src": "/the-forge/F785D756-12B9-49CF-B33A-DBD763290C91_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "600",
-          "height": "500"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",
@@ -230,8 +216,7 @@
           "size": 1,
           "src": "/the-forge/5BA03F25-59BF-4D06-9DAD-715E8D0FCC4F_1_105_c.jpeg",
           "alt": "ocean",
-          "width": "750",
-          "height": "500"
+          "max_width": "100%"
         },
         {
           "_template": "paragraph",

@@ -24,7 +24,6 @@ const StyledInlineBlocks = styled(InlineBlocks)`
   width: 100%;
   max-width: 100%;
 
-  flex-wrap: wrap;
   
 
   align-items: center;
