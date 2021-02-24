@@ -171,9 +171,17 @@
         {
           "_template": "image",
           "size": 1,
-          "src": "/ivan-bandura-unsplash-square.jpg",
+          "src": "/the-knife/2D6B53B4-C9CB-4307-879C-49F707FE32FD_1_105_c.jpeg",
           "alt": "ocean",
-          "max_width": "100%"
+          "max_width": "450px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Then was burning in the tang and heat treating the blade. The handle burned in very nicely. I find merely pushing the blade into the handle cause the sides of the slot to burn wider than wanted, gently tapping the blade down with a mallet seems to help."
+        },
+        {
+          "_template": "paragraph",
+          "text": "The heat treating itself went quite well. First it was normalized three times (heated till it glows then let it cool back down in the air). Followed by a fourth heat and plunged into warmed oil. It looked pretty good."
         },
         {
           "_template": "spacer",
