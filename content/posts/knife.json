@@ -195,6 +195,17 @@
           "text": "Then it needed to be tempered to release it's brittleness. A heat at 450 F for an hour and a half worked the trick. As the steel heats up it goes through an array of colours, straw is the one I was going for and it looks like it hit the mark."
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/124CEBDA-7E7B-4ABA-854E-246D6FF2EB18_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "More sanding and polishing to get it back to where it was."
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
