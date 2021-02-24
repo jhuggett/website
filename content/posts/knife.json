@@ -217,6 +217,57 @@
           "text": "Finally it was time for assembly. The blade fit in quite well but just to be safe I filled it with glue to make sure it stays in place."
         },
         {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/9B9F19AC-3DF9-49FC-A4F9-91A0A9BFC54B_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/B46569CF-2EA8-4107-A5A9-31F6715CB0B5_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "section",
+          "direction": "horizontal",
+          "height": "dynamic",
+          "max_width": 10,
+          "items": [
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/2564C801-DBDC-4196-946F-CFB195C37CD5_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            },
+            {
+              "_template": "image",
+              "size": 1,
+              "src": "/the-knife/4630B01D-76C9-4A0F-B32B-B7CE89EFBD4D_1_105_c.jpeg",
+              "alt": "ocean",
+              "max_width": "100%"
+            }
+          ]
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/68E4E83E-7FF3-4718-8667-05BB84DB5BFE_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
