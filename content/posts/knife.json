@@ -371,6 +371,35 @@
           "max_width": "750px"
         },
         {
+          "_template": "paragraph",
+          "text": "To finish it off, I coated it in double boiled linseed oil. It takes a while to dry but it gives a very nice finish."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/9580D54E-6CEC-41F1-AA58-87F3DD574E98_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/7A1292FF-D2E4-4A52-9298-DE6A2D521888_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "800px"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/931D9D04-1353-4287-B7B7-5C14574823DD_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "750px"
+        },
+        {
+          "_template": "paragraph",
+          "text": "And there it is, my fourth knife. It isn't perfect; that would take all the fun away after all. But it is a vast improvement over its predecessors."
+        },
+        {
           "_template": "spacer",
           "height": "45em",
           "width": "100%"
