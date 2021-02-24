@@ -6,7 +6,6 @@ import * as NextImage from 'next/image'
 
 export function Image({ index, data }) {
 
-
   return (
     <Container>
     <BlocksControls index={index}>
@@ -18,7 +17,7 @@ export function Image({ index, data }) {
             alt={''}
           >
 
-          {props => <StyledNextImage unsized maxWidth={data.max_width} src={props.src} alt={props.alt} layout="fill"  />}
+          {props => <StyledNextImage unsized max_width={data.max_width} src={props.src} alt={props.alt} layout="fill"  />}
         </ImageStyle>
     </BlocksControls>
     </Container>

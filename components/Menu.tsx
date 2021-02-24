@@ -71,14 +71,14 @@ export const Menu = ({cms, moveDown, blurNotifier, themeHandler} : MenuProps) =>
               </LinkItem>
               
             </li>
-            <li onClick={() => {openToggle()}}>
+            {/* <li onClick={() => {openToggle()}}>
               <LinkItem>
                 <Link to={paths.posts({ name: 'pomelo-sweetmeat' })} prefetch={true}>
                   Pomelo Sweetmeat
                 </Link>
               </LinkItem>
               
-            </li>
+            </li> */}
           </ul>
           
           
@@ -209,7 +209,7 @@ const Compass = styled.div`
 
   border-radius: 50%;
   line-height: 0;
-  opacity: ${props => props.open ? '0' : '1'};
+  opacity: .25;
 
 
 
@@ -217,6 +217,7 @@ const Compass = styled.div`
   font-size: 1.5em;
 
   :hover {
+    opacity: 1;
     font-size: 1.65em;
     box-shadow: 0 0 0 0;
     cursor: pointer;

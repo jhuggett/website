@@ -16,6 +16,7 @@ const Subtitle = styled.div`
   font-size: calc(.25em + ${props => props.theme.font.general.size});
   font-weight: ${props => props.theme.font.general.weight};
 
+  width: 100%;
   
 `
 

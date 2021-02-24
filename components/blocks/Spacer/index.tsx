@@ -4,20 +4,23 @@ import { BlocksControls } from 'react-tinacms-inline'
 
 
 export interface SpacerProps {
-  max_width: string
+  width: string
+  height: string
   children?: any
 }
 
 export const defaultSpacer: SpacerProps = {
-  max_width: '50%'
+  height:'50px',
+  width: '50px'
 }
 
 export const Spacer = ({
-  max_width,
+  width,
+  height,
   children
 } : SpacerProps) => {
   return (
-    <Space max_width={max_width}>
+    <Space width={width} height={height}>
       {children}
     </Space>
   )
@@ -27,10 +30,9 @@ const Space = styled.div`
   display: block;
   width: 100%;
   margin: 0 !important;
-  width: ${props => props.max_width};
+  width: ${props => props.width};
+  height: ${props => props.height};
 
-  min-height: 50px;
-  height: 100%;
 
 `
 
@@ -51,8 +53,13 @@ function SpacerBlock({data, index}: SpacerBlockProps) {
 
 export const spacerBlockFields = [
   {
-    name: 'max_width',
-    label: 'Max Width',
+    name: 'width',
+    label: 'Width',
+    component: 'text'
+  },
+  {
+    name: 'height',
+    label: 'Height',
     component: 'text'
   }
 ];
