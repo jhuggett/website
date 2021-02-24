@@ -239,6 +239,13 @@
           ]
         },
         {
+          "_template": "image",
+          "size": 1,
+          "src": "/the-knife/68E4E83E-7FF3-4718-8667-05BB84DB5BFE_1_105_c.jpeg",
+          "alt": "ocean",
+          "max_width": "500px"
+        },
+        {
           "_template": "section",
           "direction": "horizontal",
           "height": "dynamic",
@@ -259,13 +266,6 @@
               "max_width": "100%"
             }
           ]
-        },
-        {
-          "_template": "image",
-          "size": 1,
-          "src": "/the-knife/68E4E83E-7FF3-4718-8667-05BB84DB5BFE_1_105_c.jpeg",
-          "alt": "ocean",
-          "max_width": "500px"
         },
         {
           "_template": "paragraph",
