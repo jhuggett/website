@@ -1,7 +1,7 @@
-
-
-export const typescriptStopBeingAPain = 'please!'
-
+import { CanvasDrawer, CanvasContext, RectangleSize } from "../components/Canvas"
+import { Coor, aStar } from "."
+import { GameMap } from "./map"
+import { getLineOfSight } from "./line-of-sight"
 
 // import { Coor, aStar } from "."
 
@@ -239,3 +239,187 @@ export const typescriptStopBeingAPain = 'please!'
 
   
 // })
+
+const gameMap = new GameMap()
+
+const player = {
+  location: new Coor(0, 0)
+}
+
+const tileSize = {
+  width: 25,
+  height: 25,
+}
+
+const canvasDrawer = new CanvasDrawer((ctx: CanvasContext) => {
+  const center = {
+    width: Math.floor(window.innerWidth / 2) + (0 - player.location.x * tileSize.width - Math.floor(tileSize.width / 2)),
+    height: Math.floor(window.innerHeight / 2) + ( 0 - player.location.y * tileSize.height - Math.floor(tileSize.height / 2))
+  }
+
+  ctx.drawer.offset = {
+    x: center.width,
+    y: center.height
+  }
+
+  ctx.drawer.translate()
+    
+  const size = tileSize
+
+  const grid = {
+    xstart: Math.floor(-ctx.drawer.offset.x / size.width) - 1,
+    xend: Math.floor((-ctx.drawer.offset.x + ctx.drawer.canvasSize.width) / size.width) + 1,
+    ystart: Math.floor(-ctx.drawer.offset.y / size.height) - 1,
+    yend: Math.floor((-ctx.drawer.offset.y + ctx.drawer.canvasSize.height) / size.height) + 1
+  }
+    
+    
+  const lineOfSight = getLineOfSight(player.location, gameMap, 10)
+  lineOfSight.push(player.location)
+  
+  lineOfSight.forEach(point => {
+    if (gameMap.getPointAt(point) != 1) return
+    
+        const coord = point
+        if (coord.x <= grid.xend && coord.x >= grid.xstart && coord.y <= grid.yend && coord.y >= grid.ystart) {
+          const xDiff = Math.abs(point.x - player.location.x)
+          const yDiff = Math.abs(point.y - player.location.y)
+          let ringLevel = xDiff > yDiff ? xDiff : yDiff
+          
+
+          const alpha = 1 - ringLevel / 10
+          
+          ctx.drawer.drawRectangle(
+            new Coor(coord.x * size.width, coord.y * size.height),
+            new RectangleSize(size.width, size.height),
+            '#E3BAAA',
+            alpha
+          )
+        }
+  })
+    
+  ctx.drawer.drawRectangle(
+    new Coor(player.location.x * size.width, player.location.y * size.height),
+    new RectangleSize(size.width, size.height),
+    'green'
+  )
+    
+      if (tileHighlighted && lineOfSight.filter(point => point.sameAs(tileHighlighted)).length > 0) {
+        const x = tileHighlighted.x
+        const y = tileHighlighted.y
+    
+    
+        if (gameMap.getPointAt(new Coor(x, y))) {
+          if (x != player.location.x || y != player.location.y) {
+            ctx.drawer.drawRectangle(
+              new Coor(x * size.width, y * size.height),
+              new RectangleSize(size.width, size.height),
+              'green'
+            )
+          }
+          
+        }
+        
+        const newPoints = aStar(player.location, new Coor(x, y), gameMap)
+        
+        if (!newPoints) {
+          console.log('no new points');
+          return
+        }
+        
+        newPoints.forEach(point => {
+          if (player.location.sameAs(point)) return
+            ctx.drawer.drawRectangle(
+              new Coor(Math.floor(point.x * size.width + size.width / 4), Math.floor(point.y * size.height + size.height / 4)),
+              new RectangleSize(Math.floor(size.width / 2), Math.floor(size.height / 2)),
+              'green'
+            )
+        })
+      }
+})
+
+let tileHighlighted = null
+
+function movePlayer(i: number, steps: Coor[], ctx: CanvasContext) {
+  if (!steps) { ctx.enableUserInteraction(); return }
+  player.location = steps[i]
+  ctx.draw()
+
+  if (i + 1 == steps.length) {
+    ctx.enableUserInteraction()
+    return
+  } else {
+    setTimeout(() => { movePlayer(i + 1, steps, ctx) }, 100)
+  }
+}
+
+
+export const canvasContext = new CanvasContext(canvasDrawer, (ctx: CanvasContext) => {
+  
+  ctx.handleResize = (window) => {
+    ctx.drawer.canvasSize = new RectangleSize(window.innerWidth, window.innerHeight)
+    ctx.draw()
+  }
+
+  
+  ctx.keyboardHandler.on('ArrowUp', {
+    keydown: () => {
+      if (gameMap.getPointAt(new Coor(player.location.x, player.location.y - 1)) != 1) return
+      player.location.y -= 1
+      ctx.draw()
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowRight', {
+    keydown: () => {
+      if (gameMap.getPointAt(new Coor(player.location.x + 1, player.location.y)) != 1) return
+      player.location.x += 1
+      ctx.draw()
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowDown', {
+    keydown: () => {
+      if (gameMap.getPointAt(new Coor(player.location.x, player.location.y + 1)) != 1) return
+      player.location.y += 1
+      ctx.draw()
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowLeft', {
+    keydown: () => {
+      if (gameMap.getPointAt(new Coor(player.location.x - 1, player.location.y)) != 1) return
+      player.location.x -= 1
+      ctx.draw()
+    }
+  })
+
+
+  ctx.mouseHandler.addMouseMoveAction(() => {
+    const x = Math.floor((ctx.mouseHandler.mouseLocation.x - ctx.drawer.offset.x) / tileSize.width)
+      const y = Math.floor((ctx.mouseHandler.mouseLocation.y - ctx.drawer.offset.y) / tileSize.height)
+      
+      if (gameMap.getPointAt(new Coor(x, y))) {
+        if (!tileHighlighted || !tileHighlighted.sameAs(new Coor(x, y))) {
+          tileHighlighted = new Coor(x, y)
+          ctx.draw()
+        }
+      } else if (tileHighlighted) {
+        
+        tileHighlighted = null
+        ctx.draw()
+      }
+  })
+
+  ctx.mouseHandler.addMouseDownAction(() => {
+    if (tileHighlighted && getLineOfSight(player.location, gameMap).filter(point => point.sameAs(tileHighlighted)).length > 0) {
+
+      const steps = aStar(player.location, tileHighlighted, gameMap)
+
+      tileHighlighted = null
+
+      ctx.disableUserInteraction()
+      movePlayer(0, steps, ctx)
+    }
+  })
+})
