@@ -13,10 +13,6 @@ export interface MenuProps {
   themeHandler: ThemeHandler
 }
 
-const closeMenu = (closeFunction) => {
-  setTimeout(closeFunction, 0)
-}
-
 export const Menu = ({cms, moveDown, blurNotifier, themeHandler} : MenuProps) => {
 
   const [isOpen, setOpen] = useState(false)

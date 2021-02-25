@@ -1,8 +1,8 @@
 import { ContentBody, BodyLeft, BodyCenter, BodyRight } from "../components/PageLayout";
 import { InlineBlocks } from "react-tinacms-inline";
-import Canvas, { CanvasDrawer, CanvasContext, RectangleSize } from "../components/Canvas";
+import { Canvas, CanvasDrawer, CanvasContext, RectangleSize } from "../components/Canvas";
 import { Coor } from "../game";
-
+import styled from 'styled-components'
 
 
 
@@ -10,38 +10,118 @@ export default function Snake({file, cms, themeHandler, hideTopBar}) {
 
 
   return (
-    <>
-      <ContentBody>
-      <BodyLeft>
-
-      </BodyLeft>
-
-      <BodyCenter>
+    <Page>
+      <Canvas context={canvasContext} />
         
-      {/* <Canvas context={canvasContext}>
-      
-      </Canvas> */}
-        
-      </BodyCenter>
-
-      <BodyRight>
-        
-      </BodyRight>
-
-    </ContentBody>
-    </>
+    </Page>
   )
 }
 
+const Page = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: black;
+`
 
+const directions = {
+  up: new Coor(0, -1),
+  right: new Coor(1, 0),
+  down: new Coor(0, 1),
+  left: new Coor(-1, 0)
+}
 
+const applyDirection = (coor: Coor, direction: Coor) : Coor => {
+  return new Coor(coor.x + direction.x, coor.y + direction.y)
+}
 
+const snake = {
+  parts: [new Coor(25, 25), new Coor(24, 25), new Coor(23, 25), new Coor(22, 25),
+    new Coor(21, 25), new Coor(20, 25), new Coor(19, 25), new Coor(18, 25)],
+  direction: directions.right
+}
+
+const grid = {
+  width: {
+    start: 0,
+    end: 100
+  },
+  height: {
+    start: 0,
+    end: 100
+  }
+}
+
+const food = {
+  location: new Coor(50, 50)
+}
+
+let pause = false
+
+const tileSize = new RectangleSize(25, 25)
+
+function coorWithTileSizeApplied(coor: Coor) : Coor {
+  return new Coor(coor.x * tileSize.width, coor.y * tileSize.height)
+}
+
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms))
+}
+
+(async () => {
+  while (!pause) {
+    await delay(75)
+    snake.parts.pop()
+    snake.parts = [
+      applyDirection(snake.parts[0], snake.direction),
+      ...snake.parts
+    ]
+    canvasContext.draw()
+  }
+})()
 
 const canvasDrawer = new CanvasDrawer((ctx: CanvasContext) => {
-  
-  ctx.drawer.drawRectangle(new Coor(0, 0), ctx.drawer.canvasSize, 'blue')
-  
+  snake.parts.forEach((part, index) => {
+    ctx.drawer.drawRectangle(
+      coorWithTileSizeApplied(part),
+      tileSize,
+      index == 0 ? 'orange' : 'yellow'
+    )
+  })
 })
 
+export const canvasContext = new CanvasContext(canvasDrawer, (ctx: CanvasContext) => {
+  
+  ctx.handleResize = (window) => {
+    ctx.drawer.canvasSize = new RectangleSize(window.innerWidth, window.innerHeight)
+    ctx.draw()
+  }
 
-export const canvasContext = new CanvasContext(canvasDrawer, (ctx: CanvasContext) => {})
+  ctx.keyboardHandler.on('ArrowUp', {
+    keydown: () => {
+      if (snake.direction.sameAs(directions.down)) return
+      snake.direction = directions.up
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowRight', {
+    keydown: () => {
+      if (snake.direction.sameAs(directions.left)) return
+      snake.direction = directions.right
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowDown', {
+    keydown: () => {
+      if (snake.direction.sameAs(directions.up)) return
+      snake.direction = directions.down
+    }
+  })
+
+  ctx.keyboardHandler.on('ArrowLeft', {
+    keydown: () => {
+      if (snake.direction.sameAs(directions.right)) return
+      snake.direction = directions.left
+    }
+  })
+  
+})

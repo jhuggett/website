@@ -1,16 +1,7 @@
-import { useRef, useEffect } from "react"
-import { Coor } from "../game"
+import { InputHandler } from "."
 
-export class RectangleSize {
 
-  constructor(public width: number, public height: number) {}
-
-  area() : number {
-    return this.width * this.height
-  }
-}
-
-class MouseHandler {
+export class MouseHandler implements InputHandler {
 
   userInteractionEnabled = true
 
@@ -32,6 +23,10 @@ class MouseHandler {
       event: 'mousedown',
       func: (e) => {
         if (!this.userInteractionEnabled) return
+        console.log('mousedown');
+        console.log(this);
+        
+        
         this.eventActions.mouseDown.actions.forEach(action => action(e))
       },
       actions: []
@@ -66,6 +61,8 @@ class MouseHandler {
     })
   }
 }
+
+
 
 // class DragHandler {
 //   isDown: boolean
@@ -126,115 +123,3 @@ class MouseHandler {
 //     window.removeEventListener('touchmove', this.handleMouseMove(this, false))
 //   }
 // }
-
-export class CanvasDrawer {
-  
-  offset = {
-    x: 0,
-    y: 0
-  }
-
-  canvasSize: RectangleSize = new RectangleSize(200, 150)
-
-  canvas?
-
-  draw: (ctx: CanvasContext) => void
-  private canvasContext
-
-  constructor(suppliedDraw: (context: CanvasContext) => void) {
-    this.draw = (ctx: CanvasContext) => {
-      if (!this.canvas) return
-
-      this.canvasContext = this.getCanvasContext()
-
-      this.canvasContext.width = this.canvasSize.width
-      this.canvasContext.height = this.canvasSize.height
-
-      suppliedDraw(ctx)
-    }
-  }
-
-  getCanvasContext() {
-    if (this.canvas) return this.canvas.getContext('2d')
-  }
-
-  
-
-  drawRectangle(at: Coor, size: RectangleSize, color: string, opacity?: number) {
-    if (!this.canvas) return
-
-    this.canvasContext.globalAlpha = opacity ? opacity : 1
-    this.canvasContext.fillStyle = color
-    this.canvasContext.fillRect(at.x, at.y, size.width, size.height)
-  }
-}
-
-export class CanvasContext {
-
-  userInteractionEnabled = true
-  
-  drawer: CanvasDrawer
-
-  mouseHandler: MouseHandler
-
-  enableUserInteraction() {
-    this.userInteractionEnabled = true
-    this.mouseHandler.userInteractionEnabled = true
-  }
-
-  disableUserInteraction() {
-    this.userInteractionEnabled = false
-    this.mouseHandler.userInteractionEnabled = false
-  }
-
-  supplyCanvas(canvas) {
-    this.drawer.canvas = canvas
-  }
-
-  constructor(drawer: CanvasDrawer, config: (ctx: CanvasContext) => void) {
-    this.drawer = drawer
-
-    this.mouseHandler = new MouseHandler()
-
-    config(this)
-  }
-
-  
-
-
-  draw() {
-    this.drawer.draw(this)
-  }
-}
-
-export interface CanvasProps {
-  context: CanvasContext
-}
-
-const Canvas = ({ context } : CanvasProps) => {
-
-  const canvasRef = useRef(null)
-
-  context.supplyCanvas(canvasRef.current)
-  
-  useEffect(() => {
-    function handleResize() {
-      context.draw()
-    }
-
-    window.addEventListener('resize', handleResize)
-
-
-    context.draw()
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-  
-  return (
-    <canvas className={'canvas'} ref={canvasRef} />
-  )
-}
-
-export default Canvas

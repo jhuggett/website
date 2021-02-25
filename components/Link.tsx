@@ -11,14 +11,14 @@ interface IProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 export default React.forwardRef(({ to, prefetch, ...props }: IProps, ref: any) => {
   if (typeof to === 'string') {
     return (
-      <Link href={to} prefetch={prefetch || false}>
+      <Link href={to}>
         <a {...props} ref={ref} />
       </Link>
     )
   }
 
   return (
-    <Link href={to.href} as={to.as} prefetch={prefetch || false}>
+    <Link href={to.href} as={to.as}>
       <a {...props} ref={ref} />
     </Link>
   )

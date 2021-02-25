@@ -1,22 +1,17 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
-import Canvas from '../components/Canvas'
-// import { canvasContext } from '../game'
+import {Canvas} from '../components/Canvas/Canvas'
+import { canvasContext } from '../game'
 
 export default function Backdoor({file, cms, themeHandler, hideTopBar}) {
 
 
   const [showGame, setShowGame] = useState(false)
 
-  useEffect(() => {
-    hideTopBar(false)
-  }, [])
 
   return showGame ? (
   <Background>
-    {/* <Canvas context={canvasContext}>
-      
-    </Canvas> */}
+    <Canvas context={canvasContext} />
   </Background>
   ) : (
     <Background>
