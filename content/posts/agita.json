@@ -90,7 +90,7 @@
       "items": [
         {
           "_template": "paragraph",
-          "text": "Now if you're interested in using Agita yourself, first of all thanks, and secondly please be aware that it is still new and rough round the edges (at least as of Feb. 26, 2021).  For installation and instructions see the npm registry link below. And if you run into any issues, feel free to file them in the github repo also listed below."
+          "text": "Now if you're interested in using Agita yourself, first of all thanks, and secondly please be aware that it is still new and rough round the edges (at least as of Feb. 26, 2021).  For installation and instructions see the npm registry link below. And if you run into any issues, feel free to file them in the Github repo also listed below."
         }
       ]
     }
