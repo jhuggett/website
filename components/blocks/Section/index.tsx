@@ -6,6 +6,7 @@ import { paragraphBlock } from '../../Paragraph';
 import { spacerBlock } from '../Spacer';
 import { titleBlock } from '../Title';
 import { imageBlock } from '../Image';
+import { externalLinkBlock } from '../External Link';
 
 
 function Section({ index, data }) {
@@ -76,5 +77,6 @@ const SECTION_BLOCKS = {
   heading: headingBlock,
   paragraph: paragraphBlock,
   image: imageBlock,
+  externalLink: externalLinkBlock,
   spacer: spacerBlock
 }

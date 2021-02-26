@@ -1,0 +1,107 @@
+{
+  "blocks": [
+    {
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
+        {
+          "_template": "title",
+          "headline": "Agita",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "heading",
+          "headline": "This is a headline",
+          "subtext": "TUI that hastens the basics of Git",
+          "background_color": "background",
+          "text_color": "primary",
+          "align": "center"
+        },
+        {
+          "_template": "paragraph",
+          "text": "I use git a lot. Usually after writing a bunch of code. And then I find that as I'm trying to type these same basic commands, that I've typed a thousand times before, they don't come out right. Usually goes something along the lines of \"git statsu\", then \"git comit\", and \"gut puhs\", and that's on a good day. So I was fed up with this, and thus decided to create Agita:"
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/agita/Screen Shot 2021-02-26 at 10.17.32 AM.png",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "All Agita is is a basic text-based user interface, written in node and distributed on the npm registry, that exists in your terminal and allows for selecting the commands you want. Sure, the problem can be managed by using shortcuts and aliases but I'm choosing the path of selective ignorance."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/agita/Screen Shot 2021-02-26 at 10.17.49 AM.png",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Plus I can then do some cool stuff like below. This is a user interaction that allows for selectively choosing (or removing) files from the git repository. You can navigate through directories and or select full directories with nothing but your arrow and enter keys.  "
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/agita/Screen Shot 2021-02-26 at 10.18.02 AM.png",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "I also found a tendency to create branch names that don't necessarily represent the purpose of the branch just so that the name is simple and short. I then keep forgetting or typing the name wrong. So Agita makes it simple for whenever you need the name of a remote or branch; Agita searches your .git folder and grabs all remotes and refs automatically."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/agita/Screen Shot 2021-02-26 at 10.18.15 AM.png",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "And while not being completely fleshed out, if you do run Agita in a directory that isn't a git repository, it'll help you set one up."
+        },
+        {
+          "_template": "image",
+          "size": 1,
+          "src": "/agita/Screen Shot 2021-02-26 at 10.18.32 AM.png",
+          "alt": "ocean",
+          "max_width": "100%"
+        },
+        {
+          "_template": "paragraph",
+          "text": "Agita really isn't here to replace using Git in your terminal. It's here to augment it; make it easier in a good way."
+        },
+        {
+          "_template": "paragraph",
+          "text": "Now if you're interested in using Agita yourself, first of all thanks, and secondly please be aware that it is still new and rough round the edges (at least as of Feb. 26, 2021).  For installation and instructions see the npm registry link below. And if you run into any issues, feel free to file them in the Github repo also listed below."
+        },
+        {
+          "_template": "externalLink",
+          "logo": "npm",
+          "link": "https://www.npmjs.com/package/agita/access",
+          "text": "Package"
+        },
+        {
+          "_template": "externalLink",
+          "logo": "github",
+          "link": "https://github.com/jhuggett/agita",
+          "text": "Repository"
+        },
+        {
+          "_template": "spacer",
+          "height": "15em",
+          "width": "50px"
+        }
+      ]
+    }
+  ]
+}
