@@ -86,7 +86,7 @@
         },
         {
           "_template": "spacer",
-          "height": "50px",
+          "height": "15em",
           "width": "50px"
         }
       ]
