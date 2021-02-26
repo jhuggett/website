@@ -113,8 +113,13 @@ function delay(ms: number) {
   await delay(75)
   randomlySetFood()
   
-  while (!pause) {
+  while (true) {
     await delay(75)
+
+    if (pause) {
+      continue
+    }
+
     snake.parts.pop()
     snake.parts = [
       applyDirection(snake.parts[0], snake.direction),
@@ -184,6 +189,12 @@ export const canvasContext = new CanvasContext(canvasDrawer, (ctx: CanvasContext
     keydown: () => {
       if (snake.direction.sameAs(directions.right)) return
       snake.direction = directions.left
+    }
+  })
+
+  ctx.keyboardHandler.on(' ', {
+    keydown: () => {
+      pause = !pause
     }
   })
   
