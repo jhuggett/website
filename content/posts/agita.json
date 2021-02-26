@@ -87,7 +87,7 @@
         {
           "_template": "externalLink",
           "logo": "npm",
-          "link": "https://www.npmjs.com/package/agita/access",
+          "link": "https://www.npmjs.com/package/agita",
           "text": "Package"
         },
         {
