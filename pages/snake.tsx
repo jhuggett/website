@@ -1,7 +1,7 @@
 import { ContentBody, BodyLeft, BodyCenter, BodyRight } from "../components/PageLayout";
 import { InlineBlocks } from "react-tinacms-inline";
 import { Canvas, CanvasDrawer, CanvasContext, RectangleSize } from "../components/Canvas";
-import { Coor } from "../game";
+import { Coor, getRandomNumber } from "../game";
 import styled from 'styled-components'
 
 
@@ -35,24 +35,66 @@ const applyDirection = (coor: Coor, direction: Coor) : Coor => {
 }
 
 const snake = {
-  parts: [new Coor(25, 25), new Coor(24, 25), new Coor(23, 25), new Coor(22, 25),
-    new Coor(21, 25), new Coor(20, 25), new Coor(19, 25), new Coor(18, 25)],
+  parts: [new Coor(6, 5), new Coor(5, 5), new Coor(4, 5)],
   direction: directions.right
 }
 
-const grid = {
-  width: {
-    start: 0,
-    end: 100
-  },
-  height: {
-    start: 0,
-    end: 100
+function snakeIsOutOfBounds() : boolean {
+  const head = snake.parts[0]
+
+  if (
+    head.x <= 0 ||
+    head.y <= 0 ||
+    head.x >= getMaxNumberOfTiles().x ||
+    head.y >= getMaxNumberOfTiles().y
+    ) {
+      return true
+    }
+
+  return false
+}
+
+function snakeHasHitItself() : boolean {
+  const head = snake.parts[0]
+  const rest = snake.parts.slice(1)
+
+  for (let piece of rest) {
+    if (piece.sameAs(head)) {
+      return true
+    }
+  }
+  return false
+}
+
+const getMaxNumberOfTiles = () : Coor => {
+  return new Coor(
+    Math.floor(canvasContext.drawer.canvasSize.width / tileSize.width),
+    Math.floor(canvasContext.drawer.canvasSize.height / tileSize.height)
+  )
+}
+
+function randomlySetFood() {
+  food.location = new Coor(
+    getRandomNumber(1, getMaxNumberOfTiles().x - 1),
+    getRandomNumber(1, getMaxNumberOfTiles().y - 1)
+  )
+
+  for (let piece of snake.parts) {
+    if (piece.sameAs(food.location)) {
+      randomlySetFood()
+    }
+  }
+}
+
+function checkIfSnakeCollidesWithFood() {
+  if (snake.parts[0].sameAs(food.location)) {
+    randomlySetFood()
+    snake.parts.push(snake.parts[snake.parts.length - 1])
   }
 }
 
 const food = {
-  location: new Coor(50, 50)
+  location: new Coor(-1, -1)
 }
 
 let pause = false
@@ -68,6 +110,9 @@ function delay(ms: number) {
 }
 
 (async () => {
+  await delay(75)
+  randomlySetFood()
+  
   while (!pause) {
     await delay(75)
     snake.parts.pop()
@@ -75,6 +120,16 @@ function delay(ms: number) {
       applyDirection(snake.parts[0], snake.direction),
       ...snake.parts
     ]
+
+    if (snakeIsOutOfBounds() || snakeHasHitItself()) {
+      pause = true
+      if (typeof window !== "undefined") {
+        window.location.reload()
+      }
+    }
+
+    checkIfSnakeCollidesWithFood()
+
     canvasContext.draw()
   }
 })()
@@ -87,9 +142,17 @@ const canvasDrawer = new CanvasDrawer((ctx: CanvasContext) => {
       index == 0 ? 'orange' : 'yellow'
     )
   })
+
+  ctx.drawer.drawRectangle(
+    coorWithTileSizeApplied(food.location),
+    tileSize,
+    'green'
+  )
 })
 
 export const canvasContext = new CanvasContext(canvasDrawer, (ctx: CanvasContext) => {
+
+  
   
   ctx.handleResize = (window) => {
     ctx.drawer.canvasSize = new RectangleSize(window.innerWidth, window.innerHeight)
