@@ -67,6 +67,14 @@ export const Menu = ({cms, moveDown, blurNotifier, themeHandler} : MenuProps) =>
               </LinkItem>
               
             </li>
+            <li onClick={() => {openToggle()}}>
+              <LinkItem>
+                <Link to={paths.posts({ name: 'agita' })} prefetch={true}>
+                  Agita
+                </Link>
+              </LinkItem>
+              
+            </li>
             {/* <li onClick={() => {openToggle()}}>
               <LinkItem>
                 <Link to={paths.posts({ name: 'pomelo-sweetmeat' })} prefetch={true}>
