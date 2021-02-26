@@ -23,7 +23,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "\n\nI use git a lot. Usually after writing a bunch of code. And then I find that as I'm trying to type these same basic commands that I've typed a thousand times before, they don't come out right. Usually goes something along the lines of \"git statsu\", then \"git comit\", and \"gut puhs\", and that's on a good day. So I was fed up with this, and thus decided to create Agita. "
         },
         {
           "_template": "image",
@@ -34,7 +34,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "All Agita is is a basic text-based user interface, written in node and distributed on the npm registry, that exists in your terminal and allows for selecting the commands you want. Sure, the problem can be managed by using shortcuts and aliases but I'm choosing the path of selective ignorance."
         },
         {
           "_template": "image",
@@ -45,7 +45,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "Plus I can then do some cool stuff like below. This is a user interaction that allows for selectively choose (or removing) files from the git repository. You can navigate through directories and or select full directories with nothing but your arrow and enter keys.  "
         },
         {
           "_template": "image",
@@ -56,7 +56,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "I also found a tendency to create branch names that don't necessarily represent the purpose of the branch just so that the name is simple and short. I keep forgetting or typing the name wrong. So Agita makes it simple for whenever you need the name of a remote or branch; Agita searches your .git folder for all remotes and refs."
         },
         {
           "_template": "image",
@@ -67,7 +67,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "And while not being completely fleshed out, if you do run Agita in a directory that isn't a git repository, it'll help you set one up."
         },
         {
           "_template": "image",
@@ -78,7 +78,19 @@
         },
         {
           "_template": "paragraph",
-          "text": "Take root and flourish quis nostrum exercitationem ullam corporis suscipit laboriosam culture Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur descended from astronomers encyclopaedia galactica? Nisi ut aliquid ex ea commodi consequatur something incredible is waiting to be known sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem "
+          "text": "Agita really isn't here to replace using Git in your terminal. It's here to augment it; make it easier in a good way."
+        }
+      ]
+    },
+    {
+      "_template": "section",
+      "direction": "vertical",
+      "height": "dynamic",
+      "max_width": 10,
+      "items": [
+        {
+          "_template": "paragraph",
+          "text": "Now if you're interested in using Agita yourself, first of all thanks, and secondly please be aware that it is still new and rough round the edges (at least as of Feb. 26, 2021).  For installation and instructions see the npm registry link below. And if you run into any issues, feel free to file them in the github repo also listed below."
         }
       ]
     }
