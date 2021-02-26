@@ -23,7 +23,7 @@
         },
         {
           "_template": "paragraph",
-          "text": "\n\nI use git a lot. Usually after writing a bunch of code. And then I find that as I'm trying to type these same basic commands that I've typed a thousand times before, they don't come out right. Usually goes something along the lines of \"git statsu\", then \"git comit\", and \"gut puhs\", and that's on a good day. So I was fed up with this, and thus decided to create Agita. "
+          "text": "I use git a lot. Usually after writing a bunch of code. And then I find that as I'm trying to type these same basic commands that I've typed a thousand times before, they don't come out right. Usually goes something along the lines of \"git statsu\", then \"git comit\", and \"gut puhs\", and that's on a good day. So I was fed up with this, and thus decided to create Agita. "
         },
         {
           "_template": "image",
